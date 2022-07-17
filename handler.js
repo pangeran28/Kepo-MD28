@@ -679,38 +679,6 @@ Untuk mematikan fitur ini, ketik
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
-},
-async onCall(json) {
-    let { from } = json[2][0][1]
-    let ids = 'call-id' in json[2][0][2][0][1] ? Object.entries(json[2][0][2][0][1]) : []
-    let id = ids[0][1]
-    let isOffer = json[2][0][2][0][0] == 'offer' || false
-    let users = global.DATABASE.data.users
-    let user = users[from] || {}
-    if (user.whitelist) return
-    switch (this.callWhitelistMode) {
-      case 'mycontact':
-        if (from in this.contacts && 'short' in this.contacts[from])
-        return
-        break
-    }
-      
-    if (from && id && isOffer && json[2][0]) {
-      var tag = this.generateMessageTag()
-      var NodePayload = ["action", "call", ["call", {
-        "from": this.user.jid,
-        "to": from,
-        "id": tag
-      }, [["reject", { 
-        "call-id": id, 
-        "call-creator": from, 
-        "count": "0" 
-      }, null]]]]
-      
-      await this.send(`${tag},${JSON.stringify(NodePayload)}`)
-    }
-    await this.sendMessage(from, 'Maaf, Tolong jangan telfon BOT!!', MessageType.extendedText)
-  }
 }
 
 global.dfail = async (type, m, conn) => {
