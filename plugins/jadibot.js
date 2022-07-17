@@ -30,7 +30,7 @@ Terimakasih yang sudah mendonasikan untuk bot
 Contact person jasa run:
 wa.me/79811950242 (ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×)
 *Follow Instagram ku juga kak😼*`
-  conn.send2ButtonImg(m.chat, fla + teks, anu, instagram, 'Donasi', '.donasi', 'SewaBot', '.sewazifa', m) 
+  conn.send2ButtonImg(m.chat, fla + teks, anu, instagram, 'Donasi', '.donasi', 'Sewa Pangeran', '.sewabot', m) 
 }
 handler.help = ['jadibot']
 handler.tags = ['info']
