@@ -4,8 +4,8 @@ let handler = async (m, { conn }) => {
   let baper = await fetch(pepe).then(a => a.buffer())
 
   let aine = '79811950242@s.whatsapp.net'
-  let a = await conn.profilePictureUrl(conn.user.jid, 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
-  let b = await conn.profilePictureUrl(owner[0]+'@s.whatsapp.net', 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
+  let a = await conn.profilePictureUrl(conn.user.jid, 'image').catch((_) => "https://telegra.ph/file/be35f3f279c9af2d607e8.jpg")
+  let b = await conn.profilePictureUrl(owner[0]+'@s.whatsapp.net', 'image').catch((_) => "https://telegra.ph/file/be35f3f279c9af2d607e8.jpg")
   let c = pickRandom([a, b])
   let d = await fetch(c).then(a => a.buffer())
   let prepare = await require('@adiwajshing/baileys').generateWAMessageFromContent(m.key.remoteJid,{listMessage:{
@@ -45,9 +45,9 @@ wa.me/${owner[0]}
   conn.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
 
 }
-handler.help = ['sewa', 'premium']
+handler.help = ['sewabot', 'premium']
 handler.tags = ['main']
-handler.command = /^(sewa|premium)$/i
+handler.command = /^(sewabot|premium)$/i
 
 module.exports = handler
 
