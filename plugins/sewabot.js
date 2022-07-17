@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
   let d = await fetch(c).then(a => a.buffer())
   let prepare = await require('@adiwajshing/baileys').generateWAMessageFromContent(m.key.remoteJid,{listMessage:{
   title: `${await conn.getName(conn.user.jid)}`,
-  description: ` *• SEWA BOT & UP TO PREMIUM •*
+  description: `*•SEWA BOT & UP TO PREMIUM•*
         
 _*👤Grup / 30 Hari*_
 _*✔️Rp. 15.000 Dana*_
