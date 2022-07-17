@@ -19,8 +19,8 @@ module.exports = {
         let m = chatUpdate.messages[chatUpdate.messages.length - 1]
         if (!m) return
         
-        global.namabot = await this.user.name
-        global.wm = 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ' + ' ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+        global.namabot = 'ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-MD×፝֟͜×'
+        global.wm = 'Cʀᴇᴀᴛᴇᴅ Bʏ' + ' ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
         //console.log(JSON.stringify(m, null, 4))
         try {
             m = simple.smsg(this, m) || m
