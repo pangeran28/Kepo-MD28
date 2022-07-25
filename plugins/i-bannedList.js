@@ -25,6 +25,6 @@ handler.help = ['bannedlist']
 handler.tags = ['info']
 handler.command = /^list?ban(ned)?|ban(ned)?list?|daftarban(ned)?$/i
 
-handler.owner = false
+handler.owner = true
 
 module.exports = handler
