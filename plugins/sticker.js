@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: true,
+        crop: false,
       })
     } else if (/image/.test(mime)) {
       let img = await q.download()
