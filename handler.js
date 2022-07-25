@@ -272,7 +272,7 @@ module.exports = {
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
-                    closeGroup: false,
+                    closeGroup: true,
                     add: 0,
                     isBanned: false,
                     welcome: false,
