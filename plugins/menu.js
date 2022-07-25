@@ -5,7 +5,7 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┌─〔 ᵈʳᴋ ᴏ ᴋ ᴏ ⁻ ᴹ ᴰ×፝֟͜× 〕
+┌─〔 ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜× 〕
 ├ *%ucapan %name*
 │
 ├ Tersisa *%limit Limit*
@@ -283,7 +283,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `👤Pangeran`, `${_p}owner`, `⭐Donasi⭐`, `${_p}donasi`, `🎗  ThanksTo  🎗`, `${_p}tqto`)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `👤Koko`, `${_p}owner`, `⭐Donasi⭐`, `${_p}donasi`, `🎗  ThanksTo  🎗`, `${_p}tqto`)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
