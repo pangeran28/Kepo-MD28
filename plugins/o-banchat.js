@@ -23,8 +23,8 @@ let handler = async (m, { conn, isOwner, text, isAdmin }) => {
     throw `nomor tidak ada didatabase!`
   }
 }
-handler.help = ['ban']
+handler.help = ['banchat']
 handler.tags = ['owner', 'group']
-handler.command = /^ban(chat)?$/i
+handler.command = /^(banchat)$/i
 
 module.exports = handler
