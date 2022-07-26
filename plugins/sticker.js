@@ -1,7 +1,7 @@
 const { sticker } = require('../lib/sticker')
 const WSF = require('wa-sticker-formatter')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  let stiker = true
+  let stiker = false
   let wsf = false
   try {
     let q = m.quoted ? m.quoted : m
@@ -51,7 +51,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
       quoted: m,
       mimetype: 'image/webp',
-      ephemeralExpiration: '86400'
+      ephemeralExpiration: 'null'
     })
     // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
   }
