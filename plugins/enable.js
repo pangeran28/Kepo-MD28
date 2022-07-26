@@ -186,25 +186,42 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       setting.anticall = isEnable
       break
-    case 'antitroli':
-    case 'antibuggc':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
+    case 'antivirtext':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
           throw false
         }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn)
+        throw false
       }
-      chat.antitroli = isEnable
+      chat.antiVirtext = isEnable
       break
-    case 'antivirtex':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
+    case 'antiphilip':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
           throw false
         }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn)
+        throw false
       }
-      chat.antivirtex = isEnable
-      break  
+      chat.antiPhilip = isEnable
+      break
+    case 'antibugfont':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
+      chat.antiBugfont = isEnable
+      break
     case 'antispam':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -292,6 +309,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antiviewonce
 ├ antilink
 ├ antitroli
+├ antispam
+├ antivirtext
+├ antiphilip
 ├ antibuggc
 ├ antisatir
 ├ autolevelup
