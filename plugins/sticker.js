@@ -1,7 +1,7 @@
 const { sticker } = require('../lib/sticker')
 const WSF = require('wa-sticker-formatter')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  let stiker = false
+  let stiker = true
   let wsf = false
   try {
     let q = m.quoted ? m.quoted : m
@@ -20,7 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: true,
+        crop: false,
       })
     } else if (/video/.test(mime)) {
       if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
@@ -51,7 +51,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
       quoted: m,
       mimetype: 'image/webp',
-      ephemeralExpiration: 'null'
+      ephemeralExpiration: '86400'
     })
     // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
   }
