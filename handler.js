@@ -620,8 +620,6 @@ module.exports = {
                                 groupname: await this.getName(id),
                                 membercount: groupMetadata.participants.length
                             })
-                            text = (action === 'remove' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
                             let lea = API('males', '/goodbye2', {
                                 profile: pp,
                                 username: await this.getName(user),
@@ -629,7 +627,7 @@ module.exports = {
                                 groupname: await this.getName(id),
                                 membercount: groupMetadata.participants.length
                             })
-                            await this.send3TemplateButtonImg(id, action === 'add' : 'remove' ? wel : lea, text, wm, action === 'add' : 'remove' ? 'Selamat Datang Beban' : 'Sampai Jumpa Beban', action === 'add' : 'remove' ? '.intro' : '.beban')
+                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Selamat Datang Beban' : 'Sampai Jumpa Beban', action === 'add' ? '.intro' : 'Pangeran')
                         }
                     }
                 }
