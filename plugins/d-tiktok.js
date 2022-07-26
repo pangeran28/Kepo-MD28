@@ -1,20 +1,14 @@
-let fetch = require('node-fetch')
+let axios = require('axios');
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-
-  if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/yqyjPX/`
-  if (!args[0].match(/tiktok/gi)) throw `url salah`
-
-  let res = await fetch(global.API('hardianto', '/api/download/tiktok', { url: args[0] }, 'apikey'))
-  if (!res.ok) throw await `${res.status} ${res.statusText}`
-  let json = await res.json()
-  // if (!json.status) throw json
-  await m.reply(global.wait)
-  await conn.sendFile(m.chat, json.nowm, '', `${json.caption}\n\nBOTSTYLE`, m)
-
+    if (!args[0]) throw `contoh:\n ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
+    let res = (await axios.get(API('males', '/tiktok', { url: args[0] } ))).data;
+    if (res.status != 200) throw res.message;
+    if (!res) throw res.message;
+    conn.sendButtonVid(m.chat, res.video, `*Judul:* ${res.title}\n${res.author ? `*Pembuat Video:* ${res.author}` : '\n' }`.trim(), 'Cara simpan digalery:\n1. Download dulu videonya\n2. Buka terus klik titik 3 pojok kanan atas\n3. lalu klik simpan!', 'menu', usedPrefix + 'menu', m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(tiktok)$/i
+handler.command = /^(tik(tok)?(dl)?)$/i
 handler.premium = true
 handler.limit = true
 
