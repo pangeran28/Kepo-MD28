@@ -6,7 +6,7 @@ handler.before = function (m) {
         this.sendButton(m.chat, `
 Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${this.clockString(new Date - user.afk)}
-`.trim(), wm, `Menu`, `.menu`, m)
+`.trim(), wm, `INFO PANGERAN`, `.infopangeran`, m)
         user.afk = -1
         user.afkReason = ''
     }
@@ -21,7 +21,7 @@ Selama ${this.clockString(new Date - user.afk)}
 Jangan tag dia!
 Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
 Selama ${this.clockString(new Date - afkTime)}
-`.trim(), wm, 'Menu', '.menu', m)
+`.trim(), wm, 'INFO PANGERAN', '.infopangeran', m)
     }
     return true
 }
