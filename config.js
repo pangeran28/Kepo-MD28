@@ -38,7 +38,7 @@ global.APIKeys = { // APIKey Here
   'https://api.adiofficial.xyz': 'adiofficial'
 }
 
-global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █ 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
+global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
 global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 
 //========Url Template Buttons=========//
@@ -47,7 +47,7 @@ global.urlnya = "https://www.instagram.com/kokopangeran_"
 
 //============= callButtons =============//
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-global.phn = '+79811950242'
+global.phn = '+6285929970260'
 
 //============= Games ================//
 global.benar = '_*Benar✅*_'
