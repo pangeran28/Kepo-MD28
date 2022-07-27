@@ -27,10 +27,10 @@ ${txt}
   - *By:* ${json.result.name}
   - *Caption:* ${json.result.caption}
 
-_*Jangan Lupa Follow IG OwnerKu Tante:*_
+ _*•Jangan Lupa Follow IG OwnerKu Tante:*_
 https://instagram.com/kokopangeran_
     `
-    await conn.sendFile(m.chat, url, 'tiktok.mp4', wm, txt.trim(), m)
+    await conn.sendFile(m.chat, url, 'tiktok.mp4', txt.trim(), m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
