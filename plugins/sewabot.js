@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
   let pepe = 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg'
   let baper = await fetch(pepe).then(a => a.buffer())
 
-  let aine = '79811950242@s.whatsapp.net'
+  let aine = '6285929970260@s.whatsapp.net'
   let a = await conn.profilePictureUrl(conn.user.jid, 'image').catch((_) => "https://telegra.ph/file/be35f3f279c9af2d607e8.jpg")
   let b = await conn.profilePictureUrl(owner[0]+'@s.whatsapp.net', 'image').catch((_) => "https://telegra.ph/file/be35f3f279c9af2d607e8.jpg")
   let c = pickRandom([a, b])
@@ -26,7 +26,7 @@ _*✔️Rp. 20.000 Pulsa MyXL*_
 
 wa.me/${owner[0]}
 *Bukan Bot!!!*
-*Owner ${conn.user.name}*
+*Owner ${namabot}*
 `,
   buttonText: 'Harga Sesuai Pasaran',
   listType: 2,
@@ -36,7 +36,7 @@ wa.me/${owner[0]}
   products:[{productId:'7487741964584083'}]}],
   headerImage: { productId: '7487741964584083',
   jpegThumbnail: baper },
-  businessOwnerJid: `79811950242@s.whatsapp.net`
+  businessOwnerJid: `6285929970260@s.whatsapp.net`
   },
   footerText: 'https://MendingTuru.github.io',
   }},{})
