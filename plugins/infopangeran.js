@@ -1,17 +1,17 @@
 let handler  = async (m, { conn, usedPrefix }) => { 
 conn.reply(m.chat, `
-╭─˗ˏˋ *INFORMASI OWNER* ´ˎ˗
+╭─˗ˏˋ *INFORMASI PANGERAN* ´ˎ˗
 │ ✎ _Nama_ : ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
 │ ✎ _Sekolah_ : Sudah Lulus
 │ ✎ _Umur_ : 20th
 │ ✎ _Asal_ : DKI Jakarta
-│ ✎ _Status_ : Jadi Pelampiasan
+│ ✎ _Status_ : Sering Dijadikan Pelampiasan
 │ ✎ _Youtube_ :
 │    https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ
 │ ✎ _Instagram_ : 
 │    instagram.com/kokopangeran_
 │ ✎ _WhatsApp_ :
-│    wa.me/6287832147584
+│    wa.me/6285929970260
 ╰───────────────────
 `.trim(), m)
 }
