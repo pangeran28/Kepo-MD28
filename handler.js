@@ -274,7 +274,7 @@ module.exports = {
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
-                    closeGroup: true,
+                    closeGroup: false,
                     add: 0,
                     isBanned: false,
                     welcome: false,
@@ -283,8 +283,8 @@ module.exports = {
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: true,
-                    descUpdate: true,
+                    desc: false,
+                    descUpdate: false,
                     stiker: false,
                     delete: true,
                     antiLink: true,
@@ -323,7 +323,7 @@ module.exports = {
                     backup: false,
                     backupDB: 0,
                     groupOnly: false,
-                    jadibot: false,
+                    jadibot: true,
                     status: 0,
                     epe: true,
                     game: true,
