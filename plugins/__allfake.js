@@ -47,11 +47,194 @@ handler.all = async function (m) {
 		}
 		
 		// Fake 🤥
-		global.ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
-		global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': require('fs').readFileSync('./src/pangeran.jpg'), thumbnail: require('fs').readFileSync('./src/pangeran.jpg'),sendEphemeral: true}}}
-		
+		const ftoko = {
+                        key: {
+			fromMe: false,
+			participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "0@s.whatsapp.net" } : {})
+		},
+		message: {
+			"productMessage": {
+				"product": {
+					"productImage":{
+						"mimetype": "image/jpeg",
+						"jpegThumbnail": fs.readFileSync('./src/pangeran.jpg') //Gambarnye
+					},
+					"title": "KokoPageran", //Kasih namalu 
+					"description": "SELF BOT", 
+					"currencyCode": "USD",
+					"priceAmount1000": "2000",
+					"retailerId": "Ghost",
+					"productImageCount": 1
+				},
+				    "businessOwnerJid": `0@s.whatsapp.net`
+		}
 	}
 }
+//----------[ FAKE TROLI ]--------//
+const ftroli = {
+	key : {
+                          participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    orderMessage: {
+                            itemCount : 1,
+                            status: 1,
+                            surface : 1,
+                            message: 'KokoPangeran', //Kasih namalu
+                            orderTitle: 'Bang',
+                            thumbnail: fs.readFileSync('./src/pangeran.jpg'), //Gambarnye
+                            sellerJid: '0@s.whatsapp.net'
+          
+                          }
+                        }
+                      }
+//----------[ FAKE LOKASI ]--------//
+const flokasi = {
+	key : {
+           participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    locationMessage: {
+                    name: 'Indonesia',
+                    jpegThumbnail: fs.readFileSync('./src/pangeran.jpg')
+                          }
+                        }
+                      }
+                      
+const floc = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "locationMessage": { "title":"jakarta","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')}}
+	}
+	
+const fliveLoc = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "caption":"ANTIBOT","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')}}
+	}
+	const fliveLoc2 = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "title": "ANTIBOT","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')}}
+	}
+//FAKEREPLY KONTAK
+ const fcon = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "contactMessage": { "title":"sri","h": `haloo`, 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')}}
+	}
+	
+	const fcona = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "contactsArrayMessage": { "title":"antibot","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')}}
+	}
+	const bugcon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) }, message: { "contactMessage": { "vcard": ""}}}
+	
+//----------[ FAKE DOC ]--------//
+const fdocs = {
+	key : {
+           participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    documentMessage: {
+                    title: 'Halo bang', 
+                    jpegThumbnail: fs.readFileSync('./src/pangeran.jpg')
+                          }
+                        }
+                      }
+//----------[ FAKE VIDEO ]--------//
+const fvideo = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "0-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title":"hallo bang",
+                 "h": `Hmm`,
+                 'seconds': '99999', 
+                 'caption': 'Halo bang',
+                 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')
+                        }
+                       }
+	                  }
+//----------[ FAKE GC ]--------//
+const fgclink = {
+	"key": {
+		"fromMe": false,
+		"participant": "0@s.whatsapp.net",
+		"remoteJid": "0@s.whatsapp.net"
+	},
+	"message": {
+		"groupInviteMessage": {
+			"groupJid": "0-1625305606@g.us",
+			"inviteCode": "mememteeeekkeke",
+			"groupName": "Mengter", 
+            "caption": "Halo bang jagoo", 
+            'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')
+		}
+	}
+}
+//----------[ FAKE GIF  ]--------//
+const fgif = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "0-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title":"hallo bang",
+                 "h": `Hmm`,
+                 'seconds': '99999', 
+                 'gifPlayback': 'true', 
+                 'caption': 'Halo bang',
+                 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')
+                        }
+                       }
+	                  } 
+//----------[ FAKE TEXT  ]--------//
+const ftextt = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "0-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text":"hallo bang",
+                 "title": `Hmm`,
+                 'jpegThumbnail': fs.readFileSync('./src/pangeran.jpg')
+                        }
+	                  } 
+                     }
+//----------[ FAKE VN  ]--------//
+const fvn = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "0-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+		"audioMessage": {
+                 "mimetype":"audio/ogg; codecs=opus",
+                 "seconds": "${second}",
+                 "ptt": "true"
+                        }
+	                  } 
+                     }
 
 module.exports = handler
 
