@@ -17,7 +17,7 @@ const ftroli = {
     }
     }
     }
-conn.sendBut(m.chat, anu, wm, 'Bucin Sayang💦', '.bucin', ftroli) 
+conn.sendBut(m.chat, anu, wm, 'Bucin Sayang', '.bucin', ftroli) 
 }
 handler.help = ['bucin']
 handler.tags = ['quotes']
