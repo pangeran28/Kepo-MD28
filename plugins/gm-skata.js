@@ -1,127 +1,113 @@
-/**
- *
- *  WELCOME TO INDONESIAN 
- *
- * where scripts are traded, 
- * and acknowledges as if the script is his
- * 
- * 
- * Credits:
- *  Syahrularranger (maker)
- *  KokoPangeran (Remake)
- *
- */
-
-const axios = require('axios')
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
-const game = `┌「 *Kata Bersambung* 」
-├ Sambung Kata adalah
-│ permainan yang dimana setiap
-│ pemainnya diharuskan membuat
-│ kata dari akhir kata yang
-│ berasal dari kata sebelumnya.
-└────`.trim()
+const skata = require('../lib/sambung-kata')
+const game = `╔══「 *Kata Bersambung* 」
+╟ Game Kata Bersambung adalah
+║  permainan yang dimana setiap
+║  pemainnya diharuskan membuat
+║  kata dari akhir kata yang
+║  berasal dari kata sebelumnya.
+╚═════`.trim()
 const rules = `
-┌「 *PERATURAN* 」
-├ Jawaban merupakan kata dasar
-│ yaitu tidak mengandung 
-│ spasi dan imbuhan (me-, -an, dll).
-├ Pemain yang bertahan akan
-│ menang dan mendapatkan
-│ 500XP × Jumlah Pemain.
-├ ketik *.skata*
-│ untuk memulai
-├ ketik *nyerah*
-│ untuk menyerah
-└────`.trim()
+╔══「 *PERATURAN* 」
+╟ Jawaban merupakan kata dasar
+║  yaitu tidak mengandung
+║  spasi dan imbuhan (me-, -an, dll).
+╟ Pemain yang bertahan akan
+║  menang dan mendapatkan
+║  500xp X jumlah pemain
+╟ .skata
+║  untuk memulai
+╚═════
+Credit:
+Ariffb
+Syahrul`.trim()
 let poin = 500
-let handler = async (m, { conn, usedPrefix, command, text, isPrems, isROwner }) => {
-	let ikut = conn.pickRandom(['ikut', 'ikutan ah', 'ngikut cuy', 'melu cuk', 'melu ah', 'gabung dong', 'ikut dong gabut nih'])
+let handler = async (m, { conn, text, isPrems, isROwner, usedPrefix, command }) => {
 	let isDebug = /debug/i.test(command) && isROwner
+	//if (!isPrems) throw `Game ini dalam tahap pengemmbangan.. cooming soon`
 	conn.skata = conn.skata ? conn.skata : {}
+	// try {
 	let id = m.chat
 	let kata = await genKata()
 	let room_all = Object.values(conn.skata).find(room => room.id !== id && room.player.includes(m.sender))
-	if (room_all) throw 'kamu sedang bermain sambung kata di chat lain, silahkan selesaikan game kamu terlebih dahulu.';
-	
+	if (room_all) throw `Kamu sedang bermain sambung kata di chat lain, selesaikan game kamu terlebih dahulu`
+
 	if (id in conn.skata) {
 		let room = conn.skata[id]
-		let member = room.player;
+		let member = room.player
 		if (room.status == 'play') {
-			if (!room.waktu._destroyed && !room.diam) return conn.sendButton(m.chat, `hii @${m.sender.split('@')[0]}, masih ada game berlangsung di chat ini.\nsilahkan menunggu sampai game berakhir dan ikut bergabung untuk bermain game sambung kata.`, wm, 'menu', usedPrefix + 'menu', room.chat).catch(e => { return !1 }) // ketika baileys error;
+			if (!room.waktu._destroyed && !room.diam) return conn.reply(m.chat, `Hii @${m.sender.split`@`[0]}, Masih ada game berlangsung di chat ini\nTunggu hingga game berakhir\nLalu ikut bergabung`, room.chat).catch(e => { return !1 })// ketika naileys err
 			delete conn.skata[id]
 		}
 		if (text == 'start' && room.status == 'wait') {
-			if (!member.includes(m.sender)) return conn.sendButton(m.chat, `\n kamu belum ikut\n`, wm, ikut, usedPrefix + command, m)
-			if (member.length < 2) throw 'mininal 2 orang untuk bermain game kata bersambung!'
+			if (!member.includes(m.sender)) return conn.sendButton(m.chat, `Kamu belum ikut`, '', 1, ['Ikut', `${usedPrefix + command}`], m)
+			if (member.length < 2) throw `Minimal 2 orang`
 			room.curr = member[0]
 			room.status = 'play'
-			room.chat = await conn.reply(m.chat, `saatnya @${member[0].split('@')[0]}\nMulai: *${(room.kata).toUpperCase()}*\n*${room.filter(room.kata).toUpperCase()}...?*\n\n*balas pesan ini untuk menjawab!*\nketik *nyerah* untuk menyerah\nTotal Pemain: ${member.length} Player`, m)
+			room.chat = await conn.reply(m.chat, `Saatnya @${member[0].split`@`[0]}\nMulai : *${(room.kata).toUpperCase()}*\n*${room.filter(room.kata).toUpperCase()}... ?*\n*Reply untuk menjawab!*\n"nyerah" untuk menyerah\nTotal: ${member.length} Player`, m)
 			room.win_point = 100
 			for (let i of room.player) {
 				let user = db.data.users[i]
-				if(!('skata' in user)) user.skata = 0
+				if (!('skata' in user)) user.skata = 0
 			}
 			clearTimeout(room.waktu_list)
 			room.waktu = setTimeout(() => {
-				conn.reply(m.chat, `\n   *waktu untuk menjawab telah habis!*\n@${room.cur.split('@')[0]} telah tereleminasi`, room.chat).then(_ => {
+				conn.reply(m.chat, `Waktu jawab habis\n@${room.curr.split`@`[0]} tereliminasi`, room.chat).then(_ => {
 					room.eliminated.push(room.curr)
 					let index = member.indexOf(room.curr)
 					member.splice(index, 1)
 					room.curr = member[0]
 					if (room.player.length == 1 && room.status == 'play') {
 						db.data.users[member[0]].exp += room.win_point
-						conn.sendButton(m.chat, `\n  @${member[0].split('@')[0]} Menang!\n *+${room.win_point} XP*`, wm, 'mulai lagi', usedPrefix + 'skata', room.chat).then(_ => {
+						conn.sendButton(m.chat, `@${member[0].split`@`[0]} Menang`, `+${room.win_point}XP`, 2, ['Sambung Kata', '.skata', 'Top Player', '.topskata'], room.chat, { contextInfo: { mentionedJid: member } }).then(_ => {
 							delete conn.skata[id]
 							return !0
-						});
+						})
 					}
-					room.diam = true;
-					room.new = true;
+					room.diam = true
+					room.new = true
 					let who = room.curr
 					conn.preSudo('nextkata', who, m).then(async _ => {
-						conn.ev.emit('message.upsert', _)
+						conn.ev.emit('messages.upsert', _)
 					})
 				})
 			}, 45000)
+
 		} else if (room.status == 'wait') {
-			if (member.includes(m.sender)) throw 'kamu sudah ikut di list';
+			if (member.includes(m.sender)) throw `Kamu sudah ikut di list`
 			member.push(m.sender)
 			clearTimeout(room.waktu_list)
 			room.waktu_list = setTimeout(() => {
-				conn.reply(m.chat, `\n waktu telah berakhir dan sambung kata tidak dimulai atau dibatalkan!`, room.chat).then(() => { delete conn.skata[id] })
+				conn.reply(m.chat, `Sambung kata tidak dimulai (Cancel)`, room.chat).then(() => { delete conn.skata[id] })
 			}, 120000)
 			let caption = `
-┌「 *Daftar Player* 」
-${member.map((v, i) => `├ ${i + 1}. @${v.split('@')[0]}`).join('\n')}
-└────
-
-*Note:*
-Sambung kata akan dimainkan sesuai urutan Player *(bergiliran)*, dan hanya bisa dimainkan oleh Player yang terdaftar.
-
-Ketik *${usedPrefix + command}* untuk bergabung
-*${usedPrefix + command} start* untuk memulai permainan.
-`.trim()
-			room.chat = await conn.send2Button(m.chat, caption, wm, ikut, usedPrefix + 'skata', 'mulai', '.skata start', m)
+╔═〘 Daftar Player 〙
+${member.map((v, i) => `╟ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
+╚════
+Sambung kata akan dimainkan sesuai urutan player ( *Bergiliran* )
+Dan hanya bisa dimainkan oleh player yang terdaftar`.trim()
+			room.chat = await conn.sendButton(m.chat, caption, `Ketik\n*${usedPrefix + command}* untuk join/ikut\n*${usedPrefix + command} start* untuk memulai`, 1, ['Ikut', `${usedPrefix}skata`], m, { contextInfo: { mentionedJid: conn.parseMention(caption) } })
 		}
 	} else {
 		conn.skata[id] = {
 			id,
-			player: isDebug ? owner.map(v => v + '@s.whatsapp.net') : [],
+			player: isDebug ? ([owner[2] + '@s.whatsapp.net', conn.user.jid, owner[0] + '@s.whatsapp.net']) : [],
 			status: 'wait',
 			eliminated: [],
 			basi: [],
 			diam: false,
 			win_point: 0,
-			curr: ' ',
+			curr: '',
 			kata,
 			filter,
 			genKata,
-			chat: conn.reply(m.chat, game + "\n" + readMore + rules, m),
+			chat: conn.sendButton(m.chat, game, conn.readmore + rules, 1, ['Bergabung', `${usedPrefix + command}`], m),
 			waktu: false
+
 		}
 	}
+	// } catch (e) {
+	// 	throw e
+	// }
 }
 handler.help = ['sambungkata']
 handler.tags = ['game']
@@ -131,15 +117,14 @@ handler.group = true
 module.exports = handler
 
 async function genKata() {
-	let res = await axios.get(global.API('males', '/sambungkata')).catch(err => { return !0 })
-	let result = res.data.kata
+	let json = await skata.kata()
+	let result = json.kata
 	while (result.length < 3 || result.length > 7) {
-		res = await axios.get(global.API('males', '/sambungkata')).catch(err => { return !0 })
-		result = res.data.kata
+		json = await skata.kata()
+		result = json.kata
 	}
 	return result
 }
-
 function filter(text) {
 	let mati = ["q", "w", "r", "t", "y", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
 	let misah
