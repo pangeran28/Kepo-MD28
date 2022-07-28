@@ -1,28 +1,18 @@
+let fs = require('fs')
 let handler = async (m, { conn }) => {
 let anu =`
-─────〔 *Pantun* 〕─────
+─────〔 *PANTUN* 〕─────
 ${pickRandom(global.pantun)}
 `
-conn.sendBut(m.chat, anu, wm, 'Pantun Sayang', '.pantun', m) 
+conn.reply(m.chat, anu, m) 
 }
 handler.help = ['pantun']
 handler.tags = ['quotes']
 handler.command = /^(pantun)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
 module.exports = handler
 
 function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
+    return list[Math.floor(list.length * Math.random())]
 }
 
 global.pantun = [
