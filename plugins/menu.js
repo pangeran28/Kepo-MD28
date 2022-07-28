@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'maker', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': '👤UTAMA👤',
@@ -54,13 +54,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'bokep': '🔞BOKEP 18+🔞',
     'downloader': '📍Downloader📍',
     'tools': '🎨Tools🎨',
+    'maker': '📝Logo/Gambar📝',
     'fun': '🎇Fun🎇',
+    'nsfw': '🔞NSFW🔞',
     'database': '🌐Database🌐',
     'asupan': '🔞ASUPAN 18+🔞',
     'absen': '📩Absen📩',
     'quran': '📓Al Qur\'an📓',
     'audio': 'Pengubah Suara',
-    'stalk': '📲Stalk📲',
+    'stalk': '📲Stalkers📲',
     'jadibot': '🎭Jadi Bot🎭',
     'info': '👾Info👾',
     '': 'Tanpa Kategori',
@@ -81,7 +83,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'quotes') tags = {
     'quotes': '📃Quotes📃'
   }
-  if (teks == 'grup') tags = {
+  if (teks == 'group') tags = {
     'group': '👥Group👥'
   }
   if (teks == 'premium') tags = {
@@ -99,8 +101,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'downloader') tags = {
     'downloader': '📍Downloader📍'
   }
+  if (teks == 'maker') tags = {
+    'maker': '📝Logo/Gambar📝'
+  }
   if (teks == 'tools') tags = {
     'tools': '🎨Tools🎨'
+  }
+  if (teks == 'nsfw') tags = {
+    'nsfw': '🔞Nsfw🔞'
   }
   if (teks == 'fun') tags = {
     'fun': '🎇Fun🎇'
@@ -121,7 +129,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'audio': 'Pengubah Suara'
   }
   if (teks == 'stalk') tags = {
-    'stalk': '📲Stalk📲'
+    'stalk': '📲Stalkers📲'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': '🎭Jadi Bot🎭'
@@ -212,7 +220,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🔞Bokep 18+🔞', rowId: `${_p}? bokep` },
           { title: '📍Downloader📍', rowId: `${_p}? downloader` },
           { title: '🎨Tools🎨', rowId: `${_p}? tools` },
-          { title: '🎇Fun🎇', rowId: `${_p}? fun`},
+          { title: '📝Logo/Gambar📝', rowId: `${_p}? maker` },
+          { title: '🎇Fun🎇', rowId: `${_p}? fun` },
+          { title: '🔞Nsfw🔞', rowId: `${_p}? nsfw` },
           { title: '🌐Database🌐', rowId: `${_p}? database` },
           { title: '🔞Asupan 18+🔞', rowId: `${_p}? asupan` },
           { title: '📩Absen📩', rowId: `${_p}? absen` },
