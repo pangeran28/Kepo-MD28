@@ -5,7 +5,7 @@ let handler = async(m, { isOwner, isAdmin, conn, text, participants }) => {
                 }
   let teks = `┌─「 TAG ALL 」\n\n_*Isi Pesannya:*_ ${text ? text : ''}\n\n`
   for (let mem of participants) {
-  teks += `├💌 @${mem.id.split('@')[0]}\n`}
+  teks += `├➥ @${mem.id.split('@')[0]}\n`}
   teks += `└────\n`
   conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )
 }
