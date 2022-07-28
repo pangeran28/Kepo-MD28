@@ -1,8 +1,8 @@
 let fs = require('fs')
 let handler = async (m, { conn }) => {
 let anu =`
-─────〔 *Bucin* 〕─────
-${pickRandom(global.galau)}
+─────〔 *BUCIN* 〕─────
+${pickRandom(global.bucin)}
 `
 conn.reply(m.chat, anu, m) 
 }
@@ -15,7 +15,7 @@ function pickRandom(list) {
     return list[Math.floor(list.length * Math.random())]
 }
 
-let bucin = [
+global.bucin = [
   "Aku memilih untuk sendiri, bukan karena menunggu yang sempurna, tetapi butuh yang tak pernah menyerah.",
   "Aku tak peduli meski lagit tak cerah lagi, Dari pada langit biru, Aku lebih menginginkan mu.\n\n-Hodaka",
   "Seorang yang single diciptakan bersama pasangan yang belum ditemukannya.",
