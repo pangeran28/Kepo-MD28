@@ -17,7 +17,7 @@ const ftroli = {
     }
     }
     }
-conn.sendBut(m.chat, anu, wm, 'Gombal Sayang💦', '.gombal', ftroli) 
+conn.sendBut(m.chat, anu, wm, 'Gombal Sayang', '.gombal', ftroli) 
 }
 handler.help = ['gombal']
 handler.tags = ['quotes']
@@ -60,5 +60,5 @@ global.gombal = [
 "Kalo kamu lagi di AS, Patung Liberty ga akan bawa obor tapi bakal bawa BUNGA!",
 "Aku rela jadi abang nasi goreng asalkan setiap malam aku bisa lewat depan rumah kamu.",
 "Aku rela dipenjara seumur hidup asalkan pelanggarannya karena mencintaimu.",
-"Kamu tau gak? Lukisan itukan makin lama makin antik, kalo kamu makin lama makin cantik",
+"Kamu tau gak? Lukisan itukan makin lama makin antik, kalo kamu makin lama makin cantik"
 ]
