@@ -40,95 +40,97 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'UTAMA',
-    'game': 'Game',
-    'rpg': 'RPG',
-    'xp': 'Exp & Limit',
-    'sticker': 'Stiker',
-    'kerang': 'Kerang Ajaib',
-    'quotes': 'Quotes',
-    'group': 'Grup',
-    'premium': 'Premium',
-    'internet': 'Internet',
-    'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
-    'downloader': 'Downloader',
-    'tools': 'Tools',
-    'fun': 'Fun',
-    'database': 'Database',
-    'vote': 'Voting',
-    'absen': 'Absen',
-    'quran': 'Al Qur\'an',
-    'audio': 'Pengubah Suara',
-    'stalk': 'Stalkers',
-    'jadibot': 'Jadi Bot',
-    'info': 'Info',
-    '': 'Tanpa Kategori',
+    'main': '👤UTAMA👤',
+    'game': '🎮GAME🎮',
+    'rpg': '🎮RPG🎮',
+    'xp': '🎲Exp & Limit🎲',
+    'sticker': '🃏Stiker🃏',
+    'kerang': '🐚Kerang Ajaib🐚',
+    'quotes': '📃Quotes📃',
+    'group': '👥Grup👥',
+    'premium': '🌟Premium🌟',
+    'internet': '🗼Internet🗼',
+    'anonymous': '💌Anonymous Chat💌',
+    'bokep': '🔞BOKEP 18+🔞',
+    'downloader': '📍Downloader📍',
+    'tools': '🎨Tools🎨',
+    'fun': '🎇Fun🎇',
+    'database': '🌐Database🌐',
+    'asupan': '🔞ASUPAN 18+🔞',
+    'absen': '📩Absen📩',
+    'quran': '📓Al Qur\'an📓',
+    'audio': '🎤Pengubah Suara🎤',
+    'stalk': '📲Stalker📲',
+    'jadibot': '🎭Jadi Bot🎭',
+    'info': '👾Info👾',
+    '': '🚫Tanpa Kategori🚫',
   }
   if (teks == 'game') tags = {
-    'game': 'Game',
-    'rpg': 'RPG'
+    'game': '🎮GAME🎮',
+    'rpg': '🎮RPG🎮'
   }
   if (teks == 'xp') tags = {
-    'xp': 'Exp & Limit'
+    'xp': '🎲Exp & Limit🎲'
   }
   if (teks == 'stiker') tags = {
-    'sticker': 'Stiker'
+    'sticker': '🃏Stiker🃏'
   }
   if (teks == 'kerangajaib') tags = {
-    'kerang': 'Kerang Ajaib'
+    'kerang': '🐚Kerang Ajaib🐚'
   }
   if (teks == 'quotes') tags = {
-    'quotes': 'Quotes'
+    'quotes': '📃Quotes📃'
   }
   if (teks == 'grup') tags = {
-    'group': 'Grup'
+    'group': '👥Group👥'
   }
   if (teks == 'premium') tags = {
-    'premium': 'Premium'
+    'premium': '🌟Premium🌟'
   }
   if (teks == 'internet') tags = {
-    'internet': 'Internet'
+    'internet': '🗼Internet🗼'
   }
   if (teks == 'anonymous') tags = {
-    'anonymous': 'Anonymous Chat'
+    'anonymous': '💌Anonymous Chat💌'
   }
-  if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+  if (teks == 'bokep') tags = {
+    'bokep': '🔞BOKEP 18+🔞'
   }
   if (teks == 'downloader') tags = {
-    'downloader': 'Downloader'
+    'downloader': '📍Downloader📍'
   }
   if (teks == 'tools') tags = {
-    'tools': 'Tools'
+    'tools': '🎨Tools🎨'
   }
   if (teks == 'fun') tags = {
-    'fun': 'Fun'
+    'fun': '🎇Fun🎇'
   }
   if (teks == 'database') tags = {
-    'database': 'Database'
+    'database': '🌐Database🌐'
   }
-  if (teks == 'vote') tags = {
-    'vote': 'Voting',
-    'absen': 'Absen'
+  if (teks == 'asupan') tags = {
+    'asupan': '🔞ASUPAN 18+🔞'
+  }
+  if (teks == 'absen') tags = {
+    'absen': '📩Absen📩'
   }
   if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
+    'quran': '📓Al Qur\'an📓'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': '🎤Pengubah Suara🎤'
   }
   if (teks == 'stalk') tags = {
-    'stalk': 'Stalkers'
+    'stalk': '📲Stalker📲'
   }
   if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
+    'jadibot': '🎭Jadi Bot🎭'
   }
   if (teks == 'info') tags = {
-    'info': 'Info'
+    'info': '👾Info👾'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
+    '': '🚫Tanpa Kategori🚫'
   }
   if (teks == 'owner') tags = {
     'owner': 'Owner',
@@ -197,29 +199,30 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       {
         title: 'List Menu ' + namabot,
         rows: [
-          { title: 'Semua Perintah', rowId: `${_p}? all` },
-          { title: 'Game', rowId: `${_p}? game` },
-          { title: 'XP', rowId: `${_p}? xp` },
-          { title: 'Stiker', rowId: `${_p}? stiker` },
-          { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
-          { title: 'Quotes', rowId: `${_p}? quotes` },
-          { title: 'Grup', rowId: `${_p}? grup` },
-          { title: 'Premium', rowId: `${_p}? premium` },
-          { title: 'Internet', rowId: `${_p}? internet` },
-          { title: 'Anonymous', rowId: `${_p}? anonymous` },
-          { title: 'Nulis & Logo', rowId: `${_p}? nulis` },
-          { title: 'Downloader', rowId: `${_p}? downloader` },
-          { title: 'Tools', rowId: `${_p}? tools` },
-          { title: 'Fun', rowId: `${_p}? fun`},
-          { title: 'Database', rowId: `${_p}? database` },
-          { title: 'Vote & Absen', rowId: `${_p}? vote` },
-          { title: "Al-Qur\'an", rowId: `${_p}? quran` },
-          { title: 'Pengubah Suara', rowId: `${_p}? audio` },
-          { title: 'Stalkers', rowId: `${_p}? stalk` },
-          { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
-          { title: 'Info', rowId: `${_p}? info` },
-          { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
-          { title: 'Owner', rowId: `${_p}? owner` },
+          { title: '💯Semua Perintah💯', rowId: `${_p}? all` },
+          { title: '🎮Game🎮', rowId: `${_p}? game` },
+          { title: '🎲XP🎲', rowId: `${_p}? xp` },
+          { title: '🃏Stiker🃏', rowId: `${_p}? stiker` },
+          { title: '🐚Kerang Ajaib🐚', rowId: `${_p}? kerangajaib` },
+          { title: '📃Quotes📃', rowId: `${_p}? quotes` },
+          { title: '👥Group👥', rowId: `${_p}? grup` },
+          { title: '🌟Premium🌟', rowId: `${_p}? premium` },
+          { title: '🗼Internet🗼', rowId: `${_p}? internet` },
+          { title: '💌Anonymous💌', rowId: `${_p}? anonymous` },
+          { title: '🔞Bokep 18+🔞', rowId: `${_p}? bokep` },
+          { title: '📍Downloader📍', rowId: `${_p}? downloader` },
+          { title: '🎨Tools🎨', rowId: `${_p}? tools` },
+          { title: '🎇Fun🎇', rowId: `${_p}? fun`},
+          { title: '🌐Database🌐', rowId: `${_p}? database` },
+          { title: '🔞Asupan 18+🔞', rowId: `${_p}? asupan` },
+          { title: '📩Absen📩', rowId: `${_p}? absen` },
+          { title: '📓Al-Qur\'an📓', rowId: `${_p}? quran` },
+          { title: '🎤Pengubah Suara🎤', rowId: `${_p}? audio` },
+          { title: '📲Stalker📲', rowId: `${_p}? stalk` },
+          { title: '🎭Jadi Bot🎭', rowId: `${_p}? jadibot` },
+          { title: '👾Info👾', rowId: `${_p}? info` },
+          { title: '🚫Tanpa Kategori🚫', rowId: `${_p}? tanpakategori` },
+          { title: '👤Owner👤', rowId: `${_p}? owner` },
         ]
       }
     ]
