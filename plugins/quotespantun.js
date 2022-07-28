@@ -3,7 +3,7 @@ let anu =`
 ─────〔 *Pantun* 〕─────
 ${pickRandom(global.pantun)}
 `
-conn.sendBut(m.chat, anu, wm, 'Pantun Sayang💦', '.pantun', m) 
+conn.sendBut(m.chat, anu, wm, 'Pantun Sayang', '.pantun', m) 
 }
 handler.help = ['pantun']
 handler.tags = ['quotes']
@@ -38,5 +38,5 @@ global.pantun = [
 "Seribu bebek di kandang singa,\nhanya satu berwarna belang\nBeribu cewek di Indonesia,\nhanya engkau yang aku sayang. ",
 "Pergi memancing saat fajar,\nPulang siang membawa ikan\nSiapa yang rajin belajar\nJadi orang sukses kemudian. ",
 "Beli computer itu biasa\nSupaya belajar jadi semangat\nMari kita belajar puasa\nAgar kita jadi kuat ",
-"Minum sekoteng hangat rasanya,\nminum segelas ada yang minta.\nLaki-laki ganteng siapa yang punya?\nBolehkah aku jatuh cinta.",
+"Minum sekoteng hangat rasanya,\nminum segelas ada yang minta.\nLaki-laki ganteng siapa yang punya?\nBolehkah aku jatuh cinta."
 ]
