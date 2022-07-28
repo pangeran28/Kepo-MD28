@@ -5,5 +5,6 @@ conn.sendFile(m.chat, supa, null, 'Jepang Sayang🇯🇵', m)
 handler.help = ['negaratetangga5']
 handler.tags = ['asupan']
 handler.command = /^(negaratetangga5)$/i
-
+handler.premium = true
+handler.limit = true
 module.exports = handler
