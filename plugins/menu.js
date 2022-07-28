@@ -60,7 +60,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'absen': '📩Absen📩',
     'quran': '📓Al Qur\'an📓',
     'audio': 'Pengubah Suara',
-    'stalk': '📲Stalker📲',
+    'stalk': '📲Stalk📲',
     'jadibot': '🎭Jadi Bot🎭',
     'info': '👾Info👾',
     '': 'Tanpa Kategori',
@@ -121,7 +121,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'audio': 'Pengubah Suara'
   }
   if (teks == 'stalk') tags = {
-    'stalk': '📲Stalker📲'
+    'stalk': '📲Stalk📲'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': '🎭Jadi Bot🎭'
@@ -218,7 +218,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '📩Absen📩', rowId: `${_p}? absen` },
           { title: '📓Al-Qur\'an📓', rowId: `${_p}? quran` },
           { title: '🎤Pengubah Suara🎤', rowId: `${_p}? audio` },
-          { title: '📲Stalker📲', rowId: `${_p}? stalk` },
+          { title: '📲Stalk📲', rowId: `${_p}? stalk` },
           { title: '🎭Jadi Bot🎭', rowId: `${_p}? jadibot` },
           { title: '👾Info👾', rowId: `${_p}? info` },
           { title: '🚫Tanpa Kategori🚫', rowId: `${_p}? tanpakategori` },
@@ -231,7 +231,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       footer: wm,
       mentions: await conn.parseMention(judul),
       title: '',
-      buttonText: "Klik Disini",
+      buttonText: "Klik Sayang",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
