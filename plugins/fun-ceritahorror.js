@@ -20,7 +20,7 @@ ${json.desc}`
     surface : 1,
     message: 'Random Cerita Horor', 
     orderTitle: `▮Menu ▸`,
-    thumbnail: 'https://telegra.ph/file/5ecbec3e82e247671a18e.jpg', 
+    thumbnail: 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg', 
     sellerJid: '0@s.whatsapp.net' 
     }
     }
