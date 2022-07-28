@@ -1,42 +1,18 @@
+let fs = require('fs')
 let handler = async (m, { conn }) => {
-let anu =`─────〔 *Bucin* 〕─────\n\n${pickRandom(bucin)}`
-const ftroli = {
-    key : {
-    remoteJid: '6283136505591-1614953337@g.us',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 26-9999, 
-    status: 1,
-    surface : 1,
-    message: 'Random Teks Bucin', 
-    orderTitle: `▮Menu ▸`,
-    thumbnail: 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg', 
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-conn.sendBut(m.chat, anu, wm, 'Bucin Sayang', '.bucin', ftroli) 
+let anu =`
+─────〔 *Bucin* 〕─────
+${pickRandom(global.galau)}
+`
+conn.reply(m.chat, anu, m) 
 }
 handler.help = ['bucin']
 handler.tags = ['quotes']
 handler.command = /^(bucin)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
 module.exports = handler
 
 function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
+    return list[Math.floor(list.length * Math.random())]
 }
 
 let bucin = [
