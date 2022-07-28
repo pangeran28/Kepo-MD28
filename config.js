@@ -44,6 +44,8 @@ global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 //========Url Template Buttons=========//
 global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
 global.urlnya = "https://www.instagram.com/kokopangeran_"
+global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
+global.zenzkey = 'BagasPrdn' //ubah pakai apikeymu
 
 //============= callButtons =============//
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
