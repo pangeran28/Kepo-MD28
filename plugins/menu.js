@@ -47,10 +47,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'sticker': '🃏Stiker🃏',
     'kerang': '🐚Kerang Ajaib🐚',
     'quotes': '📃Quotes📃',
-    'group': '👥Grup👥',
+    'group': '👥Group👥',
     'premium': '🌟Premium🌟',
     'internet': '🗼Internet🗼',
-    'anonymous': '💌Anonymous Chat💌',
+    'anonymous': 'Anonymous Chat',
     'bokep': '🔞BOKEP 18+🔞',
     'downloader': '📍Downloader📍',
     'tools': '🎨Tools🎨',
@@ -59,11 +59,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'asupan': '🔞ASUPAN 18+🔞',
     'absen': '📩Absen📩',
     'quran': '📓Al Qur\'an📓',
-    'audio': '🎤Pengubah Suara🎤',
+    'audio': 'Pengubah Suara',
     'stalk': '📲Stalker📲',
     'jadibot': '🎭Jadi Bot🎭',
     'info': '👾Info👾',
-    '': '🚫Tanpa Kategori🚫',
+    '': 'Tanpa Kategori',
   }
   if (teks == 'game') tags = {
     'game': '🎮GAME🎮',
@@ -91,7 +91,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'internet': '🗼Internet🗼'
   }
   if (teks == 'anonymous') tags = {
-    'anonymous': '💌Anonymous Chat💌'
+    'anonymous': 'Anonymous Chat'
   }
   if (teks == 'bokep') tags = {
     'bokep': '🔞BOKEP 18+🔞'
@@ -118,7 +118,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quran': '📓Al Qur\'an📓'
   }
   if (teks == 'audio') tags = {
-    'audio': '🎤Pengubah Suara🎤'
+    'audio': 'Pengubah Suara'
   }
   if (teks == 'stalk') tags = {
     'stalk': '📲Stalker📲'
@@ -130,12 +130,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'info': '👾Info👾'
   }
   if (teks == 'tanpakategori') tags = {
-    '': '🚫Tanpa Kategori🚫'
+    '': 'Tanpa Kategori'
   }
   if (teks == 'owner') tags = {
-    'owner': 'Owner',
-    'host': 'Host',
-    'advanced': 'Advanced'
+    'owner': '👤Owner👤',
+    'host': '👤Host👤',
+    'advanced': '👤Advanced👤'
   }
 
 
