@@ -29,7 +29,7 @@ global.APIKeys = { // APIKey Here
   'https://neoxr-api.herokuapp.com': 'yntkts',
    'https://api.xteam.xyz': 'apivproject',
   'https://melcanz.com': 'elaina',
-  'https://api.lolhuman.xyz': 'pkebgk8248jskrkfm',
+  'https://api.lolhuman.xyz': 'Deffbotz',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
   'https://pencarikode.xyz': 'pais',
