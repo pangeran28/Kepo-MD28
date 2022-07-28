@@ -18,7 +18,7 @@ const rules = `
 ║  untuk memulai
 ╚═════
 Credit:
-Ariffb
+ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
 Syahrul`.trim()
 let poin = 500
 let handler = async (m, { conn, text, isPrems, isROwner, usedPrefix, command }) => {
