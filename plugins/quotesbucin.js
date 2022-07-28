@@ -160,5 +160,5 @@ let bucin = [
   "Yang penting itu kebahagiaan kamu, aku sih gak penting..",
   "Cuma satu keinginanku, dicintai olehmu..",
   "Aku tanpamu bagaikan ambulans tanpa wiuw wiuw wiuw.",
-  "Cukup antartika aja yang jauh. Antarkita jangan."
+  "Cukup antartika aja yang jauh. Antarkita jangan.",
 ]
