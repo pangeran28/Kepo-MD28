@@ -1,45 +1,18 @@
+let fs = require('fs')
 let handler = async (m, { conn }) => {
-let anu =`─────〔 *Motivasi* 〕─────
+let anu =`
+─────〔 *MOTIVASI* 〕─────
 ${pickRandom(global.motivasi)}
 `
-const hyzer = {
-    key : {
-    remoteJid: '6283136505591-1614953337@g.us',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 2022,
-    status: 1,
-    surface : 1,
-    message: 'Random Motivasi', 
-    orderTitle: `Wabot`,
-    thumbnail: 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg', 
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-conn.reply(m.chat, anu, hyzer) 
+conn.reply(m.chat, anu, m) 
 }
 handler.help = ['motivasi']
 handler.tags = ['quotes']
 handler.command = /^(motivasi)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.register = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
 module.exports = handler
 
 function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
+    return list[Math.floor(list.length * Math.random())]
 }
 
 global.motivasi = [
