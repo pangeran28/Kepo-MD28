@@ -290,7 +290,7 @@ module.exports = {
                     antiLink: true,
                     expired: 0,
                     antiBadword: true,
-                    antispam: true,
+                    antispam: false,
                     antitroli: false,
                     antiVirtext: false,
                     antiPhilip: false,
@@ -687,17 +687,17 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = async (type, m, conn) => {
     let msg = {
-        rowner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
-        owner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
+        rowner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Hi-Thec!1!1!*_`,
+        owner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Hi-Thec!1!1!*_`,
         mods: `👤Perintah ini hanya dapat digunakan oleh *Moderator*`,
         premium: '👤Khusus Member _*Premium!*_\n_*Mau Jadi Member Premium?*_\n\n_*List Premium:*_\n_*10k/2minggu*_\n_*15k/permanen*_\n\n_*Selebihnya Chat OwnerKu Tante:*_\nwa.me/+6285929970260',
         group: `👥Perintah ini hanya dapat digunakan di grup!`,
         private: '👤Perintah ini hanya dapat digunakan di Chat Pribadi!',
         admin: '👤Perintah ini hanya untuk *Admin* grup!',
         botAdmin: '👻Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        unreg: '👤Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        nsfw: `👤NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini!`,
-        rpg: `👤RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini!`,
+        unreg: '👤Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Pangeran.20*',
+        nsfw: `👤NSFW tidak aktif, Silahkan hubungi Team Bot Hi-Thec untuk mengaktifkan fitur ini!`,
+        rpg: `👤RPG tidak aktif, Silahkan hubungi Team Bot Hi-Thec Untuk mengaktifkan fitur ini!`,
         restrict: 'Fitur ini di *disable*!'
     }[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })
