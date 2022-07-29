@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['neonlight [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^neonlight$/i
 handler.limit = true
 
