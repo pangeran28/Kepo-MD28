@@ -7,7 +7,7 @@ let data = JSON.parse(fs.readFileSync('./data.json'))
 //UTAMA TAMPILAN
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
-global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
+global.lolkey = 'Deffbotz' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasGanz'
 
 
@@ -36,7 +36,7 @@ global.APIKeys = { // APIKey Here
   'https://api.xteam.xyz': 'apivproject',
   'https://melcanz.com': 'elaina',
   'https://server-api-rey.herokuapp.com': 'apirey',
-  'https://api.lolhuman.xyz': 'rey2k22',
+  'https://api.lolhuman.xyz': 'Deffbotz',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://bsbt-api-rest.herokuapp.com': 'benniismael',
   'https://api.zeks.xyz': 'apivinz',
