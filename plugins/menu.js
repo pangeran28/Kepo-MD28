@@ -101,7 +101,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'downloader') tags = {
     'downloader': '📍Downloader📍'
   }
-  if (teks == 'maker') tags = {
+  if (teks == 'textpro') tags = {
     'textpro': '📝Logo/Gambar📝'
   }
   if (teks == 'tools') tags = {
