@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'maker', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'textpro', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': '👤UTAMA👤',
@@ -54,7 +54,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'bokep': '🔞BOKEP 18+🔞',
     'downloader': '📍Downloader📍',
     'tools': '🎨Tools🎨',
-    'maker': '📝Logo/Gambar📝',
+    'textpro': '📝Logo/Gambar📝',
     'fun': '🎇Fun🎇',
     'nsfw': '🔞NSFW🔞',
     'database': '🌐Database🌐',
@@ -102,7 +102,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'downloader': '📍Downloader📍'
   }
   if (teks == 'maker') tags = {
-    'maker': '📝Logo/Gambar📝'
     'textpro': '📝Logo/Gambar📝'
   }
   if (teks == 'tools') tags = {
@@ -221,7 +220,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🔞Bokep 18+🔞', rowId: `${_p}? bokep` },
           { title: '📍Downloader📍', rowId: `${_p}? downloader` },
           { title: '🎨Tools🎨', rowId: `${_p}? tools` },
-          { title: '📝Logo/Gambar📝', rowId: `${_p}? maker` },
+          { title: '📝Logo/Gambar📝', rowId: `${_p}? textpro` },
           { title: '🎇Fun🎇', rowId: `${_p}? fun` },
           { title: '🔞Nsfw🔞', rowId: `${_p}? nsfw` },
           { title: '🌐Database🌐', rowId: `${_p}? database` },
