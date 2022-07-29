@@ -4,20 +4,21 @@ let flaaa = JSON.parse(fs.readFileSync('./api/fla.json'))
 let waifu = JSON.parse(fs.readFileSync('./api/waifu.json'))
 let data = JSON.parse(fs.readFileSync('./data.json'))
 
-
+//UTAMA TAMPILAN
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasGanz'
 
 
-
+//APIKEY TAMPILAN
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
+  bsbt: 'https://bsbt-api-rest.herokuapp.com',
   zeks: 'https://api.zeks.me',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
@@ -26,15 +27,18 @@ global.APIs = { // API Prefix
   hardianto: 'https://hardianto.xyz',
   lol: 'https://api.lolhuman.xyz',
   adicug: 'https://api.adiofficial.xyz',
-  males: 'https://malest.herokuapp.com'
+  males: 'https://malest.herokuapp.com',
+  rey: 'https://server-api-rey.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://neoxr-api.herokuapp.com': 'yntkts',
-   'https://api.xteam.xyz': 'apivproject',
+  'https://api.xteam.xyz': 'apivproject',
   'https://melcanz.com': 'elaina',
+  'https://server-api-rey.herokuapp.com': 'apirey',
   'https://api.lolhuman.xyz': 'rey2k22',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
+  'https://bsbt-api-rest.herokuapp.com': 'benniismael',
   'https://api.zeks.xyz': 'apivinz',
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
