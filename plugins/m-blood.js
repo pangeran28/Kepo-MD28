@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['blood [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^blood$/i
 handler.limit = true
 
