@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['magma [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^magma$/i
 handler.limit = true 
 
