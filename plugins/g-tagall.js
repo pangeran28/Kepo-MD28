@@ -11,7 +11,9 @@ let handler = async(m, { isOwner, isAdmin, conn, text, participants }) => {
 }
 handler.help = ['tagall <message>']
 handler.tags = ['group']
-handler.command = /^(t(agall)?)$/i
+handler.customPrefix = /T|Tagall/i
+handler.command = new RegExp
+
 handler.botAdmin = true
 handler.admin = true
 handler.group = true
