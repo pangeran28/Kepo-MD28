@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['newyear [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^newyear$/i
 handler.limit = true
 
