@@ -7,6 +7,10 @@ let data = JSON.parse(fs.readFileSync('./data.json'))
 
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
+global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
+global.zenzkey = 'BagasGanz'
+
+
 
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -29,7 +33,7 @@ global.APIKeys = { // APIKey Here
   'https://neoxr-api.herokuapp.com': 'yntkts',
    'https://api.xteam.xyz': 'apivproject',
   'https://melcanz.com': 'elaina',
-  'https://api.lolhuman.xyz': 'Deffbotz',
+  'https://api.lolhuman.xyz': 'rey2k22',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
   'https://pencarikode.xyz': 'pais',
@@ -44,8 +48,6 @@ global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 //========Url Template Buttons=========//
 global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
 global.urlnya = "https://www.instagram.com/kokopangeran_"
-global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
-global.zenzkey = 'BagasPrdn' //ubah pakai apikeymu
 
 //============= callButtons =============//
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
