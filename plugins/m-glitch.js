@@ -29,7 +29,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['glitch [teks]|[text2]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^glitch$/i
 handler.limit = true
 
