@@ -268,7 +268,7 @@ module.exports = {
                     if (!('antiPhilip' in chat)) chat.antiPhilip = false
                     if (!('antiBugfont' in chat)) chat.antiBugfont = false
                     if (!('viewonce' in chat)) chat.viewonce = true
-                    if (!('nsfw' in chat)) chat.nsfw = false
+                    if (!('nsfw' in chat)) chat.nsfw = true
                     if (!('simi' in chat)) chat.simi = false
                     if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
@@ -296,7 +296,7 @@ module.exports = {
                     antiPhilip: false,
                     antiBugfont: false,
                     viewonce: false,
-                    nsfw: false,
+                    nsfw: true,
                     simi: false,
                     clear: false,
                     clearTime: 0
@@ -304,17 +304,17 @@ module.exports = {
                 let settings = global.db.data.settings[this.user.jid]
                 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
                 if (settings) {
-                    if (!'tag' in settings) settings.tag = true
-                    if (!'self' in settings) settings.self = false
-                    if (!'anon' in settings) settings.anon = true
-                    if (!'anticall' in settings) settings.anticall = true
-                    if (!'backup' in settings) settings.backup = false
+                    if (!('tag' in settings)) settings.tag = true
+                    if (!('self' in settings)) settings.self = false
+                    if (!('anon' in settings)) settings.anon = true
+                    if (!('anticall' in setting)) setting.anticall = true
+                    if (!('backup' in settings)) settings.backup = false
                     if (!isNumber(settings.backupDB)) settings.backupDB = 0
-                    if (!'groupOnly' in settings) settings.groupOnly = false
-                    if (!'jadibot' in settings) settings.groupOnly = false
+                    if (!('groupOnly' in settings)) settings.groupOnly = false
+                    if (!('jadibot' in settings)) settings.groupOnly = false
                     if (!isNumber(settings.status)) settings.status = 0
-                    if (!'epe' in settings) settings.epe = true
-                    if (!'game' in settings) settings.game = true
+                    if (!('epe' in settings)) settings.epe = true
+                    if (!('game' in settings)) settings.game = true
                 } else global.db.data.settings[this.user.jid] = {
                     tag: true,
                     self: false,
@@ -683,6 +683,29 @@ Untuk mematikan fitur ini, ketik
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
+},
+async onCall(json) {
+    if (!db.data.settings[this.user.jid].anticall) return
+    let jid = json[2][0][1]['from']
+    let isOffer = json[2][0][2][0][0] == 'offer'
+    let users = global.db.data.users
+    let user = users[jid] || {}
+    if (user.whitelist) return
+    if (jid && isOffer) {
+      const tag = this.generateMessageTag()
+      const nodePayload = ['action', 'call', ['call', {
+        'from': this.user.jid,
+        'to': `${jid.split`@`[0]}@s.whatsapp.net`,
+        'id': tag
+      }, [['reject', {
+        'call-id': json[2][0][2][0][1]['call-id'],
+        'call-creator': `${jid.split`@`[0]}@s.whatsapp.net`,
+        'count': '0'
+      }, null]]]]
+      this.sendJSON(nodePayload, tag)
+      m.reply('Dimohon untuk tidak menelpon bot!')
+    }
+  }
 }
 
 global.dfail = async (type, m, conn) => {
