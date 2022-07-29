@@ -1,4 +1,4 @@
-var tp = require("../lib/textpro.js")
+var tp = require("../lib/textpro.cjs")
 let handler = async (m, {
 	conn,
 	args, 
@@ -33,7 +33,7 @@ t2 = 'jawa'
 	}
 }
 handler.help = ['pornhub [text|text2]']
-handler.tags = ['maker']
+handler.tags = ['maker', 'textpro']
 handler.command = /^pornhub$/i
 handler.limit = true
 
