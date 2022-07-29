@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['glue [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^glue$/i
 handler.limit = true
 
