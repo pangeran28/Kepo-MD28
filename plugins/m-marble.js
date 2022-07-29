@@ -29,7 +29,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['marble [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^marble$/i
 handler.limit = true
 
