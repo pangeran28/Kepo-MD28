@@ -2,6 +2,7 @@ let fs = require('fs')
 let handler = async (m, { conn }) => {
 let anu =`
 ─────〔 *GALAU* 〕─────
+
 ${pickRandom(global.galau)}
 `
 conn.reply(m.chat, anu, m) 
@@ -26,8 +27,8 @@ global.galau = [
     "Maaf. Tidak ada waktu untuk meladeni gabutmu. Karena aku sibuk dengan kesibukan ku.\n*BY PUTRI*",
     "Pelangimu mungkin banyak warna. Tapi, tak ada warna yang membuat dia menaruh rasa.\n*BY PUTRI*",
     "Bahagia terus ya,sampai saat ini lu masih jadi tokoh favorit dikisah hidup gue,luv u.\n\n*BY PUTRI*",
-   "Sorry,gue ga kuat buat semuanya ,mksi ya\n\n*BY PUTRI*",
-   "Kamu memang sosok yg tak terduga Mudah membuat ku bahagia,mudah membuatku hancur saat itu juga.\n\n*BY PUTRI*",
+    "Sorry,gue ga kuat buat semuanya ,mksi ya\n\n*BY PUTRI*",
+    "Kamu memang sosok yg tak terduga Mudah membuat ku bahagia,mudah membuatku hancur saat itu juga.\n\n*BY PUTRI*",
     "Harusnya kalo udah ga sayang sama aku tu bilang aja gausa di tutup tutupin\n*BY INDI*",
     "Kalau aku memang tidak sayang sama kamu ngapain aku mikirin kamu. Tapi semuanya kamu yang ngganggap aku gak sayang sama kamu",
     "Jangan iri dan sedih jika kamu tidak memiliki kemampuan seperti yang orang miliki. Yakinlah orang lain juga tidak memiliki kemampuan sepertimu",
@@ -107,5 +108,9 @@ global.galau = [
     "Balikan sama kamu itu sama saja bunuh diri dan melukai perasaan ku sendiri",
     "Tak perlu membalas dengan menyakiti biar Karma yang akan urus semua itu",
     "Aku masih ingat kamu tapi perasaanku sudah tidak sakit seperti dulu",
+    "_kamu adalah ekspektasi yang tidak akan perna menjadi kenyataan._\n\n*Cr: Meii*",
+    "_zona terberat dalam perasaan adalah ketika aku harus berpura-pura menjadi teman, padahal aku mencintainya._\n\n*Cr: Meii*",
+    "_awal yang manis tidak membuktikan bahwa akhirnya akan manis, jadi jangan pernah berharap lebih jika diperlakukan manis di awal._\n\n*Cr: Meii*",
+    "_hanya sebatas mengagumi kalo memiliki aku sadar diri._\n\n*Cr: Meii*",
     "Punya kalimat sendiri & mau ditambahin? chat *.owner*"
 ]
