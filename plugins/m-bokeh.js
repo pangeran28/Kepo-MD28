@@ -18,7 +18,7 @@ let handler = async (m, {
 		})
 		console.log(buffer.status)
 		m.reply("tunggu sebentar")
-		conn.sendFile(m.chat, buffer.data, "", "nih bruh", false)
+		conn.sendFile(m.chat, buffer.data, "", "_Nih Sayang💦_\n\n_*Follow IG OwnerKu Tante:*_\nhttps://instagram.com/kokopangeran_", false)
 	} catch (e) {
 		if (e.response) {
 			console.log(e.response.statusText)
