@@ -29,7 +29,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['glitter [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^glitter$/i
 handler.limit = true
 
