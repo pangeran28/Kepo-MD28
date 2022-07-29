@@ -103,6 +103,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'maker') tags = {
     'maker': '📝Logo/Gambar📝'
+    'textpro': '📝Logo/Gambar📝'
   }
   if (teks == 'tools') tags = {
     'tools': '🎨Tools🎨'
