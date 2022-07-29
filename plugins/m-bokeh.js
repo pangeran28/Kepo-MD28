@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['bokeh [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^bokeh$/i
 handler.limit = true
 
