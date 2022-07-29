@@ -27,7 +27,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['deluxe [text]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^deluxe$/i
 handler.limit = true
 
