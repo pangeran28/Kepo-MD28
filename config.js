@@ -7,8 +7,6 @@ let data = JSON.parse(fs.readFileSync('./data.json'))
 //UTAMA TAMPILAN
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
-global.lolkey = 'Deffbotz' //biar mudah ngegantinya semisal apikeynya expired:v
-global.zenzkey = 'BagasGanz'
 
 
 //APIKEY TAMPILAN
@@ -18,7 +16,6 @@ global.APIs = { // API Prefix
   bg: 'http://bochil.ddns.net',
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
-  bsbt: 'https://bsbt-api-rest.herokuapp.com',
   zeks: 'https://api.zeks.me',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
@@ -27,18 +24,15 @@ global.APIs = { // API Prefix
   hardianto: 'https://hardianto.xyz',
   lol: 'https://api.lolhuman.xyz',
   adicug: 'https://api.adiofficial.xyz',
-  males: 'https://malest.herokuapp.com',
-  rey: 'https://server-api-rey.herokuapp.com'
+  males: 'https://malest.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://neoxr-api.herokuapp.com': 'yntkts',
   'https://api.xteam.xyz': 'apivproject',
   'https://melcanz.com': 'elaina',
-  'https://server-api-rey.herokuapp.com': 'apirey',
-  'https://api.lolhuman.xyz': 'Deffbotz',
+  'https://api.lolhuman.xyz': 'f0e663f6b15a7b844d89cac6',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://bsbt-api-rest.herokuapp.com': 'benniismael',
   'https://api.zeks.xyz': 'apivinz',
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
