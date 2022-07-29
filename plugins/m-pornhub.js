@@ -33,7 +33,7 @@ t2 = 'jawa'
 	}
 }
 handler.help = ['pornhub [text|text2]']
-handler.tags = ['maker', 'textpro']
+handler.tags = ['textpro']
 handler.command = /^pornhub$/i
 handler.limit = true
 
