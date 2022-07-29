@@ -1,4 +1,4 @@
-var tp = require("../lib/textpro.js")
+var tp = require("../lib/textpro.cjs")
 let handler = async (m, {
 	conn,
 	args
@@ -29,7 +29,7 @@ let handler = async (m, {
 	}
 }
 handler.help = ['glitter [text]']
-handler.tags = ['maker']
+handler.tags = ['maker', 'textpro']
 handler.command = /^glitter$/i
 handler.limit = true
 
