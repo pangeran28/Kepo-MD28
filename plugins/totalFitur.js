@@ -1,11 +1,12 @@
-let handler = async (m, { conn }) => {
-  let lang = db.data.users[m.sender].lang
-  let tot = Object.values(global.plugins).filter(p => !p.disabled).map(p => Array.isArray(p.command) ? p.command : [p.command]).length
-  let total = await conn.translate(lang, 'Total fitur ' + tot).catch((_) => 'Total fitur ' + tot)
-  m.reply(total)
+let handler = async (m, { conn, args, command }) => {
+let totalf = Object.values(global.plugins).filter(
+    (v) => v.help && v.tags
+  ).length;
+conn.reply(m.chat, `Total Fitur saat ini: ${totalf}`,m)
 }
-handler.help = ['totalfitur']
-handler.tags = ['main']
-handler.command = /^(total)?fitur$/i
 
+handler.help = ['totalfitur']
+handler.tags = ['tools']
+handler.command = ['totalfitur']
+handler.limit = true
 module.exports = handler
