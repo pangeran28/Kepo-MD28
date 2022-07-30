@@ -1,3 +1,4 @@
+const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 const WSF = require('wa-sticker-formatter')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -42,16 +43,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (wsf) {
       await wsf.build()
       const sticBuffer = await wsf.get()
-      if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
+      if (sticBuffer) await conn.sendMessage(m.chat, sticBuffer, MessageType.sticker, {
         quoted: m,
-        mimetype: 'image/webp',
-        ephemeralExpiration: 86400
+        mimetype: 'image/webp'
       })
     }
-    if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
-      quoted: m,
-      mimetype: 'image/webp',
-      ephemeralExpiration: 86400
+    if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+      quoted: m
     })
     // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
   }
