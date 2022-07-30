@@ -8,9 +8,10 @@ let handler = async(m, { conn, text }) => {
     else throw json
 }
 handler.help = ['nhsearch <query>']
-handler.tags = ['nsfw']
+handler.tags = ['internet']
 handler.nsfw = true
-handler.command = /^(nhs|nhsearch)$/i
 handler.premium = true
 handler.limit = true
+handler.command = /^(nhs|nhsearch)$/i
+
 module.exports = handler
