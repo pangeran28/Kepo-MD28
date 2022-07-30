@@ -4,12 +4,10 @@ let flaaa = JSON.parse(fs.readFileSync('./api/fla.json'))
 let waifu = JSON.parse(fs.readFileSync('./api/waifu.json'))
 let data = JSON.parse(fs.readFileSync('./data.json'))
 
-//UTAMA TAMPILAN
+
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
 
-
-//APIKEY TAMPILAN
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -42,6 +40,7 @@ global.APIKeys = { // APIKey Here
 
 global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
 global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
+global.Intervalmsg = 1800 //detik
 
 //========Url Template Buttons=========//
 global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
@@ -49,7 +48,7 @@ global.urlnya = "https://www.instagram.com/kokopangeran_"
 
 //============= callButtons =============//
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-global.phn = '+6285929970260'
+global.phn = '+62 859-2997-0260'
 
 //============= Games ================//
 global.benar = '_*Benar✅*_'
@@ -67,25 +66,6 @@ global.author = data.owner;
         global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 global.img = pickRandom(waifu)
 global.fla = pickRandom(flaaa)
-
-/*============== PAYMENT ==============*/
-global.saweria = "https://saweria.co/kokopangeran"// website saweria.co
-global.dana = ["087832147584"]
-global.pulsa = ["087832147584"] //pulsa here
-global.trakteer = "https://trakteer.id/kokopangeran"//Link url https://
-global.paypal = "pangeran.dwnta01@gmail.com" //paypal email
-global.gopay = "087832147584"//Numver for Payment digital Gopay Gojek
-global.instagram = "https://instagram.com/kokopangeran_"
-
-/*============== PAYMENT ==============*/
-global.pdana = '087832147584'
-global.povo = '087832147584'
-global.pgopay = '087832147584'
-global.ppulsa = '087832147584'
-global.ppulsa2 = '087832147584'
-global.psaweria = 'https://saweria.com/kokopangeran'
-
-
 
 global.rpg = {
   emoticon(string) {
