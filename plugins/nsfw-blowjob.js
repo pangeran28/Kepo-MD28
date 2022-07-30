@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
    conn.sendButtonImg(m.chat, json, 'Wangy Wangy Wangy', watermark, 'NEXT', `${usedPrefix + command}`, m)
 }
 handler.help = ['blowjob']
-handler.tags = ['hentai']
+handler.tags = ['nsfw']
 handler.command = /^(blowjob)$/i
 
 handler.admin = false
