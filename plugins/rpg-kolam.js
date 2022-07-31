@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
          let udang = global.db.data.users[m.sender].udang
          let ikan = global.db.data.users[m.sender].ikan 
          let orca = global.db.data.users[m.sender].orca 
-         let pancingan = global.db.data.users[m.sender].pancingan
+         let lastfishing = global.db.data.users[m.sender].lastfishing
          let _pancingan = global.db.data.users[m.sender].anakpancingan 
          let aineh = `
 *Fish Pond*
@@ -28,9 +28,9 @@ Lumba²: ${lumba}
 Lobster: ${lobster}
 Kepiting: ${kepiting}
 *Level Pancingan:*
-Pancingan: *${pancingan == 0 ? 'Tidak Punya' : '' || pancingan == 1 ? 'Level 1' : '' || pancingan == 2 ? 'Level 2' : '' || pancingan == 3 ? 'Level 3' : '' || pancingan == 4 ? 'Level 4' : '' || pancingan == 5 ? 'Level MAX' : ''}*
+Pancingan: *${lastfishing == 0 ? 'Tidak Punya' : '' || lastfishing == 1 ? 'Level 1' : '' || lastfishing == 2 ? 'Level 2' : '' || lastfishing == 3 ? 'Level 3' : '' || lastfishing == 4 ? 'Level 4' : '' || lastfishing == 5 ? 'Level MAX' : ''}*
 ╭────────────────
-│pancingan ${pancingan == 0 ? 'Tidak Punya' : '' || pancingan > 0 && pancingan < 5 ? `Level *${pancingan}* To level *${pancingan + 1}*\n│Exp *${_pancingan}* -> *${pancingan *10000}*` : '' || pancingan == 5 ? '*Max Level*' : ''}
+│Lastfishing ${lastfishing == 0 ? 'Tidak Punya' : '' || lastfishing > 0 && lastfishing < 5 ? `Level *${lastfishing}* To level *${lastfishing + 1}*\n│Exp *${_pancingan}* -> *${lastfishing *10000}*` : '' || lastfishing == 5 ? '*Max Level*' : ''}
 ╰────────────────
 `.trim()
 
