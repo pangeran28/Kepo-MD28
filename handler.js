@@ -184,7 +184,7 @@ module.exports = {
                     anjing: 0,
                     anjinglastclaim: 0,
                     area: 0,
-                    banned: true,
+                    banned: false,
                     warn: 0,
                     warning: 0,
                     lastIstigfar: 0,
