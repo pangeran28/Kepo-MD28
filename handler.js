@@ -102,6 +102,7 @@ module.exports = {
                     if (!isNumber(user.lastduel)) user.lastduel = 0
                     if (!isNumber(user.lastmining)) user.lastmining = 0
                     if (!isNumber(user.lasthunt)) user.lasthunt = 0
+                    if (!isNumber(user.lasthourly)) user.lasthourly = 0
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
                     if (!('registered' in user)) user.registered = false
