@@ -1,4 +1,3 @@
-const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 const WSF = require('wa-sticker-formatter')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -13,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: false,
+        crop: true,
       })
     } else if (/image/.test(mime)) {
       let img = await q.download()
@@ -21,7 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: false,
+        crop: true,
       })
     } else if (/video/.test(mime)) {
       if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
@@ -43,13 +42,16 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (wsf) {
       await wsf.build()
       const sticBuffer = await wsf.get()
-      if (sticBuffer) await conn.sendMessage(m.chat, sticBuffer, MessageType.sticker, {
+      if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
         quoted: m,
-        mimetype: 'image/webp'
+        mimetype: 'image/webp',
+        ephemeralExpiration: 86400
       })
     }
-    if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
+    if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
+      quoted: m,
+      mimetype: 'image/webp',
+      ephemeralExpiration: 86400
     })
     // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
   }
