@@ -214,6 +214,7 @@ module.exports = {
                     lastduel: 0,
                     lastmining: 0,
                     lasthunt: 0,
+                    lasthourly: 0,
                     lastweekly: 0,
                     lastmonthly: 0,
                     registered: false,
