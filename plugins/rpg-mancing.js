@@ -9,9 +9,9 @@ let handler = async (m, { conn,usedPrefix, command, text, args }) => {
                                   let __timers = (new Date - global.db.data.users[m.sender].lastmancingeasy)
                                   let _timers = (28800000 - __timers)
                                   let timers = clockString(_timers) 
-                                  if (pancingan == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
+                                  if (lastfishing == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
                                   if (new Date - global.db.data.users[m.sender].lastmancingeasy > 28800000) {
-                                  if (global.db.data.users[m.sender].pancingan > 1) {
+                                  if (global.db.data.users[m.sender].lastfishing > 1) {
                                   if (global.db.data.users[m.sender].umpan > 99) {
                                   let randomaku1 = `${Math.floor(Math.random() * 10)}`
                                   let randomaku2 = `${Math.floor(Math.random() * 10)}`
@@ -193,7 +193,7 @@ let handler = async (m, { conn,usedPrefix, command, text, args }) => {
                                   let __timerh = (new Date - global.db.data.users[m.sender].lastmancingeasy)
                                   let _timerh = (28800000 - __timerh)
                                   let timerh = clockString(_timerh) 
-                                  if (pancingan == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
+                                  if (lastfishing == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
                                   if (new Date - global.db.data.users[m.sender].lastmancingeasy > 28800000) {
                                   if (global.db.data.users[m.sender].lastfishing > 3) {
                                   if (global.db.data.users[m.sender].umpan > 199) {
