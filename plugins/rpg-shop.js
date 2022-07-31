@@ -54,7 +54,7 @@ ${rpg.emoticon('batu')}Batu           : ${Bbatu}
 ${rpg.emoticon('string')}String         : ${Bstring}
 ${rpg.emoticon('iron')}Iron           : ${Biron}
 ${rpg.emoticon('umpan')}Umpan       : ${Bumpan}
-${rpg.emoticon('lastfishing')}lastfishing          : ${Blastfishing}
+${rpg.emoticon('lastfishing')}Lastfishing          : ${Blastfishing}
 ${rpg.emoticon('sword')}Sword       : ${Bsword}`.trim() +
 '```'
 + '\n\n*♻️Barang                       | 💲Harga Jual*\n' +
@@ -71,7 +71,7 @@ ${rpg.emoticon('batu')}Batu           :  ${Sbatu}
 ${rpg.emoticon('string')}String         :  ${Sstring}
 ${rpg.emoticon('iron')}Iron           :  ${Siron}
 ${rpg.emoticon('umpan')}Umpan       : ${Sumpan}
-${rpg.emoticon('lastfishing')}lastfishing          : ${Slastfishing}
+${rpg.emoticon('lastfishing')}Lastfishing          : ${Slastfishing}
 ${rpg.emoticon('sword')}Sword       : ${Ssword}\n\n
 `.trim() + '```'
     try {
