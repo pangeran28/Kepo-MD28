@@ -25,8 +25,11 @@ const Bumpan = 500
 const Sumpan = 100
 const Bsword = 150000
 const Ssword = 1000
-const Bpancingan = 50000
-const Spancingan = 1000
+const Blastfishing = 50000
+const Slastfishing = 1000
+const Bpickaxe = 40000
+const Spickaxe = 1000
+
 
 let handler  = async (m, { conn, command, args, usedPrefix }) => {
     const _armor = global.db.data.users[m.sender].armor
@@ -55,7 +58,8 @@ ${rpg.emoticon('string')}String         : ${Bstring}
 ${rpg.emoticon('iron')}Iron           : ${Biron}
 ${rpg.emoticon('umpan')}Umpan       : ${Bumpan}
 ${rpg.emoticon('lastfishing')}Lastfishing          : ${Blastfishing}
-${rpg.emoticon('sword')}Sword       : ${Bsword}`.trim() +
+${rpg.emoticon('sword')}Sword       : ${Bsword}
+${rpg.emoticon('pickaxe')}Pickaxe       : ${Bpickaxe}`.trim() +
 '```'
 + '\n\n*♻️Barang                       | 💲Harga Jual*\n' +
 '```' + `
@@ -72,7 +76,8 @@ ${rpg.emoticon('string')}String         :  ${Sstring}
 ${rpg.emoticon('iron')}Iron           :  ${Siron}
 ${rpg.emoticon('umpan')}Umpan       : ${Sumpan}
 ${rpg.emoticon('lastfishing')}Lastfishing          : ${Slastfishing}
-${rpg.emoticon('sword')}Sword       : ${Ssword}\n\n
+${rpg.emoticon('sword')}Sword       : ${Ssword}
+${rpg.emoticon('pickaxe')}Sword       : ${Bpickaxe}\n\n
 `.trim() + '```'
     try {
         if (/shop|toko/i.test(command)) {
@@ -124,11 +129,18 @@ ${rpg.emoticon('sword')}Sword       : ${Ssword}\n\n
                             } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('umpan')}Umpan dengan harga ${Bumpan * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)                       
                         break
                     case 'lastfishing':
-                            if (global.db.data.users[m.sender].money >= Bpancingan * count) {
+                            if (global.db.data.users[m.sender].money >= Blastfishing * count) {
                                 global.db.data.users[m.sender].lastfishing += count * 1
-                                global.db.data.users[m.sender].money -= Bpancingan * count
+                                global.db.data.users[m.sender].money -= Blastfishing * count
                                 conn.sendButton(m.chat, `Succes membeli ${count} ${rpg.emoticon('lastfishing')}Lastfishing dengan harga ${Blastfishing * count} ${rpg.emoticon('money')}Money`, wm, 'inventory', usedPrefix + 'inv', m)
                             } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('lastfishing')}Lastfishing dengan harga ${Blastfishing * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)                        
+                        break
+                     case 'pickaxe':
+                            if (global.db.data.users[m.sender].money >= Bpickaxe * count) {
+                                global.db.data.users[m.sender].pickaxe += count * 1
+                                global.db.data.users[m.sender].money -= Bpickaxe * count
+                                conn.sendButton(m.chat, `Succes membeli ${count} ${rpg.emoticon('pickaxe')}Pickaxe dengan harga ${Bpickaxe * count} ${rpg.emoticon('money')}Money`, wm, 'inventory', usedPrefix + 'inv', m)
+                            } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('pickaxe')}Pickaxe dengan harga ${Bpickaxe * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)
                         break
                     case 'string':
                             if (global.db.data.users[m.sender].money >= Bstring * count) {
@@ -238,11 +250,18 @@ ${rpg.emoticon('sword')}Sword       : ${Ssword}\n\n
                         } else conn.reply(m.chat, `Umpan kamu tidak cukup`.trim(), m)
                         break
                     case 'lastfishing':
-                        if (global.db.data.users[m.sender].batu >= count * 1) {
+                        if (global.db.data.users[m.sender].lastfishing >= count * 1) {
                             global.db.data.users[m.sender].money += Slastfishing * count
-                            global.db.data.users[m.sender].batu -= count * 1
+                            global.db.data.users[m.sender].lastfishing -= count * 1
                             conn.reply(m.chat, `Succes menjual ${count} Lastfishing dengan harga ${Slastfishing * count} money`.trim(), m)
                         } else conn.reply(m.chat, `Lastfishing kamu tidak cukup`.trim(), m)
+                        break
+                    case 'pickaxe':
+                        if (global.db.data.users[m.sender].pickaxe >= count * 1) {
+                            global.db.data.users[m.sender].money += Spickaxe * count
+                            global.db.data.users[m.sender].pickaxe -= count * 1
+                            conn.reply(m.chat, `Succes menjual ${count} Pickaxe dengan harga ${Spickaxe * count} money`.trim(), m)
+                        } else conn.reply(m.chat, `Pickaxe kamu tidak cukup`.trim(), m)
                         break
                     case 'string':
                         if (global.db.data.users[m.sender].string >= count * 1) {
@@ -352,13 +371,20 @@ ${rpg.emoticon('sword')}Sword       : ${Ssword}\n\n
                              conn.sendButton(m.chat, `Succes membeli ${count} ${rpg.emoticon('umpan')}Umpan dengan harga ${Bumpan * count} ${rpg.emoticon('money')}Money`, wm, 'inventory', usedPrefix + 'inv', m)
                           } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('umpan')}Umpan dengan harga ${Bumpan * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)                       
                       break
-                  case 'lastfishing':
-                          if (global.db.data.users[m.sender].money >= Bpancingan * count) {
-                              global.db.data.users[m.sender].lastfishing += count * 1
-                              global.db.data.users[m.sender].money -= Bpancingan * count
-                              conn.sendButton(m.chat, `Succes membeli ${count} ${rpg.emoticon('lastfishing')}Lastfishing dengan harga ${Blastfishing * count} ${rpg.emoticon('money')}Money`, wm, 'inventory', usedPrefix + 'inv', m)
-                          } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('lastfishing')}Lastfishing dengan harga ${Blastfishing * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)                        
-                      break
+                 case 'lastfishing':
+                         if (global.db.data.users[m.sender].money >= Blastfishing * count) {
+                             global.db.data.users[m.sender].lastfishing += count * 1
+                             global.db.data.users[m.sender].money -= Blastfishing * count
+                             conn.sendButton(m.chat, `Succes membeli ${count} ${rpg.emoticon('lastfishing')}Lastfishing dengan harga ${Blastfishing * count} ${rpg.emoticon('money')}Money`, wm, 'inventory', usedPrefix + 'inv', m)
+                         } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('lastfishing')}Lastfishing dengan harga ${Blastfishing * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)                        
+                     break
+                  case 'pickaxe':
+                         if (global.db.data.users[m.sender].money >= Bpickaxe * count) {
+                             global.db.data.users[m.sender].pickaxe += count * 1
+                             global.db.data.users[m.sender].money -= Bpickaxe * count
+                             conn.sendButton(m.chat, `Succes membeli ${count} ${rpg.emoticon('pickaxe')}Pickaxe dengan harga ${Bpickaxe * count} ${rpg.emoticon('money')}Money`, wm, 'inventory', usedPrefix + 'inv', m)
+                         } else conn.send2Button(m.chat, `Uang anda tidak cukup untuk membeli ${count} ${rpg.emoticon('pickaxe')}Pickaxe dengan harga ${Bpickaxe * count} ${rpg.emoticon('money')}money`, wm, 'inventory', usedPrefix + 'inv', 'claim', usedPrefix + 'claim', m)
+                     break
                 case 'string':
                         if (global.db.data.users[m.sender].money >= Bstring * count) {
                             global.db.data.users[m.sender].string += count * 1
@@ -471,11 +497,18 @@ ${rpg.emoticon('sword')}Sword       : ${Ssword}\n\n
                     } else conn.reply(m.chat, `Umpan kamu tidak cukup`.trim(), m)
                     break
                 case 'lastfishing':
-                    if (global.db.data.users[m.sender].batu >= count * 1) {
+                    if (global.db.data.users[m.sender].lastfishing >= count * 1) {
                         global.db.data.users[m.sender].money += Slastfishing * count
-                        global.db.data.users[m.sender].batu -= count * 1
+                        global.db.data.users[m.sender].lastfishing -= count * 1
                         conn.reply(m.chat, `Succes menjual ${count} Lastfishing dengan harga ${Slastfishing * count} money`.trim(), m)
                     } else conn.reply(m.chat, `Lastfishing kamu tidak cukup`.trim(), m)
+                    break
+                case 'pickaxe':
+                    if (global.db.data.users[m.sender].pickaxe >= count * 1) {
+                        global.db.data.users[m.sender].money += Spickaxe * count
+                        global.db.data.users[m.sender].pickaxe -= count * 1
+                        conn.reply(m.chat, `Succes menjual ${count} Pickaxe dengan harga ${Spickaxe * count} money`.trim(), m)
+                    } else conn.reply(m.chat, `Pickaxe kamu tidak cukup`.trim(), m)
                     break
                 case 'string':
                     if (global.db.data.users[m.sender].string >= count * 1) {
