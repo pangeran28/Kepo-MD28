@@ -132,7 +132,7 @@ module.exports = {
                     if (!isNumber(user.udang)) user.udang = 0
                     if (!isNumber(user.orca)) user.orca = 0
                     if (!isNumber(user.umpan)) user.umpan = 0
-                    if (!isNumber(user.lastfishing)) user.lastfishing = 0
+                    if (!isNumber(user.pancingan)) user.pancingan = 0
                     if (!isNumber(user.anakpancingan)) user.anakpancingan = 0
                     if (!isNumber(user.lastmancingeasy)) user.lastmancingeasy = 0
                     if (!isNumber(user.lastmancingnormal)) user.lastmancingnormal = 0
@@ -209,7 +209,7 @@ module.exports = {
                     fishingrod: 0,
                     fishingroddurability: 0,
                     lastadventure: 0,
-                    lastfishing: 0,
+                    pancingan: 0,
                     lastdungeon: 0,
                     lastduel: 0,
                     lastmining: 0,
