@@ -1,7 +1,7 @@
 
 let handler = async (m, { conn,usedPrefix, command, text, args }) => {
        let user = global.db.data.users[m.sender]
-       let pancingan = user.pancingan
+       let lastfishing = user.lastfishing
        let umpan = user.umpan
        let type = (args[0] || '').toLowerCase()
         switch (type) {
@@ -101,9 +101,9 @@ let handler = async (m, { conn,usedPrefix, command, text, args }) => {
                                   let __timerl = (new Date - global.db.data.users[m.sender].lastmancingeasy)
                                   let _timerl = (28800000 - __timerl)
                                   let timerl = clockString(_timerl) 
-                                  if (pancingan == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
+                                  if (lastfishing == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
                                   if (new Date - global.db.data.users[m.sender].lastmancingeasy > 28800000) {
-                                  if (global.db.data.users[m.sender].pancingan > 2) {
+                                  if (global.db.data.users[m.sender].lastfishing > 2) {
                                   if (global.db.data.users[m.sender].umpan > 149) {
                                   let randomakud1 = `${Math.floor(Math.random() * 50)}`
                                   let randomakud2 = `${Math.floor(Math.random() * 50)}`
@@ -195,7 +195,7 @@ let handler = async (m, { conn,usedPrefix, command, text, args }) => {
                                   let timerh = clockString(_timerh) 
                                   if (pancingan == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
                                   if (new Date - global.db.data.users[m.sender].lastmancingeasy > 28800000) {
-                                  if (global.db.data.users[m.sender].pancingan > 3) {
+                                  if (global.db.data.users[m.sender].lastfishing > 3) {
                                   if (global.db.data.users[m.sender].umpan > 199) {
                                   let randomakur1 = `${Math.floor(Math.random() * 100)}`
                                   let randomakur2 = `${Math.floor(Math.random() * 100)}`
@@ -285,9 +285,9 @@ let handler = async (m, { conn,usedPrefix, command, text, args }) => {
                                   let __timere = (new Date - global.db.data.users[m.sender].lastmancingeasy)
                                   let _timere = (28800000 - __timere)
                                   let timere = clockString(_timere) 
-                                  if (pancingan == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
+                                  if (lastfishing == 0 || umpan == 0) return m.reply('*Kamu belum memiliki Pancingan dan Umpan, Silahkan beli dulu..*')
                                   if (new Date - global.db.data.users[m.sender].lastmancingeasy > 28800000) {
-                                  if (global.db.data.users[m.sender].pancingan > 4) {
+                                  if (global.db.data.users[m.sender].lastfishing > 4) {
                                   if (global.db.data.users[m.sender].umpan > 249) {
                                   let randomakue1 = `${Math.floor(Math.random() * 500)}`
                                   let randomakue2 = `${Math.floor(Math.random() * 500)}`
