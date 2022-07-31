@@ -13,6 +13,7 @@ let handler = async (m, { conn, command, args, usedPrefix, DevMode }) => {
             {buttonId: `${prefix}craft fishingrod`, buttonText: {displayText: 'Craft 🎣FishingRod'}, type: 1},
             {buttonId: `${prefix}craft pickaxe`, buttonText: {displayText: 'Craft ⛏️Pickaxe'}, type: 1},
             {buttonId: `${prefix}craft sword`, buttonText: {displayText: 'Craft ⚔️Sword'}, type: 1},
+            {buttonId: `${prefix}craft armor`, buttonText: {displayText: 'Craft 👙Armor'}, type: 1},
         ]
         
         let lmao1 = `Gunakan Format *${usedPrefix}${command} [type]*
@@ -21,6 +22,7 @@ contoh *${usedPrefix}${command} fishingRod*
 🎣FishingRod
 ⛏️Pickaxe
 ⚔️Sword
+👙Armor
 `.trim()
         const buttonMessage1 = {
             text: lmao1,
@@ -103,6 +105,31 @@ ${iron < 30 ? `\n⛓️Iron kamu kurang *${30 - iron}*` : ''}${kayu < 20 ? `\n�
                 user.money -= 10000
                 user.sworddurability += 50
                 m.reply('Succes mengcrafting ⚔️Sword')
+                break
+            case 'armor':
+                if ((user.armor * 1) > 0) {
+                    const buttons = [
+                        {buttonId: `${prefix}upgrade armor`, buttonText: {displayText: 'Upgrade 👙Armor'}, type: 1},
+                    ]
+                    let lmao =`Anda sudah memiliki 👙Armor, untuk mengupgrade ketik
+*${usedPrefix}upgrade armor*`
+                    const buttonMessage = {
+                        text: lmao,
+                        footer: wm,
+                        buttons: buttons,
+                        headerType: 1
+                    }
+                    return conn.sendMessage(m.chat, buttonMessage, { quoted: m })
+                }
+                if (iron < 30 || kayu < 20 || money < 10000) return m.reply(`
+Material Anda Kurang!!
+${iron < 30 ? `\n⛓️Iron kamu kurang *${30 - iron}*` : ''}${kayu < 20 ? `\n🪵Kayu kamu kurang *${20 - kayu}*` : ''}${money < 10000 ? `\n💵Uang kamu kurang *${10000 - money}*` : ''}`)
+                user.sword += 1
+                user.iron -= 30
+                user.kayu -= 20
+                user.money -= 10000
+                user.sworddurability += 50
+                m.reply('Succes mengcrafting 👙Armor')
                 break
             default :
                 return conn.sendMessage(m.chat, buttonMessage1, { quoted: m })
