@@ -184,7 +184,7 @@ module.exports = {
                     anjing: 0,
                     anjinglastclaim: 0,
                     area: 0,
-                    banned: false,
+                    banned: true,
                     warn: 0,
                     warning: 0,
                     lastIstigfar: 0,
@@ -209,7 +209,7 @@ module.exports = {
                     fishingrod: 0,
                     fishingroddurability: 0,
                     lastadventure: 0,
-                    pancingan: 0,
+                    lastfishing: 0,
                     lastdungeon: 0,
                     lastduel: 0,
                     lastmining: 0,
@@ -217,7 +217,7 @@ module.exports = {
                     lasthourly: 0,
                     lastweekly: 0,
                     lastmonthly: 0,
-                    registered: false,
+                    registered: true,
                     name: this.getName(m.sender),
                     email: '',
                     label: '',
@@ -274,7 +274,7 @@ module.exports = {
                     if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
                     if (!isNumber(chat.expired)) chat.expired = 0
-                    if (!('antiBadword' in chat)) chat.antiBadword = true
+                    if (!('antiBadword' in chat)) chat.antiBadword = false
                     if (!('antispam' in chat)) chat.antispam = true
                     if (!('antitroli' in chat)) chat.antitroli = false
                     if (!('antiVirtext' in chat)) chat.antiVirtext = false
@@ -302,7 +302,7 @@ module.exports = {
                     delete: true,
                     antiLink: true,
                     expired: 0,
-                    antiBadword: false,
+                    antiBadword: true,
                     antispam: true,
                     antitroli: false,
                     antiVirtext: false,
@@ -321,7 +321,7 @@ module.exports = {
                     if (!'self' in settings) settings.self = false
                     if (!'anon' in settings) settings.anon = true
                     if (!'anticall' in settings) settings.anticall = true
-                    if (!'backup' in settings) settings.backup = false
+                    if (!'backup' in settings) settings.backup = true
                     if (!isNumber(settings.backupDB)) settings.backupDB = 0
                     if (!'groupOnly' in settings) settings.groupOnly = false
                     if (!'jadibot' in settings) settings.jadibot = false
