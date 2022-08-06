@@ -1,4 +1,4 @@
-let handler = async (m, { conn }) => {
+/*let handler = async (m, { conn }) => {
     let id = m.chat
     let mCount = {}
     let totalM = 0
@@ -19,4 +19,4 @@ handler.command = /^totalpesan$/i
 handler.admin = true
 handler.botAdmin = true
 
-module.exports = handler
+module.exports = handler*/
