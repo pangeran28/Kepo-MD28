@@ -277,6 +277,7 @@ module.exports = {
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antispam' in chat)) chat.antispam = true
                     if (!('antitroli' in chat)) chat.antitroli = true
+                    if (!('antibuggc' in chat)) chat.antibuggc = true
                     if (!('antiVirtext' in chat)) chat.antiVirtext = true
                     if (!('antiPhilip' in chat)) chat.antiPhilip = true
                     if (!('antiBugfont' in chat)) chat.antiBugfont = true
@@ -305,9 +306,10 @@ module.exports = {
                     antiBadword: true,
                     antispam: false,
                     antitroli: false,
-                    antiVirtext: true,
-                    antiPhilip: true,
-                    antiBugfont: true,
+                    antibuggc: false,
+                    antivirtext: true,
+                    antiphilip: true,
+                    antibugfont: true,
                     viewonce: false,
                     nsfw: false,
                     simi: false,
