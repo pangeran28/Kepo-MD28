@@ -40,7 +40,6 @@ ${listAdmin}
 
 *Pengaturan Bot:*
 ${antiLink ? '✅' : '❌'} Anti Link
-${antiWame ? '✅' : '❌'} Anti Wame
 ${global.db.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
 ${isBanned ? '✅' : '❌'} Banned
 ${descUpdate ? '✅' : '❌'} Deskprisi
