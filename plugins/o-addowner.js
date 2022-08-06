@@ -1,22 +1,20 @@
-let fs = require('fs')
-let handler = async (m, { conn, args }) => {
-
-    const json = JSON.parse(fs.readFileSync('./settings/owner.json'))
+let handler = async (m, { conn, text }) => {
     let who
-    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-    else who = args[0] ? args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
-    if (json.includes(who.split`@`[0])) throw `${await conn.getName(who)} sudah jadi owner!`
-    json.push(`${who.split`@`[0]}`)
-    fs.writeFileSync('./settings/owner.json', JSON.stringify(json))
-    m.reply(`${await conn.getName(who)} sekarang jadi owner!`)
-
-    delete require.cache[require.resolve('../config')]
-    require('../config')
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text
+    else who = m.chat
+    if (!who) throw `tag orangnya tod!`
+    if (global.owner.includes(who.split`@`[0])) throw 'dia udah menjadi owner tod!'
+    global.owner.push(`${who.split`@`[0]}`)
+    conn.reply(m.chat, `@${who.split`@`[0]} sekarang kamu owner tod!`, m, {
+        contextInfo: {
+            mentionedJid: [who]
+        }
+    })
 
 }
 handler.help = ['addowner [@user]']
 handler.tags = ['owner']
-handler.command = /^(add|tambah|\+)ow(ner)?$/i
+handler.command = /^(add|tambah|\+)owner$/i
 
 handler.owner = true
 
