@@ -1,5 +1,8 @@
 const { sticker } = require('../lib/sticker')
 const WSF = require('wa-sticker-formatter')
+const uploadFile = require('../lib/uploadFile')
+const uploadImage = require('../lib/uploadImage')
+let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
   let wsf = false
@@ -28,7 +31,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   } catch (e) {
     console.error(e)
     if (!stiker) stiker = e
-  } finally {
+  } 
+   finally {
     if (wsf) {
       await wsf.build()
       const sticBuffer = await wsf.get()
