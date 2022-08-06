@@ -6,7 +6,8 @@ const emoji = new EmojiAPI()
 
 let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
   let er = `contoh:
-${usedPrefix}semoji whatsapp 😎
+${usedPrefix}semoji whatsapp ðŸ˜Ž
+
 *Opsi*
 - apple
 - facebook
