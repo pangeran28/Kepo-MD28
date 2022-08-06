@@ -321,7 +321,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antispam
 ├ antivirtext
 ├ antiphilip
-├ antibuggc
+├ antibugfont
 ├ antisatir
 ├ autolevelup
 ├ antibadword
@@ -332,7 +332,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ jadibot
 ├ simi
 ├ welcome
-│ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
+>>ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ<<
 └────
 Contoh:
 ${usedPrefix}on welcome
