@@ -195,7 +195,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       return {
         help: Array.isArray(plugin.help) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
-        prefix: 'customPrefix' in plugin,
+        prefix: '' in plugin,
         limit: plugin.limit,
         premium: plugin.premium,
         enabled: !plugin.disabled,
