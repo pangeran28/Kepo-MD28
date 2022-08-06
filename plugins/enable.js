@@ -195,7 +195,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antitroli = isEnable
       break
-    case 'antivirtext':
+     case 'antibuggc':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antibuggc = isEnable
+      break
+    case 'antivirtex':
       if (!m.isGroup) {
         if (!isOwner) {
           global.dfail('group', m, conn)
@@ -205,7 +214,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('admin', m, conn)
         throw false
       }
-      chat.antiVirtext = isEnable
+      chat.antivirtex = isEnable
       break
     case 'antiphilip':
       if (!m.isGroup) {
@@ -217,7 +226,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('admin', m, conn)
         throw false
       }
-      chat.antiPhilip = isEnable
+      chat.antiphilip = isEnable
       break
     case 'antibugfont':
       if (!m.isGroup) {
@@ -229,7 +238,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('admin', m, conn)
         throw false
       }
-      chat.antiBugfont = isEnable
+      chat.antibugfont = isEnable
       break
     case 'antispam':
       if (m.isGroup) {
@@ -322,6 +331,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antivirtext
 ├ antiphilip
 ├ antibugfont
+├ antibuggc
 ├ antisatir
 ├ autolevelup
 ├ antibadword
