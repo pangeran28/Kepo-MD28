@@ -273,13 +273,14 @@ module.exports = {
                     if (!('stiker' in chat)) chat.stiker = false
                     if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
+                    if (!('antiWame' in chat)) chat.antiWame = true
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antispam' in chat)) chat.antispam = true
-                    if (!('antitroli' in chat)) chat.antitroli = false
-                    if (!('antiVirtext' in chat)) chat.antiVirtext = false
-                    if (!('antiPhilip' in chat)) chat.antiPhilip = false
-                    if (!('antiBugfont' in chat)) chat.antiBugfont = false
+                    if (!('antitroli' in chat)) chat.antitroli = true
+                    if (!('antiVirtext' in chat)) chat.antiVirtext = true
+                    if (!('antiPhilip' in chat)) chat.antiPhilip = true
+                    if (!('antiBugfont' in chat)) chat.antiBugfont = true
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('nsfw' in chat)) chat.nsfw = false
                     if (!('simi' in chat)) chat.simi = false
@@ -287,7 +288,7 @@ module.exports = {
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
-                    closeGroup: true,
+                    closeGroup: false,
                     add: 0,
                     isBanned: false,
                     welcome: false,
@@ -301,9 +302,10 @@ module.exports = {
                     stiker: false,
                     delete: true,
                     antiLink: true,
+                    antiWame: true,
                     expired: 0,
                     antiBadword: true,
-                    antispam: true,
+                    antispam: false,
                     antitroli: false,
                     antiVirtext: false,
                     antiPhilip: false,
