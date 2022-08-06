@@ -333,7 +333,7 @@ module.exports = {
                     self: false,
                     anon: true,
                     anticall: true,
-                    backup: true,
+                    backup: false,
                     backupDB: 0,
                     groupOnly: false,
                     jadibot: false,
