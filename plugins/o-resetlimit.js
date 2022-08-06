@@ -16,3 +16,4 @@ module.exports = handler
 function isNumber(x = 0) {
   x = parseInt(x)
   return !isNaN(x) && typeof x == 'number'
+}
