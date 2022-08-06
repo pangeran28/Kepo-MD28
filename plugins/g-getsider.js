@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command, usedPrefix }) => {
+/*let handler = async (m, { conn, command, usedPrefix }) => {
   if (!m.quoted) throw `balas pesan bot dengan perintah ${usedPrefix + command}`
   if (!m.quoted.fromMe) throw false
   if (!m.quoted.id) throw false
@@ -35,4 +35,4 @@ function formatDate(n, locale = 'id') {
     minute: 'numeric',
     second: 'numeric'
   })
-}
+}*/
