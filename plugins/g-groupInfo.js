@@ -40,6 +40,7 @@ ${listAdmin}
 
 *Pengaturan Bot:*
 ${antiLink ? '✅' : '❌'} Anti Link
+${antiWame ? '✅' : '❌'} Anti Wame
 ${global.db.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
 ${isBanned ? '✅' : '❌'} Banned
 ${descUpdate ? '✅' : '❌'} Deskprisi
@@ -49,7 +50,9 @@ ${welcome ? '✅' : '❌'} Welcome
 ${antispam ? '✅' : '❌'} Anti Spam
 ${antiBadword ? '❌' : '✅'} Anti Badword
 ${antitroli ? '✅' : '❌'} Anti Troli
-${antivirtex ? '✅' : '❌'} Anti Virtex
+${antiVirtext ? '✅' : '❌'} Anti Virtex
+${antiBugfont ? '✅' : '❌'} Anti Virtex
+${antiPhilip ? '✅' : '❌'} Anti Virtex
 ${closeGroup ? '✅' : '❌'} Auto Tutup Grup
 *Pengaturan Pesan Bot:*
 Welcome: ${sWelcome}
