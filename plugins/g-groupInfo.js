@@ -49,9 +49,10 @@ ${welcome ? '✅' : '❌'} Welcome
 ${antispam ? '✅' : '❌'} Anti Spam
 ${antiBadword ? '❌' : '✅'} Anti Badword
 ${antitroli ? '✅' : '❌'} Anti Troli
-${antiVirtext ? '✅' : '❌'} Anti Virtex
-${antiBugfont ? '✅' : '❌'} Anti Bugfont
-${antiPhilip ? '✅' : '❌'} Anti Philip
+${antivirtex ? '✅' : '❌'} Anti Virtex
+${antibugfont ? '✅' : '❌'} Anti Bugfont
+${antibugfont ? '✅' : '❌'} Anti BugGC
+${antiphilip ? '✅' : '❌'} Anti Philip
 ${closeGroup ? '✅' : '❌'} Auto Tutup Grup
 *Pengaturan Pesan Bot:*
 Welcome: ${sWelcome}
