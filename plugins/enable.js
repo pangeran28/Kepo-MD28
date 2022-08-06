@@ -126,6 +126,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
+     case 'antiwame':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiWame = isEnable
+      break
     case 'stiker':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -317,6 +326,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ autoclosegroup
 ├ antiviewonce
 ├ antilink
+├ antiwame
 ├ antitroli
 ├ antispam
 ├ antivirtext
