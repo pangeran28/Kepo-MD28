@@ -1,12 +1,9 @@
 // TODO: fix jadibot
-var qrcode = require('qrcode');
-var ws = require('ws');
+let qrcode = require('qrcode')
+let ws = require('ws')
+const { DisconnectReason } = require('@adiwajshing/baileys')
 
-var {
-	DisconnectReason
-} = require('@adiwajshing/baileys');
-
-var handler = async (m, {
+let handler = async (m, {
 	conn: _conn,
 	args,
 	usedPrefix,
@@ -14,24 +11,24 @@ var handler = async (m, {
 	isOwner
 }) => {
 	/** @type {import('../lib/connection').Socket} */
-	var Connection = (await import('../lib/connection.js')).default;
-	var Store = (await import('../lib/store.js')).default;
-	var parent = args[0] && args[0] == 'plz' ? _conn : await Connection.conn
+	let Connection = (await import('../lib/connection.js')).default;
+	let Store = (await import('../lib/store.js')).default;
+	let parent = args[0] && args[0] == 'plz' ? _conn : await Connection.conn
 	if (!((args[0] && args[0] == 'plz') || (await Connection.conn).user.jid == _conn.user.jid)) {
 		throw 'Tidak bisa membuat bot didalam bot!\n\nhttps://wa.me/' + (await Connection.conn).user.jid.split`@` [0] + '?text=.jadibot'
 	}
 
-	var id = Connection.conns.size
-	var auth = Store.useMemoryAuthState()
-	var store = Store.makeInMemoryStore()
-	var conn = await Connection.start(null, {
+	let id = Connection.conns.size
+	let auth = Store.useMemoryAuthState()
+	let store = Store.makeInMemoryStore()
+	let conn = await Connection.start(null, {
 		isChild: true,
 		connectionOptions: {
 			auth: auth.state
 		},
 		store
 	})
-	var logout = async () => {
+	let logout = async () => {
 		await parent.sendMessage(conn.user?.jid || m.chat, {
 			text: 'Koneksi terputus...'
 		})
@@ -40,7 +37,7 @@ var handler = async (m, {
 		} catch {}
 		Connection.conns.delete(id)
 	}
-	var lastQr, shouldSendLogin, errorCount = 0
+	let lastQr, shouldSendLogin, errorCount = 0
 	conn.ev.on('connection.update', async ({
 		qr,
 		isNewLogin,
