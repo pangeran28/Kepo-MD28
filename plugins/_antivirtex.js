@@ -1,18 +1,24 @@
 let handler = m => m
 
-handler.before = function(m, { text }) {
+handler.before = function (m, { user, text }) {
 
-  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  let username = conn.getName(who)
-  let mentionedJid = [m.sender]
-  let name = m.fromMe ? conn.user : conn.contacts[m.sender]
-  let users = m.sender
+  if (m.isBaileys && m.fromMe) return
+  let chat = global.db.data.chats[m.chat]
+  let name = this.getName(m.sender)
 
-    if (m.text > 📄.PHILIP_                                                             📄.PHILIP_) {
-  this.reply(m.chat, '*「 ANTI Philip 」*\n\nTerdeteksi telah mengirim Philip!\n\nMaaf Kamu akan dikick dari grup ini!', m)
-     this.groupRemove(m.chat, [users])
-  }
+  if (chat.antivirtex && text > 2000) {
+    this.reply(m.chat `
+*「 ANTI VIRTEX 」*
+
+Terdeteksi telah mengirim virtex!
+
+Maaf Kamu akan dikick dari grup ini!
+`.trim(), m)
+
+    this.groupRemove(m.chat, [m.sender])
+  } else return false
 }
 handler.group = true
+handler.register = false
 
 module.exports = handler
