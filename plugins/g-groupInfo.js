@@ -51,8 +51,8 @@ ${antispam ? '✅' : '❌'} Anti Spam
 ${antiBadword ? '❌' : '✅'} Anti Badword
 ${antitroli ? '✅' : '❌'} Anti Troli
 ${antiVirtext ? '✅' : '❌'} Anti Virtex
-${antiBugfont ? '✅' : '❌'} Anti Virtex
-${antiPhilip ? '✅' : '❌'} Anti Virtex
+${antiBugfont ? '✅' : '❌'} Anti Bugfont
+${antiPhilip ? '✅' : '❌'} Anti Philip
 ${closeGroup ? '✅' : '❌'} Auto Tutup Grup
 *Pengaturan Pesan Bot:*
 Welcome: ${sWelcome}
