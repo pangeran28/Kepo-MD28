@@ -34,7 +34,7 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-  let bzz = './src/tmp.mp3'
+  let bzz = './src/src_sound.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'maker', 'jadibot', 'info', 'tanpakategori', 'owner']
@@ -311,7 +311,7 @@ handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-
+handler.register = true
 handler.admin = false
 handler.botAdmin = false
 
