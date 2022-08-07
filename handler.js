@@ -105,7 +105,7 @@ module.exports = {
                     if (!isNumber(user.lasthourly)) user.lasthourly = 0
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
-                    if (!('registered' in user)) user.registered = false
+                    if (!('registered' in user)) user.registered = true
                     if (!user.registered) {
                     if (!('name' in user)) user.name = this.getName(m.sender)
                     if (!isNumber(user.age)) user.age = -1
