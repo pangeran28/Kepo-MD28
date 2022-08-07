@@ -398,7 +398,7 @@ module.exports = {
                     // global.dfail('restrict', m, this)
                     continue
                 }
-                const str2Regex = str => str.replace(''/[|\\{}()[\]^$+*?.]/g, '\\$&')
+                const str2Regex = str => str.replace('', /[|\\{}()[\]^$+*?.]/g, '\\$&')
                 let _prefix = plugin.customPrefix ? plugin.customPrefix : conn.prefix ? conn.prefix : global.prefix
                 let match = (_prefix instanceof RegExp ? // RegExp Mode?
                     [[_prefix.exec(m.text), _prefix]] :
