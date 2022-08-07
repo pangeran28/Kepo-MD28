@@ -35,11 +35,6 @@ ${'```%npmdesc```'}
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './src/tmp.mp3'
-	let { anon, anticall, antispam, antitroli, backup, jadibot, groupOnly, nsfw } = global.db.data.settings[conn.user.jid]
-    let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn.state !== 'close').map(conn => conn.user)])]
-
-    let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'maker', 'jadibot', 'info', 'tanpakategori', 'owner']
