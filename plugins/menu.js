@@ -34,7 +34,7 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-  let bzz = './src/sound.mp3'
+  let bzz = './src/tmp.mp3'
 	let { anon, anticall, antispam, antitroli, backup, jadibot, groupOnly, nsfw } = global.db.data.settings[conn.user.jid]
     let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn.state !== 'close').map(conn => conn.user)])]
 
