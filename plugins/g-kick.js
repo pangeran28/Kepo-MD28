@@ -20,7 +20,7 @@ await conn.groupParticipantsUpdate(m.chat, [usr], "remove"); return;
 
 handler.help = ['kick @user']
 handler.tags = ['group']
-handler.command = /^(kic?k|remove|tendang|\-)$/i
+handler.command = /^(k|kick|remove|tendang|\-)$/i
 handler.group = true
 handler.botAdmin = true
 
