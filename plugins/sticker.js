@@ -1,4 +1,4 @@
-const { sticker1, sticker5 } = require('../lib/sticker')
+const { sticker5 } = require('../lib/sticker')
 const WSF = require('wa-sticker-formatter')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: false,
+        crop: true,
       })
     } else if (/image/.test(mime)) {
       let img = await q.download()
@@ -20,7 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: false,
+        crop: true,
       })
     } else if (/video/.test(mime)) {
       if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
