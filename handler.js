@@ -1,6 +1,6 @@
 //Penambahan Fitur
 autoon = false
-autovn = true
+autovn = false
 
 
 let { Presence } = require('@adiwajshing/baileys')
