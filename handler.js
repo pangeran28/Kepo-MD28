@@ -108,11 +108,10 @@ module.exports = {
                     if (!('registered' in user)) user.registered = false
                     if (!user.registered) {
                     if (!('name' in user)) user.name = this.getName(m.sender)
-                    if (!('email' in user)) user.email = ''
-                    if (!('label' in user)) user.label = ''
                     if (!isNumber(user.age)) user.age = -1
+                    if (!isNumber(user.premiumDate)) user.premiumDate = -1
                     if (!isNumber(user.regTime)) user.regTime = -1
-                    }
+                        }
                     if (!('premium' in user)) user.premium = false
                     if (!isNumber(user.premiumTime)) user.premiumTime = 0
                     if (!user.role) user.role = ''
