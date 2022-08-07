@@ -1,3 +1,8 @@
+//Penambahan Fitur
+autoon = false
+autovn = true
+
+
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
@@ -31,6 +36,10 @@ module.exports = {
             // console.log(m)
             m.exp = 0
             m.limit = false
+
+     if (autovn === true) conn.updatePresence(m.chat, Presence.recording) //
+     if (autoon === true) conn.updatePresence(m.chat, Presence.available) //
+
             try {
                 let user = global.db.data.users[m.sender]
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
