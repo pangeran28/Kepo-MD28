@@ -1,4 +1,4 @@
-let handler = async (m, { conn, usedPrefix, text }) => {
+/*let handler = async (m, { conn, usedPrefix, text }) => {
 let data = fs.readFileSync('../lib/hack.js')
 let parse = JSON.parse(data)
 let random = Math.floor(Math.random() * parse.length);
@@ -15,4 +15,4 @@ handler.premium = true
 handler.register = true
 handler.xp = 150
 
-module.exports = handler
+module.exports = handler*/
