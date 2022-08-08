@@ -1,7 +1,7 @@
-/*let handler = async(m, { conn }) => {
-  m.reply('Kenapa SayangKuuuu😚')
+let handler = async(m, { conn }) => {
+  m.reply('Kenapa SayangKuuuu😚', 'Apasih anj manggil owner gw mulu!', 'iya ada apa tante muach💋', 'Manggil OwnerKu Seperlunya Saja Tante😤', 'Cieee Manggil OwnerKu Terus\nSuka Ya Tante😅',)
 }
 handler.customPrefix= /^(k?o|ko?ko|pang?eran)$/i
 handler.command = new RegExp
 
-module.exports = handler*/
+module.exports = handler
