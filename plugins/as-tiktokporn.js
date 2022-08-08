@@ -21,7 +21,7 @@ let handler = async(m, { conn, usedPrefix, command }) => {
  }
 }
 handler.help = ['tiktokporn']
-handler.tags = ['dewasa', 'update']
+handler.tags = ['asupan', 'bokep']
 handler.command = /^((tik(tok)?)?porn(no)?)$/i
 
 handler.private = true
