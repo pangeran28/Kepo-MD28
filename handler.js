@@ -105,13 +105,14 @@ module.exports = {
                     if (!isNumber(user.lasthourly)) user.lasthourly = 0
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
-                    if (!('registered' in user)) user.registered = true
+                    if (!('registered' in user)) user.registered = false
                     if (!user.registered) {
                     if (!('name' in user)) user.name = this.getName(m.sender)
+                    if (!('email' in user)) user.email = ''
+                    if (!('label' in user)) user.label = ''
                     if (!isNumber(user.age)) user.age = -1
-                    if (!isNumber(user.premiumDate)) user.premiumDate = -1
                     if (!isNumber(user.regTime)) user.regTime = -1
-                        }
+                    }
                     if (!('premium' in user)) user.premium = false
                     if (!isNumber(user.premiumTime)) user.premiumTime = 0
                     if (!user.role) user.role = ''
@@ -700,49 +701,22 @@ Untuk mematikan fitur ini, ketik
 }
 
 global.dfail = async (type, m, conn) => {
-    let name = conn.getName(m.sender)
     let msg = {
-    rowner: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
-⬡ Perintah ini hanya untuk developer bot
-╰─────────────────֍`,
-    owner: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
-⬡ Perintah ini hanya untuk owner bot
-╰─────────────────֍`,
-    mods: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
-⬡ Perintah ini hanya untuk moderator bot
-╰─────────────────֍`,
-    premium: `╭─֍〔 ıll 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐎𝐍𝐋𝐘 llı 〕֍─
-⬡ Fitur ini hanya tersedia untuk user *Premium*
-╰─────────────────֍`,
-    group: `╭─֍〔 ıll 𝐆𝐑𝐎𝐔𝐏 𝐎𝐍𝐋𝐘 llı 〕֍─
-⬡ Fitur ini hanya dapat digunakan didalam grup!!
-╰─────────────────֍`,
-    private: `╭─֍〔 ıll 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 𝐎𝐍𝐋𝐘 llı 〕֍─
-⬡ Fitur ini hanya dapat digunakan diprivate chat
-╰─────────────────֍`,
-    admin: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
-⬡ Fitur ini hanya tersedia untuk admin grup!!
-╰─────────────────֍`,
-    botAdmin: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
-⬡ Fitur ini tidak dapat work, bot tidak menjadi admin
-╰─────────────────֍`,
-    restrict: 'Fitur ini di *disable*!',
+        rowner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
+        owner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
+        mods: `👤Perintah ini hanya dapat digunakan oleh *Moderator*`,
+        premium: '👤Khusus Member _*Premium!*_\n_*Mau Jadi Member Premium?*_\n\n_*List Premium:*_\n_*10k/perbulan*_\n_*30k/permanen*_\n\n_*Selebihnya Chat OwnerKu Tante:*_\nwa.me/+6285929970260',
+        group: `👥Perintah ini hanya dapat digunakan di grup!`,
+        private: '👤Perintah ini hanya dapat digunakan di Chat Pribadi!',
+        admin: '👤Perintah ini hanya untuk *Admin* grup!',
+        botAdmin: '👻Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
+        unreg: '👤Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
+        nsfw: `👤NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini!`,
+        rpg: `👤RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini!`,
+        restrict: 'Fitur ini di *disable*!'
     }[type]
-  if (msg) return conn.sendBut(m.chat, msg, '❑ Silahkan klik menu dibawah ini', 'Menu', '.menu', m)
- let unreg = {
-  unreg: `
-┏━━━〔 ıll 𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑 llı 〕━━❑
-⬡ Hallo mypren👋, @${m.sender.split`@`[0]}
-⬡ Sebelum melihat fitur bot, lebih baik register dulu
-⬡ Kalau tidak kelihatan button nya, contohnya dibawah!
-┗━━━━━━━━━━━━━━━━━━❑
-┏━━〔 ıll CONTOH llı 〕━❑
-⬡ #daftar namamu.umurmu
-⬡ #daftar @${m.sender.split`@`[0]}.18
-┗━━━━━━━━━━❑ `
-  }[type]
- if (unreg) return conn.sendBut(m.chat, unreg, '❑ Silahkan Klik reg dibawah ini ❑', 'Register', `.daftar @${m.sender.split`@`[0]}.18`, m)
- }
+    if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })
+}
 
 let fs = require('fs')
 let chalk = require('chalk')
