@@ -1,5 +1,8 @@
 let handler  = async (m, { conn, usedPrefix, command }) => {
-  conn.sendBL(m.chat, `${pickRandom(global.sadboy)}`, wm, fla + `${command}`, [[`Sad Boy`, `${usedPrefix + command}`]], m)
+   let anu = ` ─────〔 *SAD BOY* 〕─────
+${pickRandom(global.sadboy)}
+`
+conn.sendButton(m.chat, anu, wm, `Sad Boy`, `${usedPrefix + command}`, m)
 }
 handler.help = ['sadboy']
 handler.tags = ['quotes']
