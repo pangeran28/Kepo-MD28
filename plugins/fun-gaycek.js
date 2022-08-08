@@ -23,7 +23,7 @@ global.gay = [
 'Gay Level : 41%\n\nDah lewat dri Aman',
 'Gay Level : 48%\n\nSetengah gay',
 'Gay Level : 56%\n\nLu gay juga',
-'Gay Level : 64%\n\numayan gay',
+'Gay Level : 64%\n\nLumayan gay',
 'Gay Level : 71%\n\nHebatnya kegayan lu',
 'Gay Level : 1%\n\n99% LU GAK GAY!',
 'Gay Level : 77%\n\nGak akan Salah Lagi dah gaynya lu',
