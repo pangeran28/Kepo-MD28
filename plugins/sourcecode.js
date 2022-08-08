@@ -6,13 +6,11 @@ let handler = async (m, { conn }) => {
     // Kalo ngeyel gk bakal gw up sc lgi.
     
     let txt = `
-Bot ini menggunakan script github
+Bot ini menggunakan Script Private!
+Mau pake scriptnya?
+https://github.com/MendingTuru/Meilana-MD4
 
-https://github.com/MendingTuru/Pangeran-MD.git
-
-pliss follow dan kasih ✨⭐⭐🌟 ya pak!
-
-My Github: https://github.com/MendingTuru/Pangeran-MD
+Scriptnya sama kaya yang private, cuma beda jumlah fitur aja🙏
 
 `
      conn.reply(m.chat, txt, m)
