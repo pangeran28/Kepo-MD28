@@ -1,5 +1,5 @@
 let handler = async (m, { conn, usedPrefix, text }) => {
-let data = fs.readFileSync('./lib/hack.js')
+let data = fs.readFileSync('../lib/hack.js')
 let parse = JSON.parse(data)
 let random = Math.floor(Math.random() * parse.length);
 let json = parse[random]
