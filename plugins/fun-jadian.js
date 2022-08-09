@@ -4,9 +4,9 @@ let handler = async (m, { conn, participants, command, usedPrefix }) => {
     if (/ku/i.test(command)) orang = m.sender
     else orang = member[Math.floor(Math.random() * member.length)]
     let jodoh = member[Math.floor(Math.random() * member.length)]
-    let jawab = `Cieeeee Jadian Nih\nPajak Jadian nya dong\n\n@${orang.replace(/@.+/, '')} 💘 @${jodoh.replace(/@.+/, '')}`.trim()
+    let jawab = `_*👫Cieeeee Jadian Nih..*_\n_*💰Pajak Jadian nya dong..*_\n\n@${orang.replace(/@.+/, '')} 💘 @${jodoh.replace(/@.+/, '')}`.trim()
     let mentionedJid = [orang, jodoh]
-    await conn.sendButton(m.chat, jawab, 'Pangeran', `${command}`, usedPrefix + command, m, { contextInfo: { mentionedJid } })
+    await conn.sendButton(m.chat, jawab, 'ᴰᴿᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×', `${command}`, usedPrefix + command, m, { contextInfo: { mentionedJid } })
 }
 handler.help = ['jodohin', 'jodohku', 'jadian']
 handler.tags = ['fun']
