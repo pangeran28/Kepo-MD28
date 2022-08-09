@@ -47,7 +47,7 @@ hsl = `*—[ Hasil Dari ${command} ${name.vnmae || name.notify || name.name || (
  ➕ 💹 *Uang:* 100000
  ➕ ✨ *Exp:* ${zero5}
  ➕ 🔥 *Dosa:* 10
-➕  📥 *Pelanggan sebelumnya:*  ${order}
+ ➕ 📥 *Pelanggan sebelumnya:*  ${order}
 ${wm}
 `
 
@@ -80,7 +80,7 @@ setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
  user.lastngocok = new Date * 1
- conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
+   } else conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
 }
 handler.help = ['ngewe', 'ngentod', 'ngocok']
 handler.tags = ['rpg']
