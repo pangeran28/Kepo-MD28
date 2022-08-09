@@ -8,4 +8,6 @@ conn.sendButtonImg(m.chat, json, '*Sangne Lu Ya*', wm, 'NEXT LOLI▶️', `${use
 handler.help = ['nsfwloli']
 handler.tags = ['nsfw']
 handler.command = /^(nsfwloli)$/i
+handler.premium = true
+handler.limit = true
 module.exports = handler 
