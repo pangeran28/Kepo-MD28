@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['nsfwneko']
 handler.tags = ['nsfw']
 handler.command = /^(nsfwneko|nekonsfw)$/i
-
+handler.premium = true
 handler.private = true
 handler.limit = true
 handler.register = true
