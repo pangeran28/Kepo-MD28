@@ -81,7 +81,7 @@ setTimeout(() => {
                      setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
- } else { user.lastngocok = new Date * 1
+ user.lastngocok = new Date * 1
  conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Inventory', m) 
  }  
 }
