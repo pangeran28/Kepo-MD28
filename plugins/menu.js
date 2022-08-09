@@ -213,7 +213,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🃏Stiker🃏', rowId: `${_p}? stiker` },
           { title: '🐚Kerang Ajaib🐚', rowId: `${_p}? kerangajaib` },
           { title: '📃Quotes📃', rowId: `${_p}? quotes` },
-          { title: '👥Group👥', rowId: `${_p}? grup` },
+          { title: '👥Group👥', rowId: `${_p}? group` },
           { title: '🌟Premium🌟', rowId: `${_p}? premium` },
           { title: '🗼Internet🗼', rowId: `${_p}? internet` },
           { title: '💌Anonymous💌', rowId: `${_p}? anonymous` },
