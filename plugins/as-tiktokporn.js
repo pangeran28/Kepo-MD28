@@ -1,4 +1,4 @@
-let handler = async(m, { conn, usedPrefix, command }) => {
+/*let handler = async(m, { conn, usedPrefix, command }) => {
   await m.reply("Sedang mencari video porn untuk anda, jika video tidak muncul silahkan ulangi!")
   try {
   var a = await scrape.tiktokporn()
@@ -28,4 +28,4 @@ handler.private = true
 handler.register = true
 handler.limit = true
 
-module.exports = handler
+module.exports = handler*/
