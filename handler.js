@@ -37,7 +37,10 @@ module.exports = {
                 if (user) {
                     if (!isNumber(user.joincount)) user.joincount = 1
                     if (!isNumber(user.healt)) user.healt = 0
-                    if (!isNumber(user.level)) user.level = 1
+                    if (!isNumber(user.stamina)) user.stamina = 100
+                    if (!isNumber(user.haus)) user.haus = 100
+                    if (!isNumber(user.laper)) user.laper = 100
+                    if (!isNumber(user.level)) user.level = 0
                     if (!isNumber(user.exp)) user.exp = 0
                     if (!isNumber(user.limit)) user.limit = 10
                     if (!isNumber(user.lastseen)) user.lastseen = 0
@@ -47,6 +50,9 @@ module.exports = {
                     if (!isNumber(user.korbanngocok)) user.korbanngocok = 0
                     if (!isNumber(user.trofi)) user.trofi= 0
                     if (!user.rtrofi) user.rtrofi = 'Perunggu'
+                    if (!isNumber(user.troopcamp)) user.troopcamp = 0
+                    if (!isNumber(user.coin)) user.coin = 0
+                    if (!isNumber(user.ojekk)) user.ojekk = 0
                     if (!isNumber(user.lastngojek)) user.lastngojek = 0
                     if (!isNumber(user.lastnebang)) user.lastnebang = 0
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
@@ -158,7 +164,11 @@ module.exports = {
                 } else global.db.data.users[m.sender] = {
                     joincount: 1,
                     healt: 100,
-                    level: 1,
+                    haus: 100,
+                    laper: 100,
+                    tprem: 0,
+                    stamina : 100,
+                    level: 0,
                     exp: 0,
                     limit: 10,
                     lastseen: 0,
@@ -170,6 +180,7 @@ module.exports = {
                     rtrofi: 'perunggu',
                     lastnebang: 0,
                     lastnyampah: 0,
+                    ojekk: 0,
                     korbanngocok: 0,
                     lastowner: 0,
                     money: 0,
