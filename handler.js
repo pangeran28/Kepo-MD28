@@ -43,7 +43,10 @@ module.exports = {
                     if (!isNumber(user.lastseen)) user.lastseen = 0
                     if (!isNumber(user.usebot)) user.usebot = 0
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
-                    if (!isNumber(user.lastclaim2)) user.lastclaim2 = 0  
+                    if (!isNumber(user.lastclaim2)) user.lastclaim2 = 0 
+                    if (!isNumber(user.korbanngocok)) user.korbanngocok = 0
+                    if (!isNumber(user.trofi)) user.trofi= 0
+                    if (!user.rtrofi) user.rtrofi = 'Perunggu'
                     if (!isNumber(user.lastngojek)) user.lastngojek = 0
                     if (!isNumber(user.lastnebang)) user.lastnebang = 0
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
@@ -52,6 +55,7 @@ module.exports = {
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.batu)) user.batu = 0
+                    if (!('kingdom' in user)) user.kingdom = true
                     if (!isNumber(user.kayu)) user.kayu = 0
                     if (!isNumber(user.string)) user.string = 0  
                     if (!isNumber(user.common)) user.common = 0
@@ -97,6 +101,7 @@ module.exports = {
                     if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
                     if (!isNumber(user.fishingrod)) user.fishingrod = 0
                     if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
+                    if (!isNumber(user.lastngocok)) user.lastngocok = 0
                     if (!isNumber(user.lastadventure)) user.lastadventure = 0
                     if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
                     if (!isNumber(user.lastduel)) user.lastduel = 0
@@ -161,8 +166,11 @@ module.exports = {
                     lastclaim: 0,
                     lastclaim2: 0,
                     lastngojek: 0,
+                    trofi: 0,
+                    rtrofi: 'perunggu',
                     lastnebang: 0,
                     lastnyampah: 0,
+                    korbanngocok: 0,
                     lastowner: 0,
                     money: 0,
                     diamond: 0,
@@ -201,6 +209,7 @@ module.exports = {
                     antispamlastclaim: 0,
                     kayu: 0,
                     batu: 0,
+                    kingdom: true,
                     string: 0,
                     sword: 0,
                     sworddurability: 0,
@@ -217,6 +226,7 @@ module.exports = {
                     lasthourly: 0,
                     lastweekly: 0,
                     lastmonthly: 0,
+                    lastngocok: 0,
                     registered: true,
                     name: this.getName(m.sender),
                     email: '',
