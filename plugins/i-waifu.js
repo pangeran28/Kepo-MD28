@@ -4,12 +4,11 @@ let handler = async(m, { conn }) => {
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.url) throw 'Error!'
-  conn.sendFile(m.chat, json.url, wm, 'Istri kartun', m)
+  conn.sendFile(m.chat, json.url, wm, '_*Nih Waifu nya Sayang*_\n\n_*Follow IG OwnerKu Tante:*_\nhttps://instagram.com/kokopangeran_', m)
 }
 handler.help = ['waifu']
 handler.tags = ['internet']
 handler.command = /^(waifu)$/i
 handler.limit = true
-handler.premium = true
 //MADE IN ERPAN 1140 BERKOLABORASI DENGAN BTS
 module.exports = handler
