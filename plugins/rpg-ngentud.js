@@ -1,20 +1,19 @@
 let { MessageType } = require('@adiwajshing/baileys')
-let handler = async (m, { conn, usedPrefix, command }) => {
+let handler = async (m, { conn, command }) => {
     let __timers = (new Date - global.db.data.users[m.sender].lastngocok)
     let _timers = (500000 - __timers)
     let timers = clockString(_timers) 
     let order = global.db.data.users[m.sender].korbanngocok
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
-    let buttons = [
-{
+  } 
+let buttons = [
     if (new Date - global.db.data.users[m.sender].lastngocok > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
 let randomaku2 = `${Math.floor(Math.random() * 10)}`
 let randomaku4 = `${Math.floor(Math.random() * 5)}`
 let randomaku3 = `${Math.floor(Math.random() * 10)}`
 let randomaku5 = `${Math.floor(Math.random() * 10)}`
-
 .trim()
 
 let rbrb1 = (randomaku1 * 2)
