@@ -25,7 +25,7 @@ ${json.desc}`
     }
     }
     }
-  conn.sendBut(m.chat, anu, wm, 'Cerita Horror👻', '.ceritahoror', ftroli) 
+  conn.sendButton(m.chat, anu, wm, 'Cerita Horror👻', '.ceritahoror', ftroli) 
 }
 handler.help = ['ceritahorror', 'ceritahantu']
 handler.tags = ['internet', 'fun']
