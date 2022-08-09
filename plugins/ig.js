@@ -1,68 +1,55 @@
-/*const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
-const { igdl } = require('../lib/scrape')
-let handler = async (m, { conn, args, usedPrefix, command }) => {
- if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://www.instagram.com/p/CH1A1c9J5pY/?utm_medium=copy_link`
- if (args[0].startsWith('https://instagram.com/stories')) throw `sepertinya kamu menggunakan link story, untuk mendownload Instagram Story silahkan gunakan command di bawah\n\n*${usedPrefix}instagramstory <username>*`
- if (!args[0].match(/(https|http):\/\/www.instagram.com\/(p|reel|tv)/gi)) throw `url salah, perintah ini untuk mengunduh post/reel/tv`
-   await m.reply(wait)
-   await conn.reply(m.chat, 'Downloading media from Instagram', 0, {
-   contextInfo: { mentionedJid: [m.sender],
-    externalAdReply :{
-    mediaUrl: linkig,
-    mediaType: 2,
-    description: deslink, 
-    title: titlink,
-    body: wm, //`${fileSizeH}`,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: linkgc
-     }}
-   })
-   try {
-   var a = await instagramdl(args[0])
-   let urla = a[0].url
-   let urlshort = await(await axios.get(`https://tinyurl.com/api-create.php?url=${urla}`)).data
-   for(let { thumbnail, url } of a)
-   conn.sendMedia(m.chat, url, null, {mentions: [m.sender], jpegThumbnail: await(await fetch(thumbnail)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
-  } catch {
-   try {
-   var b = await instagramdlv2(args[0])
-   let urlb = b[0].url
-   let urlshort = await(await axios.get(`https://tinyurl.com/api-create.php?url=${urlb}`)).data
-   for(let { thumbnail, url } of b)
-   conn.sendMedia(m.chat, url, null, {mentions: [m.sender], jpegThumbnail: await(await fetch(thumbnail)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
-  } catch {
-   try {
-   var c = await instagramdlv3(args[0])
-   let urlc = c[0].url
-   let urlshort = await(await axios.get(`https://tinyurl.com/api-create.php?url=${urlc}`)).data
-   for(let { thumbnail, url } of c)
-   conn.sendMedia(m.chat, url, null, {mentions: [m.sender], jpegThumbnail: await(await fetch(thumbnail)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
-  } catch {
-   try {
-   var d = await instagramdlv4(args[0])
-   let urld = d[0].url
-   let urlshort = await(await axios.get(`https://tinyurl.com/api-create.php?url=${urld}`)).data
-   for(let { thumbnail, url } of d)
-   conn.sendMedia(m.chat, url, null, {mentions: [m.sender], jpegThumbnail: await(await fetch(thumbnail)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
-  } catch {
-   try {
-   var e = igdl(args[0])
-   let urle = e[0].url
-   let urlshort = await(await axios.get(`https://tinyurl.com/api-create.php?url=${urle}`)).data
-   for (let { type, fileType, url, downloadUrl, preview } of e) 
-   conn.sendMedia(m.chat, url, null, {mentions: [m.sender], jpegThumbnail: await(await fetch(preview)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
-  } catch {
-   throw eror 
-     }
-    }
-   }
+let handler = async (m, { usedPrefix, command, conn, args }) => {
+  if (!args[0]) throw `Use in format: ${usedPrefix}${command} https://www.instagram.com/xxx/xxxx/`
+  let res = await igdl(args[0])
+  if (!res.length) throw 'Not found!'
+  for (let ress of res) {
+    let caption = ` 
+  *Url:* ${args[0]}
+  *Link:* ${ress.result}
+  `.trim()
+    conn.sendFile(m.chat, ress.result, 'ig.mp4', caption, m)
   }
- }
 }
-handler.help = ['instagram'].map(v => v + ' <url>')
+handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(ig|instagram)(dl)?(downloa?d(er)?)?$/i
+handler.command = /^(ig(dl)?)$/i
 handler.premium = true
 handler.limit = true
 
-module.exports = handler*/
+module.exports = handler
+
+const fetch = require('node-fetch')
+const cheerio = require('cheerio')
+const FormData = require('form-data')
+async function igdl(url) {
+  if (!/^((https|http)?:\/\/(?:www\.)?instagram\.com\/(p|tv|reel|stories)\/([^/?#&]+)).*/i.test(url)) throw 'Url invalid'
+  let form = new FormData()
+  form.append('url', encodeURI(url))
+  form.append('action', 'post')
+  let res = await fetch('https://snapinsta.app/action.php', {
+    method: 'POST',
+    headers: {
+      'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary1kCNm4346FA9yvCN',
+      'cookie': 'PHPSESSID=6d7nupv45th6ln9ldhpu62pg8s; _ga=GA1.2.1450546575.1637033620; _gid=GA1.2.1378038975.1637033620; _gat=1; __gads=ID=68a947f8174e0410-22fc6960b3ce005e:T=1637033620:RT=1637033620:S=ALNI_MbXTvxtxuISyAFMevds6-00PecLlw; __atuvc=1%7C46; __atuvs=61932694ba428f79000; __atssc=google%3B1',
+      'origin': 'https://snapinsta.app',
+      'referer': 'https://snapinsta.app/id',
+      'sec-ch-ua': '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36',
+      ...form.getHeaders()
+    },
+    body: form
+  })
+  let html = await res.text()
+  const $ = cheerio.load(html)
+  let results = []
+  $('div.col-md-4').each(function () {
+    let thumbnail = $(this).find('div.download-items > div.download-items__thumb > img').attr('src')
+    let result = $(this).find('div.download-items > div.download-items__btn > a').attr('href')
+    if (!/https?:\/\//i.test(result)) result = 'https://snapinsta.app' + result
+    results.push({
+      thumbnail,
+      result
+    })
+  })
+  return results
+}
