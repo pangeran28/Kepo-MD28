@@ -40,7 +40,7 @@ dimas3 = `Ahhh, , > / / / <
 
 dimas5 = `Ahhhh,,  > / / / < 🥵💦`
 
-dimas4 = `✔️ Menerima gaji....
+dimas4 = `✔️ Udah Kentu Dapet Uang Lagi...
 `
 hsl = `*—[ Hasil Dari ${command} ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])} ]—*
 👤 *Pelanggan:* ${pickRandom(['Sagiri', 'Elaina', 'Kakaknya Kanna','loli', 'mba mba', 'kaka mu', 'adek mu', 'mama mu', 'tante tante', 'Anak SD', 'Kanna'])}
@@ -80,7 +80,7 @@ setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
  user.lastngocok = new Date * 1
- conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Inventory', m)  
+ conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
 }
 handler.help = ['ngewe', 'ngentod', 'ngocok']
 handler.tags = ['rpg']
