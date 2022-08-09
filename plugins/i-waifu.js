@@ -10,5 +10,6 @@ handler.help = ['waifu']
 handler.tags = ['internet']
 handler.command = /^(waifu)$/i
 handler.limit = true
+handler.premium = true
 //MADE IN ERPAN 1140 BERKOLABORASI DENGAN BTS
 module.exports = handler
