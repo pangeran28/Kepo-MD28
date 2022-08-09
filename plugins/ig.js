@@ -1,4 +1,4 @@
-const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
+/*const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
 const { igdl } = require('../lib/scrape')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
  if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://www.instagram.com/p/CH1A1c9J5pY/?utm_medium=copy_link`
@@ -65,4 +65,4 @@ handler.command = /^(ig|instagram)(dl)?(downloa?d(er)?)?$/i
 handler.premium = true
 handler.limit = true
 
-module.exports = handler
+module.exports = handler*/
