@@ -1,5 +1,5 @@
 let { MessageType } = require('@adiwajshing/baileys')
-let handler = async (m, { conn, command }) => {
+let handler = async (m, { conn, text, command }) => {
     let __timers = (new Date - global.db.data.users[m.sender].lastngocok)
     let _timers = (500000 - __timers)
     let timers = clockString(_timers) 
