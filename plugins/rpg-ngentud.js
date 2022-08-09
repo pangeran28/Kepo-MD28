@@ -55,7 +55,7 @@ global.db.data.users[m.sender].warn += 10
 global.db.data.users[m.sender].money += 100000
 global.db.data.users[m.sender].exp += rbrb5
 global.db.data.users[m.sender].ojekk += 1
-
+];
 setTimeout(() => {
                      m.reply(`${hsl}`)
                      }, 35000) 
