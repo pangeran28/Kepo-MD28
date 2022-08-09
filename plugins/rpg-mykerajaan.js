@@ -5,7 +5,7 @@ let fs = require('fs')
 
 let handler = async (m, { conn, text, usedPrefix }) => {
 
-let imgk = fs.readFileSync('./lib/kerajaan.jpg')
+let imgk = fs.readFileSync('../lib/kerajaan.jpg')
 
 let user = global.db.data.users[m.sender]
 
@@ -76,6 +76,6 @@ handler.tags = ['rpg']
 handler.command = /^(mykingdom|kerajaanku)/i
 
 handler.owner = false
-handler.register = true
+handler.register = false
 
 module.exports = handler
