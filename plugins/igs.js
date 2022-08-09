@@ -1,4 +1,4 @@
-const { igstory, igstory2 } = require('../lib/scrape')
+/*const { igstory, igstory2 } = require('../lib/scrape')
 const { instagramStory, instagramStoryv2 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) throw `uhm.. username nya mana?\n\ncontoh:\n\n${usedPrefix + command} rasel.ganz`
@@ -39,4 +39,4 @@ handler.command = /^((igs|instagrams)(tory)?(dl)?(downloa?d(er)?)?)$/i
 handler.premium = true
 handler.limit = true
 
-module.exports = handler
+module.exports = handler*/
