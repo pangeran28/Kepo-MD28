@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: true,
+        crop: false,
       })
     } else if (/image/.test(mime)) {
       let img = await q.download()
@@ -20,7 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       wsf = new WSF.Sticker(img, {
         pack: global.packname,
         author: global.author,
-        crop: true,
+        crop: false,
       })
     } else if (/video/.test(mime)) {
       if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
@@ -40,6 +40,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
   finally {
     if (wsf) {
+      m.reply(stiker_wait)
       await wsf.build()
       const sticBuffer = await wsf.get()
       if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
