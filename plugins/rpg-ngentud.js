@@ -6,7 +6,6 @@ let handler = async (m, { conn, command }) => {
     let order = global.db.data.users[m.sender].korbanngocok
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
-  } 
 let buttons = [
     if (new Date - global.db.data.users[m.sender].lastngocok > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
@@ -82,7 +81,8 @@ setTimeout(() => {
                      }, 0) 
  user.lastngocok = new Date * 1
  conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Inventory', m)  
-};
+}
+}
 handler.help = ['ngewe', 'ngentod', 'ngocok']
 handler.tags = ['rpg']
 handler.command = /^(ngewe|ngentod|ngocok)$/i
