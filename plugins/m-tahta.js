@@ -1,4 +1,4 @@
-let fs = require('fs')
+/*let fs = require('fs')
 let handler = async (m, { conn, text }) => {
   conn.hartatahta = conn.hartatahta ? conn.hartatahta : {}
   if (m.chat in conn.hartatahta) throw 'Masih ada yang sedang membuat\nTeks Harta Tahta\ndi chat ini... tunggu sampai selesai'
@@ -105,4 +105,4 @@ function pickRandom(list) {
 
 function rand(min, max, q = 0.001) {
   return Math.floor((Math.random() * (max - min)) / q) * q
-}
+}*/
