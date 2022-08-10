@@ -299,6 +299,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `👤Koko`, `${_p}owner`, `⭐Donasi⭐`, `${_p}donasi`, `🎗  ThanksTo  🎗`, `${_p}tqto`)
     await conn.sendFile(m.chat, bzz, 'audio.opus', null, m, true, { duration: 999999999 })
   } catch (e) {
+    m.reply2('Wait Sayang...')
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
