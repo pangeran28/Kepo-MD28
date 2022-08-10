@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './src/src_sound.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'maker', 'jadibot', 'info', 'tqto', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'maker', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': '👤UTAMA👤',
@@ -228,7 +228,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '📝Logo📝', rowId: `${_p}? maker` },
           { title: '🎭Jadi Bot🎭', rowId: `${_p}? jadibot` },
           { title: '👾Info👾', rowId: `${_p}? info` },
-          { title: '🌟Thanks To🌟', rowId: `${_p}? tqto` },
+          { title: '🌟Thanks To🌟', rowId: `${_p}tqto` },
           { title: '👤Owner👤', rowId: `${_p}? owner` },
         ]
       }
