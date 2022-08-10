@@ -197,7 +197,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         enabled: !plugin.disabled,
       }
     })
-    m.reply('```Wait Sayang. . .```')
     if (teks == '404') {
       let judul = `${global.ucapan}, ${name}`.trim()
       const sections = [
@@ -241,6 +240,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       buttonText: "Klik Sayang",
       sections
     }
+    m.reply('```Wait Sayang. . .```')
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
