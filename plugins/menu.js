@@ -202,7 +202,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      m.reply('Wait Sayang...')
+      m.fakeReply('```Wait Sayang. . .```')
       let judul = `${global.ucapan}, ${name}`.trim()
       const sections = [
       {
