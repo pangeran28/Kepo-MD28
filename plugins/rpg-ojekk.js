@@ -106,7 +106,7 @@ setTimeout(() => {
 handler.help = ['ojek']
 handler.tags = ['rpg']
 handler.command = /^(ojek|ngojek|gojek|jadiojek)$/i
-handler.register = false
+handler.register = true
 
 module.exports = handler
 
