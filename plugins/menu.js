@@ -240,7 +240,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       buttonText: "Klik Sayang",
       sections
     }
-    m.reply('```Wait Sayang. . .```')
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
@@ -292,6 +291,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
+    m.reply('```Wait SayangKu. . .```')
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `👤Koko`, `${_p}owner`, `⭐Donasi⭐`, `${_p}donasi`, `🎗  ThanksTo  🎗`, `${_p}tqto`)
     await conn.sendFile(m.chat, bzz, 'audio.opus', null, m, true, { duration: 999999999 })
