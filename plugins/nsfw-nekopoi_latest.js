@@ -8,7 +8,7 @@ let handler = async (m, { text }) => {
  conn.sendFile(m.chat, latest.image, 'nekopoi.jpeg', teksnya.trim(), m)
 }
 handler.help = ['nekolatest', 'nekopoilatest']
-handler.tags = ['sange']
+handler.tags = ['nsfw']
 handler.command = /^nekolatest|nekopoilatest$/i
 handler.owner = false
 handler.mods = false
