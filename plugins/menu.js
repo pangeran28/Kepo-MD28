@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './src/src_sound.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'maker', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'bokep', 'downloader', 'tools', 'nsfw', 'fun', 'database', 'asupan', 'quran', 'audio', 'stalk', 'maker', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': '👤UTAMA👤',
@@ -65,7 +65,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'maker': '📝Logo📝',
     'jadibot': '🎭Jadi Bot🎭',
     'info': '👾Info👾',
-    '': 'Tanpa Kategori',
   }
   if (teks == 'game') tags = {
     'game': '🎮GAME🎮',
@@ -136,9 +135,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'info') tags = {
     'info': '👾Info👾'
-  }
-  if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
   }
   if (teks == 'owner') tags = {
     'owner': '👤Owner👤',
@@ -232,7 +228,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '📝Logo📝', rowId: `${_p}? maker` },
           { title: '🎭Jadi Bot🎭', rowId: `${_p}? jadibot` },
           { title: '👾Info👾', rowId: `${_p}? info` },
-          { title: '🚫Tanpa Kategori🚫', rowId: `${_p}? tanpakategori` },
+          { title: '🌟Thanks To🌟', rowId: `${_p}? tqto` },
           { title: '👤Owner👤', rowId: `${_p}? owner` },
         ]
       }
