@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 let handler = async(m, { conn, text }) => {
     let res = await fetch(global.API('lolhum', '/api/nhentaisearch', { query: text }, 'apikey'))
     if (!res.ok) throw await res.text()
@@ -12,4 +12,4 @@ handler.tags = ['nsfw']
 handler.nsfw = true
 handler.command = /^(nhs|nhsearch)$/i
 handler.premium = true
-module.exports = handler
+module.exports = handler*/
