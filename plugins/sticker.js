@@ -16,27 +16,29 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         if (/webp/g.test(mime)) out = await webp2png(img)
         else if (/image/g.test(mime)) out = await uploadImage(img)
         else if (/video/g.test(mime)) out = await uploadFile(img)
-        if (typeof out !== 'string') out = await uploadImage(img)
+        if (!isUrl(out)) out = await uploadImage(img)
         stiker = await sticker(false, out, global.packname, global.author)
       } catch (e) {
         console.error(e)
-      } finally {
         if (!stiker) stiker = await sticker(img, false, global.packname, global.author)
       }
     } else if (args[0]) {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
       else return m.reply('URL tidak valid!')
     }
-  } catch (e) {
+  } 
+   catch (e) {
     console.error(e)
     if (!stiker) stiker = e
-  } finally {
-    m.reply(stiker_wait)
+  } 
+   finally {
+    m.reply(sticker_wait)
     if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
     else throw 'Conversion failed'
   }
 }
-handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'stikergif (caption|reply media)', 'stikergif <url>']
+
+handler.help = ['stiker', 'stiker <url>']
 handler.tags = ['sticker']
 handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
 
