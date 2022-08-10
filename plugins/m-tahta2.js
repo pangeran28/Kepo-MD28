@@ -13,21 +13,21 @@ let handler = async (m, { text, usedPrefix, command }) => {
         '1280x1280',
         'xc:black',
         '-font',
-        './src/font/hartatahta.ttf',
+        './src/font/angelina.ttf',
         '-pointsize',
         '200',
         '-tile',
-        './src/Aesthetic/harta.jpg',
+        './src/Aesthetic/Aesthetic_002.jpg',
         '-annotate',
         '+20+80',
         fixHeight,
         '-wave',
         '10x175',
-        './src/Aesthetic/tahta.jpg'
+        './src/Aesthetic/Aesthetic_002.jpg'
       ])
         .on('error', () => m.reply(`_*Error!*_`))
         .on('exit', () => {
-          conn.sendFile(m.chat, './src/Aesthetic/tahta.jpg', 'harta5.jpg', 'Pangeran-BOT', m)
+          conn.sendFile(m.chat, './src/Aesthetic/Aesthetic_002.jpg', 'harta5.jpg', 'Pangeran-BOT', m)
           fs.unlinkSync('./src/Aesthetic/tahta.jpg')
         })
     } catch (e) {
