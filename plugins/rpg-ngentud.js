@@ -4,7 +4,7 @@ let handler = async (m, { conn, command }) => {
     let _timers = (500000 - __timers)
     let timers = clockString(_timers) 
     let order = global.db.data.users[m.sender].korbanngocok
-let name = m.fromMe ? conn.user : conn.contacts[m.sender]
+    let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
 
     if (new Date - global.db.data.users[m.sender].lastngocok > 500000) {
@@ -80,6 +80,7 @@ setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
  user.lastngocok = new Date * 1
+  } else
  conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
 }
 handler.help = ['ngewe', 'ngentod', 'ngocok']
