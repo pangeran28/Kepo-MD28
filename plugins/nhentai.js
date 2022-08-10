@@ -1,47 +1,15 @@
-let nanaAPI = require('nana-api')
-let nana = new nanaAPI()
-let handler = async (m, { usedPrefix, conn, args, text}) => {
-  conn.nhentai = conn.nhentai ? conn.nhentai : {}
- if (!DATABASE.data.chats[m.chat].nsfw && m.isGroup) throw 'Feature Nsfw Disable\nType *!enable* *nsfw* to activate this feature'
- if (!text) throw 'Cari apa?'
- m.reply('Mohon tunggu sebentar~')
-  let g = await nana.search(text)
-  index = 0
-  conn.nhentai[m.sender] = []
- let txt = `*── 「 NHENTAI 」 ──*\n\n➸ *Result for*: ${text}`
-  for (let i = 0; i < g.results.length; i++) {
-  index += 1
-  let { id, title, language } = g.results[i]
-  txt += `\n\n➸ *Title*: ${title}\n➸ *Index* : ${index}\n➸ *Language*: ${language ? language.charAt(0).toUpperCase() + language.slice(1) : ''}\n➸ *Link*: https://nhentai.net/g/${id}\n\n=_=_=_=_=_=_=_=_=_=_=_=_=`
-  conn.nhentai[m.sender].push(id)
-    }
-  conn.sendMessage(m.chat, { url: g.results[0].thumbnail.s }, `imageMessage`, { quoted: m, caption: txt })
-   m.reply(`ketik *${usedPrefix + 'getdoujin'}* angka_index
-  contoh :
-  ${usedPrefix}getdoujin 1
-  `.trim())                      
-                   
+let fetch = require('node-fetch')
+let handler = async(m, { conn, text }) => {
+    let res = await fetch(global.API('lolhum', '/api/nhentaisearch', { query: text }, 'apikey'))
+    if (!res.ok) throw await res.text()
+    let json = await res.json()
+    let keqing = json.result.map((v, i) => `#${i + 1}. \n*Kode:* ${v.id}\n*Title english:* ${v.title_english}\n*Title Japanese:* ${v.title_japanese}\n*Title:* ${v.title_native}\n*Date:* ${v.date_upload}\n*Page:* ${v.page}\n*Favourite:* ${v.favourite}\n==============\n`).join('\n') 
+    if (json.status) m.reply(keqing)
+    else throw json
 }
-handler.help = ['nhsearch', 'nhentaisearch'].map(v => v + ' <query>')
-handler.tags = ['nsfw', 'internet']
-handler.command = /^(nh|nhentai)(search)$/i
-handler.limit = true
-handler.owner = false
-handler.mods = false
-handler.premium = true
-handler.group = false
-handler.private = false
+handler.help = ['nhsearch <query>']
+handler.tags = ['nsfw']
 handler.nsfw = true
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
+handler.command = /^(nhs|nhsearch)$/i
+handler.premium = true
 module.exports = handler
-
-async function getBuffer(url) {
-k = await require('node-fetch')(url)
-a = await k.buffer()
-return a 
-}
