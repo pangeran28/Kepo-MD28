@@ -192,7 +192,7 @@ module.exports = {
                     usebot: 0,
                     lastclaim: 0,
                     lastclaim2: 0,
-                    lastdaang: 0,
+                    lastdagang: 0,
                     lastngojek: 0,
                     lastgrab: 0,
                     trofi: 0,
