@@ -9,10 +9,10 @@ let handler = async (m, { conn, text }) => {
     res = await url.json()
     stick = res.image
     let stiker = await sticker(null, stick, global.packname, global.author)
-    m.reply('```Lain Kali Buat Sendiri. . .```')
     conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
+    m.reply('```Lain Kali Buat Sendiri. . .```')
   } catch (e) {
     m.reply('Conversion Failed')
     throw false
