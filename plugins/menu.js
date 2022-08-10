@@ -197,8 +197,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         enabled: !plugin.disabled,
       }
     })
+    m.reply('```Wait Sayang. . .```')
     if (teks == '404') {
-      m.reply('```Wait Sayang. . .```')
       let judul = `${global.ucapan}, ${name}`.trim()
       const sections = [
       {
