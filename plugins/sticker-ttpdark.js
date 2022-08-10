@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
     conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    m.reply('```Lain Kali Buat Sendiri. . .```')
+    m.reply(stiker_wait)
   } catch (e) {
     m.reply('Conversion Failed')
     throw false
