@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   if (!res.ok) throw m.reply(eror)
   let json = await res.json()
   //if (!json.url) throw m.reply(eror)
-  conn.sendButton(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, [[`Next`, `${usedPrefix + command}`]], m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
+  conn.sendButtonImg(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, [[`Next`, `${usedPrefix + command}`]], m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
   } catch {
     //m.reply(eror)
   }
@@ -15,7 +15,7 @@ handler.help = ['nsfwneko']
 handler.tags = ['nsfw']
 handler.command = /^(nsfwneko|nekonsfw)$/i
 handler.premium = true
-handler.private = true
+handler.private = false
 handler.limit = true
 handler.register = true
 
