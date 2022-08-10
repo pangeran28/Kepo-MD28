@@ -15,7 +15,7 @@ let handler = async (m, { usedPrefix, conn, args, text}) => {
   txt += `\n\n➸ *Title*: ${title}\n➸ *Index* : ${index}\n➸ *Language*: ${language ? language.charAt(0).toUpperCase() + language.slice(1) : ''}\n➸ *Link*: https://nhentai.net/g/${id}\n\n=_=_=_=_=_=_=_=_=_=_=_=_=`
   conn.nhentai[m.sender].push(id)
     }
-  await conn.sendMessage(m.chat, { url: g.results[0].thumbnail.s }, `imageMessage`, { quoted: m, caption: txt })
+  conn.sendMessage(m.chat, { url: g.results[0].thumbnail.s }, `imageMessage`, { quoted: m, caption: txt })
    m.reply(`ketik *${usedPrefix + 'getdoujin'}* angka_index
   contoh :
   ${usedPrefix}getdoujin 1
@@ -23,7 +23,7 @@ let handler = async (m, { usedPrefix, conn, args, text}) => {
                    
 }
 handler.help = ['nhsearch', 'nhentaisearch'].map(v => v + ' <query>')
-handler.tags = ['nsfw']
+handler.tags = ['nsfw', 'internet']
 handler.command = /^(nh|nhentai)(search)$/i
 handler.limit = 1
 handler.owner = false
