@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
     let _timers = (300000 - __timers)
     let order = global.db.data.users[m.sender].ojekk
     let timers = clockString(_timers) 
-let name = m.fromMe ? conn.user : conn.contacts[m.sender]
+    let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
     
      if (new Date - global.db.data.users[m.sender].lastngojek > 300000) {
@@ -97,11 +97,12 @@ setTimeout(() => {
                      }, 10000) 
                      
                      setTimeout(() => {
-                     m.reply('🔍Mencari pelanggan.....')
+                     m.reply('🔍Mencari pelanggan...')
                      }, 0) 
   user.lastngojek = new Date * 1
-    } else conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n🕔 *${timers}*`, wm, 'Profile', '.profile', m )
-}
+  conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n🕔 *${timers}*`, wm, 'Profile', '.profile', m)
+      }
+   }
 handler.help = ['ojek']
 handler.tags = ['rpg']
 handler.command = /^(ojek|ngojek|gojek|jadiojek)$/i
