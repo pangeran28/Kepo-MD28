@@ -80,8 +80,7 @@ setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
  user.lastngocok = new Date * 1
-  } else
- conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
+  } else conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
 }
 handler.help = ['ngewe', 'ngentod', 'ngocok']
 handler.tags = ['rpg']
