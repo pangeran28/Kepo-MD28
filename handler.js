@@ -52,8 +52,21 @@ module.exports = {
                     if (!user.rtrofi) user.rtrofi = 'Perunggu'
                     if (!isNumber(user.troopcamp)) user.troopcamp = 0
                     if (!isNumber(user.coin)) user.coin = 0
+                    if (!isNumber(user.atm)) user.atm = 0
+                    if (!isNumber(user.limit)) user.limit = 0
+                    if (!isNumber(user.glimit)) user.glimit = 0
+                    if (!isNumber(user.tprem)) user.tprem = 0
+                    if (!isNumber(user.tigame)) user.tigame = 0
+                    if (!isNumber(user.lastclaim)) user.lastclaim = 0
+                    if (!isNumber(user.money)) user.money = 0
+                    if (!isNumber(user.rumahsakit)) user.rumahsakit= 0
+                    if (!isNumber(user.fortress)) user.fortress = 0
+                    if (!isNumber(user.shield)) user.shield = false
+                    if (!isNumber(user.pertanian)) user.pertanian = 0
+                    if (!isNumber(user.lastdagang)) user.lastdagang = 0
                     if (!isNumber(user.ojekk)) user.ojekk = 0
                     if (!isNumber(user.lastngojek)) user.lastngojek = 0
+                    if (!isNumber(user.lastgrab)) user.lastgrab = 0
                     if (!isNumber(user.lastnebang)) user.lastnebang = 0
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
                     if (!isNumber(user.lastowner)) user.lastowner = 0
@@ -170,14 +183,25 @@ module.exports = {
                     stamina : 100,
                     level: 0,
                     exp: 0,
-                    limit: 10,
+                    coin: 0,
+                    atm: 0,
+                    limit: 0,
+                    tigame: 0,
+                    limit: 0,
                     lastseen: 0,
                     usebot: 0,
                     lastclaim: 0,
                     lastclaim2: 0,
+                    lastdaang: 0,
                     lastngojek: 0,
+                    lastgrab: 0,
                     trofi: 0,
                     rtrofi: 'perunggu',
+                    rumahsakit: 0,
+                    fortress: 0,
+                    makanan: 0,
+                    troopcamp: 0,
+                    shield: 0,
                     lastnebang: 0,
                     lastnyampah: 0,
                     ojekk: 0,
@@ -220,7 +244,7 @@ module.exports = {
                     antispamlastclaim: 0,
                     kayu: 0,
                     batu: 0,
-                    kingdom: true,
+                    kingdom: false,
                     string: 0,
                     sword: 0,
                     sworddurability: 0,
@@ -238,7 +262,7 @@ module.exports = {
                     lastweekly: 0,
                     lastmonthly: 0,
                     lastngocok: 0,
-                    registered: true,
+                    registered: false,
                     name: this.getName(m.sender),
                     email: '',
                     label: '',
