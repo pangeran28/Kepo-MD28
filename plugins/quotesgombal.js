@@ -9,6 +9,7 @@ conn.reply(m.chat, anu, m)
 handler.help = ['gombal']
 handler.tags = ['quotes']
 handler.command = /^(gombal)$/i
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {
