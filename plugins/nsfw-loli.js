@@ -5,8 +5,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let res = await fetch('https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=eafcf901640d1c599ae71519')
   if (!res.ok) throw m.reply(eror)
   let json = await res.json()
-  //if (!json.url) throw m.reply(eror)
-  await conn.sendButtonImg(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, `Next`, `${usedPrefix + command}`, m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
+  // (!json.url) throw m.reply(eror)
+  conn.sendButtonImg(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, `Next`, `${usedPrefix + command}`, m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
   } catch {
     //m.reply(eror)
   }
