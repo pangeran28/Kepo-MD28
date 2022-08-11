@@ -36,5 +36,5 @@ Opsi Tersedia:
 handler.help = ['katabijak'].map(v => v + ' <opsi>')
 handler.tags = ['internet']
 handler.command = /^(katabijak|jagokata)$/i
-
+handler.limit = true
 module.exports = handler
