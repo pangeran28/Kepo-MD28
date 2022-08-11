@@ -1,5 +1,6 @@
 let handler  = async (m, { conn, usedPrefix, command }) => {
    let kepo = ` ─────〔 *SAD GIRL* 〕─────
+
 ${pickRandom(global.sadgirl)}
 `
 conn.sendButton(m.chat, kepo, wm, `Sad Girl`, `${usedPrefix + command}`, m)
