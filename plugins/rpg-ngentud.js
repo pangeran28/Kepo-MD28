@@ -7,7 +7,7 @@ let handler = async (m, { conn, command }) => {
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
     let buttons = []
-{
+
     if (new Date - global.db.data.users[m.sender].lastngocok > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
 let randomaku2 = `${Math.floor(Math.random() * 10)}`
@@ -82,7 +82,7 @@ setTimeout(() => {
                      }, 10000) 
                      
                      setTimeout(() => {
-                     m.reply('🔎 mencari pelanggan')
+                     m.reply('🔎 sedang mencari lonthe')
                      }, 0) 
   user.lastngocok = new Date * 1
     } else conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)
