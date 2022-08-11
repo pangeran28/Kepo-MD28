@@ -1,4 +1,4 @@
-let handler = async (m, { conn }) => {
+/*let handler = async (m, { conn }) => {
   if (new Date - global.db.data.users[m.sender].lastnguli > 86400000) {
     global.db.data.users[m.sender].limit += 10
     m.reply('_Selamat kamu mendapatkan +10 limit_')
@@ -20,4 +20,4 @@ handler.botAdmin = false
 handler.fail = null
 handler.limit = 0
 
-module.exports = handler
+module.exports = handler*/
