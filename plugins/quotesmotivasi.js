@@ -1,14 +1,15 @@
 let fs = require('fs')
-let handler = async (m, { conn }) => {
-let anu =` ─────〔 *MOTIVASI* 〕─────
+let handler  = async (m, { conn, usedPrefix, command }) => {
+   let anu = ` ───〔 *MOTIVASI* 〕───
 
 ${pickRandom(global.motivasi)}
 `
-conn.reply(m.chat, anu, m) 
+conn.sendButton(m.chat, anu, wm, `Motivasi`, `${usedPrefix + command}`, m)
 }
 handler.help = ['motivasi']
 handler.tags = ['quotes']
 handler.command = /^(motivasi)$/i
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {
