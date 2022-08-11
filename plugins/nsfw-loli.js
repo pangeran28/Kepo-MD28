@@ -6,7 +6,7 @@ let handler = async (m, { conn, command }) => {
   if (!res.ok) throw m.reply(eror)
   let json = await res.json()
   // (!json.url) throw m.reply(eror)
-  conn.sendButtonImg(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, `Next`, `${command}`, m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
+  conn.sendButtonImg(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, `Next`, `.${command}`, m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
   } catch {
     //m.reply(eror)
   }
