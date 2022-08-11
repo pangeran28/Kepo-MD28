@@ -1,5 +1,6 @@
 let handler  = async (m, { conn, usedPrefix, command }) => {
    let anu = ` ─────〔 *BUCIN* 〕─────
+
 ${pickRandom(global.bucin)}
 `
 conn.sendButton(m.chat, anu, wm, `Bucin`, `${usedPrefix + command}`, m)
@@ -7,6 +8,7 @@ conn.sendButton(m.chat, anu, wm, `Bucin`, `${usedPrefix + command}`, m)
 handler.help = ['bucin']
 handler.tags = ['quotes']
 handler.command = /^(bucin)$/i
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {
