@@ -293,7 +293,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     }
     m.reply('```Wait SayangKu. . .```')
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `👤Koko`, `${_p}owner`, `⭐Donasi⭐`, `${_p}donasi`, `🎗  ThanksTo  🎗`, `${_p}tqto`)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `👤Koko`, `${_p}owner`, `⭐Donasi⭐`, `${_p}donasi`, `🎗 Rules Bot 🎗`, `${_p}rules`)
     await conn.sendFile(m.chat, bzz, 'audio.opus', null, m, true, { duration: 999999999 })
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
