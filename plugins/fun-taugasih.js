@@ -1,5 +1,5 @@
 let handler  = async (m, { conn, usedPrefix, command }) => {
-   let anu = ` ──〔 *TAU KAH KAMU* 〕──
+   let anu = ` ──〔 *TAHU GA SIH* 〕──
 
 ${pickRandom(global.taugasih)}
 `
