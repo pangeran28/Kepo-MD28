@@ -8,6 +8,7 @@ conn.sendButton(m.chat, anu, wm, `Galau`, `${usedPrefix + command}`, m)
 handler.help = ['galau']
 handler.tags = ['quotes']
 handler.command = /^(galau)$/i
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {
