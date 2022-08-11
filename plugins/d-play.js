@@ -1,24 +1,84 @@
-let axios = require('axios')
-const fetch = require('node-fetch')
-let limit = 10
-const { servers, yta } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
+const { servers, yta, ytv } = require('../lib/y2mate')
+let fs = require('fs')
+let yts = require('yt-search')
+let fetch = require('node-fetch')
+let handler = async (m, { conn, command, text, usedPrefix }) => {
+  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
   let chat = global.db.data.chats[m.chat]
-  let server = (args[1] || servers[0]).toLowerCase()
-  let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize 
-  if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
-┏┉━━━━━━━━━━━❏
-┆ *YOUTUBE MP3*
-├┈┈┈┈┈┈┈┈┈┈┈
-┆• *Judul:* ${title}
-│• *Type:* MP3
-┆• *📥 Ukuran File:* ${filesizeF}
-└❏
-`.trim(), m, null, {
-  asDocument: chat.useDocument
-})
+  let results = await yts(text)
+  let vid = results.all.find(video => video.seconds < 3600)
+  if (!vid) throw 'Konten Tidak ditemukan'
+  let isVideo = /2$/.test(command)
+  let yt = false
+  let yt2 = false
+  let usedServer = servers[0]
+  for (let i in servers) {
+    let server = servers[i]
+    try {
+      yt = await yta(vid.url, server)
+      yt2 = await ytv(vid.url, server)
+      usedServer = server
+      break
+    } catch (e) {
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+    }
+  }
+  if (yt === false) throw 'semua server gagal'
+  if (yt2 === false) throw 'semua server gagal'
+  let { dl_link, thumb, title, filesize, filesizeF } = yt
+let anu =  `
+*Judul:* ${title}
+*Ukuran File Audio:* ${filesizeF}
+*Ukuran File Video:* ${yt2.filesizeF}
+*Server y2mate:* ${usedServer}
+*Link Sumber:* 
+${vid.url}
+`
+     let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(thumb)).buffer()}, { upload: conn.waUploadToServer }) 
+      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+      templateMessage: {
+          hydratedTemplate: {
+            imageMessage: message.imageMessage, 
+            hydratedContentText: anu,
+            hydratedFooterText: wm, 
+            hydratedButtons: [{
+             urlButton: {
+               displayText: 'Join Here',
+               url: gc
+             }
+
+           },
+               {
+             quickReplyButton: {
+               displayText: 'Video 360p',
+               id: `.ytmp4 ${vid.url}`,
+             }
+
+            },
+               {
+             quickReplyButton: {
+               displayText: 'Upload File',
+               id: `.upload`,
+             }
+
+            },
+               {
+             quickReplyButton: {
+               displayText: 'Audio',
+               id: `.ytmp3 ${vid.url}`,
+             }
+
+           }]
+         }
+       }
+     }), { userJid: m.sender, quoted: m });
+    //conn.reply(m.chat, text.trim(), m)
+    return await conn.relayMessage(
+         m.chat,
+         template.message,
+         { messageId: template.key.id }
+     )
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
