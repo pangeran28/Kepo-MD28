@@ -30,19 +30,21 @@ zero3 = `${rbrb3}`
 zero4 = `${rbrb4}`
 zero5 = `${rbrb5}`
 
-dimas = `✔️ Mendapatkan pelanggan....
+dimas = `✔️ Mendapatkan lonthe....
 `
 
-dimas2 = `Mulai mengngocok...
+dimas2 = `Mulai mengngewe...
 `
 
 dimas3 = `Ahhh, , > / / / <
-*Crott.. *crott.. 💦🥵
+*Crott.. crott.. di dalem syg💦🥵*
 `
 
-dimas5 = `Ahhhh,,  > / / / < 🥵💦`
+dimas5 = `Ahhhh,,  > / / / < 🥵💦
+*Lemes bestie..💦🥵*
+`
 
-dimas4 = `✔️ Menerima gaji....
+dimas4 = `✔️ Menerima Uang Dari Tante...
 `
 hsl = `*—[ Hasil Dari ${command} ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])} ]—*
 
@@ -50,9 +52,7 @@ hsl = `*—[ Hasil Dari ${command} ${name.vnmae || name.notify || name.name || (
  ➕ 💹 *Uang:* 100000
  ➕ ✨ *Exp:* ${zero5}
  ➕ 🔥 *Dosa:* 10
-
-➕  📥 *Pelanggan sebelumnya:*  ${order}
-
+ ➕ 📥 *Pelanggan sebelumnya:*  ${order}
 ${wm}
 `
 
@@ -85,7 +85,7 @@ setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
   user.lastngocok = new Date * 1
-    } else conn.sendBut(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Inventory', m)
+    } else conn.sendBut(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)
 }
 handler.help = ['ngewe', 'ngentod', 'ngocok']
 handler.tags = ['rpg']
@@ -94,7 +94,7 @@ handler.register = true
 handler.premium = true
 
 module.exports = handler
-let wm = global.botwm
+let wm = global.wm
 
 function pickRandom(list) {
    return list[Math.floor(Math.random() * list.length)]
