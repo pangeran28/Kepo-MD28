@@ -1,14 +1,14 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, command }) => {
-    let __timers = (new Date - global.db.data.users[m.sender].lastngocok)
+    let __timers = (new Date - global.db.data.users[m.sender].lastngobel)
     let _timers = (500000 - __timers)
     let timers = clockString(_timers) 
-    let order = global.db.data.users[m.sender].korbanngocok
+    let order = global.db.data.users[m.sender].korbanngobel
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
     let buttons = []
 
-    if (new Date - global.db.data.users[m.sender].lastngocok > 500000) {
+    if (new Date - global.db.data.users[m.sender].lastngobel > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
 let randomaku2 = `${Math.floor(Math.random() * 10)}`
 let randomaku4 = `${Math.floor(Math.random() * 5)}`
@@ -48,11 +48,11 @@ dimas4 = `✔️ Menerima Uang Dari Tante...
 `
 hsl = `*—[ Hasil Dari ${command} ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])} ]—*
 
-👤 *Pelanggan:* ${pickRandom(['Sagiri', 'Elaina', 'Kakaknya Kanna','loli', 'mba mba', 'kaka mu', 'adek mu', 'mama mu', 'tante tante', 'Anak SD', 'Kanna'])}
- ➕ 💹 *Uang:* 100000
- ➕ ✨ *Exp:* ${zero5}
- ➕ 🔥 *Dosa:* 10
- ➕ 📥 *Pelanggan sebelumnya:*  ${order}
+👤 *Pelanggan:* ${pickRandom(['Sagiri', 'Elaina', 'Kakaknya Kanna','loli', 'mba mba', 'kaka mu', 'adek mu', 'mama mu', 'tante tante', 'Anak SD', 'Kanna', 'Anak SMP', 'Anak SMA', 'Istri Tetangga'])}
+➕ 💹 *Uang:* 100000
+➕ ✨ *Exp:* ${zero5}
+➕ 🔥 *Dosa:* 10
+➕ 📥 *Pelanggan sebelumnya:*  ${order}
 ${wm}
 `
 
