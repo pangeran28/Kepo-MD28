@@ -48,6 +48,8 @@ module.exports = {
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!isNumber(user.lastclaim2)) user.lastclaim2 = 0 
                     if (!isNumber(user.korbanngocok)) user.korbanngocok = 0
+                    if (!isNumber(user.korbanngobel)) user.korbanngobel = 0
+                    if (!isNumber(user.lastngobel)) user.lastngobel = 0
                     if (!isNumber(user.trofi)) user.trofi= 0
                     if (!user.rtrofi) user.rtrofi = 'Perunggu'
                     if (!isNumber(user.troopcamp)) user.troopcamp = 0
@@ -181,6 +183,8 @@ module.exports = {
                     lastnyampah: 0,
                     ojekk: 0,
                     korbanngocok: 0,
+                    korbanngobel: 0,
+                    lastngobel: 0,
                     lastowner: 0,
                     money: 0,
                     diamond: 0,
