@@ -1,38 +1,15 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
-let fetch = require('node-fetch')
-   let handler  = async (m, { conn, usedPrefix, command }) => {
-   var {age} = db.data.users[m.sender]
-   if (age <17) throw conn.reply(m.chat, 'Lu masih di bawah umur jangan dulu deh', m)
-   let lolinya = `https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=eafcf901640d1c599ae71519` 
-   //conn.sendButtonImg(m.chat, json, 'Jangan coli ya', wm, '➡️ NEXT', `${usedPrefix + command}`, m, false)
-   let message = await prepareWAMessageMedia({ image: await(await fetch(lolinya)).buffer()}, { upload: conn.waUploadToServer })
-     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-      templateMessage: {
-            hydratedTemplate: {
-                imageMessage: message.imageMessage,
-                hydratedContentText: `Jangan sagne banh!`,
-                hydratedFooterText: wm,
-                hydratedButtons: [{
-                  index: 0,
-                   urlButton: {
-                        displayText: `🖼 Url Image`,
-                        url: `https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=eafcf901640d1c599ae71519`
-                    }
-                }, {
-                   quickReplyButton: {
-                        displayText: `🔞 Get Again`,
-                        id: `${usedPrefix}${command}`
-                    },
-                    selectedIndex: 1
-                }]
-            }
-        }
-    }), { userJid: m.participant || m.key.remoteJid, quoted: m });
-    return await conn.relayMessage(
-        m.key.remoteJid,
-        template.message,
-        { messageId: template.key.id }
-    )
+let handler = async (m, { conn, usedPrefix, command }) => {
+  try {
+  var {age} = db.data.users[m.sender]
+  if (age <17) throw conn.reply(m.chat, 'Lu masih di bawah umur jangan dulu deh', m) 
+  let res = await fetch('https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=eafcf901640d1c599ae71519')
+  if (!res.ok) throw m.reply(eror)
+  let json = await res.json()
+  //if (!json.url) throw m.reply(eror)
+  await conn.sendButtonImg(m.chat, `Nihh @${m.sender.split('@')[0]} jangan sagne ya!`, wm, json.url, [[`Next`, `${usedPrefix + command}`]], m, {mentions: [m.sender], jpegThumbnail: await(await fetch(json.url)).buffer() })
+  } catch {
+    //m.reply(eror)
+  }
 }
 handler.help = ['nsfwloli']
 handler.tags = ['nsfw']
