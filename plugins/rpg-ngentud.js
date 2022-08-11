@@ -6,14 +6,15 @@ let handler = async (m, { conn, command }) => {
     let order = global.db.data.users[m.sender].korbanngocok
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     let user = global.db.data.users[m.sender]
-let buttons = []
-
+    let buttons = []
+{
     if (new Date - global.db.data.users[m.sender].lastngocok > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
 let randomaku2 = `${Math.floor(Math.random() * 10)}`
 let randomaku4 = `${Math.floor(Math.random() * 5)}`
 let randomaku3 = `${Math.floor(Math.random() * 10)}`
 let randomaku5 = `${Math.floor(Math.random() * 10)}`
+
 .trim()
 
 let rbrb1 = (randomaku1 * 2)
@@ -41,14 +42,17 @@ dimas3 = `Ahhh, , > / / / <
 
 dimas5 = `Ahhhh,,  > / / / < 🥵💦`
 
-dimas4 = `✔️ Udah Kentu Dapet Uang Lagi...
+dimas4 = `✔️ Menerima gaji....
 `
 hsl = `*—[ Hasil Dari ${command} ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])} ]—*
+
 👤 *Pelanggan:* ${pickRandom(['Sagiri', 'Elaina', 'Kakaknya Kanna','loli', 'mba mba', 'kaka mu', 'adek mu', 'mama mu', 'tante tante', 'Anak SD', 'Kanna'])}
  ➕ 💹 *Uang:* 100000
  ➕ ✨ *Exp:* ${zero5}
  ➕ 🔥 *Dosa:* 10
- ➕ 📥 *Pelanggan sebelumnya:*  ${order}
+
+➕  📥 *Pelanggan sebelumnya:*  ${order}
+
 ${wm}
 `
 
@@ -56,7 +60,7 @@ global.db.data.users[m.sender].warn += 10
 global.db.data.users[m.sender].money += 100000
 global.db.data.users[m.sender].exp += rbrb5
 global.db.data.users[m.sender].ojekk += 1
-}
+
 setTimeout(() => {
                      m.reply(`${hsl}`)
                      }, 35000) 
@@ -80,9 +84,8 @@ setTimeout(() => {
                      setTimeout(() => {
                      m.reply('🔎 mencari pelanggan')
                      }, 0) 
- user.lastngocok = new Date * 1
- conn.sendButton(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Profile', '.profile', m)  
- }
+  user.lastngocok = new Date * 1
+    } else conn.sendBut(m.chat, `Sepertinya Anda Sudah Kecapekan Silahkan Istirahat Dulu sekitar\n*🕔 ${timers}*`, wm, 'Inventory', m)
 }
 handler.help = ['ngewe', 'ngentod', 'ngocok']
 handler.tags = ['rpg']
@@ -91,7 +94,7 @@ handler.register = true
 handler.premium = true
 
 module.exports = handler
-let wm = global.wm
+let wm = global.botwm
 
 function pickRandom(list) {
    return list[Math.floor(Math.random() * list.length)]
