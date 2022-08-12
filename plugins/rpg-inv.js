@@ -92,6 +92,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 ╭────────────────
 │💎Diamond: *${diamond}*
 │🥤Potion: *${potion}*
+│🍸Ramuan: *${ramuan}*
 │🗑️Sampah: *${sampah}*
 │🍖Makanan Pet: *${makananpet}*
 │⛓️Iron: *${iron}*
