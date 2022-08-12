@@ -5,27 +5,27 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-╔══〔ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜×〕══╗
-╠➤ *%ucapan %name*
-╠
-╠➤ Tersisa *%limit Limit*
-╠➤ Role *%role*
-╠➤ Level *%level (%exp / %maxexp)* [%xp4levelup]
-╠➤ %totalexp XP secara Total
-╠
-╠➤ Tanggal: *%week %weton, %date*
-╠➤ Tanggal Islam: *%dateIslamic*
-╠➤ Waktu: *%time*
-╠
-╠➤ Uptime: *%uptime (%muptime)*
-╠➤ Database: %rtotalreg dari %totalreg
-╠➤ Github:
-╠➤ https://github.com/MendingTuru
-╠════════════════╝
+┏━━〔 %me 〕━⬣
+┃➤ *%ucapan %name*
+┃
+┃➤ Tersisa *%limit Limit*
+┃➤ Role *%role*
+┃➤ Level *%level (%exp / %maxexp)* [%xp4levelup]
+┃➤ %totalexp XP secara Total
+┃
+┃➤ Tanggal: *%week %weton, %date*
+┃➤ Tanggal Islam: *%dateIslamic*
+┃➤ Waktu: *%time*
+┃
+┃➤ Uptime: *%uptime (%muptime)*
+┃➤ Database: %rtotalreg dari %totalreg
+┃➤ Github:
+┃➤ https://github.com/MendingTuru
+┗━━━━━━⬣
 %readmore`.trim(),
-  header: '╠♨ %category',
-  body: '╠✠ %cmd %islimit %isPremium',
-  footer: '╠════════════════╝\n,
+  header: '┏━━〔 %category 〕━⬣',
+  body: '┃➤ %cmd %islimit %isPremium',
+  footer: '┗━━⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
