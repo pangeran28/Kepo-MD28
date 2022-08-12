@@ -5,7 +5,7 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-╔════════〔ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜×〕════════╗
+╔══〔ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜×〕══╗
 ╠➤ *%ucapan %name*
 ╠
 ╠➤ Tersisa *%limit Limit*
@@ -21,15 +21,15 @@ const defaultMenu = {
 ╠➤ Database: %rtotalreg dari %totalreg
 ╠➤ Github:
 ╠➤ https://github.com/MendingTuru
-╠════════════════════════════╝
+╠════════════════╝
 %readmore`.trim(),
-  header: '╠♨〔 %category 〕',
+  header: '╠♨ %category',
   body: '╠✠ %cmd %islimit %isPremium',
-  footer: '╠════════════════╝\n╠════════════════╗,
+  footer: '╠════════════════╝\n,
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
-`,
+`
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './src/sound.mp3'
