@@ -786,31 +786,17 @@ async onCall(json) {
       m.reply(`Kamu dibanned karena menelepon bot, owner : @${owner[0]}`)
     }
   },
-async groupsUpdate(groupsUpdate, fromMe, m) {
-        if (opts['self'] && m.fromMe) return
-            console.log(m)
-        // Ingfo tag orang yg update group
-        for (let groupUpdate of groupsUpdate) {
-            const id = groupUpdate.id
-            const participant = groupUpdate.participants
-            console.log('\n\n=============\n\n In Groups Update \n\n============\n\n'+ `Id: ${id}\nParticipants: ${participant}` + '\n\n==============================\n')
-            if (!id) continue
-            let chats = global.db.data.chats[id], text = ''
-            if (!chats.detect) continue
-            if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc)
-            if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject)
-            if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon)
-            if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke)
-            if (groupUpdate.announce == true) text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || '```Group has been closed!')
-            if (groupUpdate.announce == false) text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || '```Group has been open!')
-            if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '```Group has been all participants!')
-            if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '```Group has been only admin!')
-            //console.log('=============\n\ngroupsUpdate \n\n============\n\n' + await groupUpdate)
-            if (!text) continue
-            await this.sendButtonDoc(id, text, wm, 'Matikan Fitur', `.off detect`, global.fkontak, { contextInfo: global.adReply.contextInfo, mentions: await this.parseMention(text) })
-        }
-    }
+async GroupUpdate({ jid, desc, descId, descTime, descOwner, announce }) {
+    if (!db.data.chats[jid].desc) return
+    if (!desc) return
+    let caption = `
+    @${descOwner.split`@`[0]} telah mengubah deskripsi grup.
+    ${desc}
+        `.trim()
+    this.sendButton(jid, caption, wm, 'Matikan', ',off desc')
 
+  }
+}
 global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
