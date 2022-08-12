@@ -1,9 +1,15 @@
 let handler = async (m, { conn, args, usedPrefix }) => {
     let type = (args[0] || '').toLowerCase()
+    let timebah = 600000
+    let timeda = 600000
+    let timecing = 600000
+    let timejing = 600000
+    let timeher= 600000
     let rubah = global.db.data.users[m.sender].rubah
     let kuda = global.db.data.users[m.sender].kuda
     let kucing = global.db.data.users[m.sender].kucing
     let anjing = global.db.data.users[m.sender].anjing
+    let hero = global.db.data.users[m.sender].hero
     switch (type) {
         case 'rubah':
             if (rubah == 0) return m.reply('*Kamu belum memiliki Pet Rubah*')
@@ -96,7 +102,32 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     }
                 } else m.reply(`Makanan pet kamu tidak cukup`)
             } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktu}* lagi`)
-            break    
+            break 
+        case 'hero':
+            if (hero == 0) return m.reply('*Kamu belum memiliki Hero*')
+            if (hero == 100) return m.reply('*hero kamu dah lvl max*')
+            let __waktuher = (new Date - global.db.data.users[m.sender].herolastclaim)
+            let _waktuher = (600000 - __waktuher)
+            let waktuher = clockString(_waktuher)
+            if (new Date - global.db.data.users[m.sender].herolastclaim > 600000) {
+                if (global.db.data.users[m.sender].pillhero > 0) {
+                    global.db.data.users[m.sender].pillhero -= 1
+                    global.db.data.users[m.sender].exphero += 10 
+                    conn.reply(m.chat, `Berhasil memberi pill ${type}`, m)
+                    setTimeout(() => {
+                         conn.reply(m.chat, 'Waktunya memberi makan *Hero*\nSaya lapar tuan..', m)
+                    }, timeher)
+                    if (hero > 0) { 
+                        let naiklvl = ((hero * 500) - 1)
+                        if (global.db.data.users[m.sender].exphero > naiklvl) {
+                            global.db.data.users[m.sender].hero += 1
+                            global.db.data.users[m.sender].exphero -= (hero * 500)
+                            conn.reply(m.chat, `*Selamat hero kamu naik level*`, m)
+                        }
+                    }
+                } else m.reply(`Pill hero kamu tidak cukup`)
+            } else m.reply(`Herokamu sudah kenyang, coba kasih makan *${waktuher}* lagi`)
+            break
             
         default:
             return conn.reply(m.chat, `${usedPrefix}feed [anjing | kucing | rubah | kuda]\nContoh penggunaan: *${usedPrefix}feed kucing*`, m)
