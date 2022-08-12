@@ -812,7 +812,7 @@ async onCall(json) {
       m.reply(`Kamu dibanned karena menelepon bot, owner : @${owner[0]}`)
     }
   }
-}
+
 
 global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
