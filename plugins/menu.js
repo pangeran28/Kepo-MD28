@@ -5,7 +5,7 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┏━━〔 %me 〕━⬣
+┏━━〔ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜×〕━⬣
 ┃➤ *%ucapan %name*
 ┃
 ┃➤ Tersisa *%limit Limit*
@@ -32,7 +32,7 @@ ${'```%npmdesc```'}
 `
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-  let bzz = './src/sound.mp3'
+  let bzz = './src/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'stalk', 'internet', 'nsfw', 'asupan', 'bokep, 'anonymous', 'maker', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'owner']
