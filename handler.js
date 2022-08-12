@@ -36,7 +36,7 @@ module.exports = {
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
                 if (user) {
                     if (!isNumber(user.joincount)) user.joincount = 1
-                    if (!isNumber(user.healt)) user.healt = 0
+                    if (!isNumber(user.healt)) user.healt = 100
                     if (!isNumber(user.stamina)) user.stamina = 100
                     if (!isNumber(user.haus)) user.haus = 100
                     if (!isNumber(user.laper)) user.laper = 100
@@ -60,6 +60,7 @@ module.exports = {
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
                     if (!isNumber(user.lastowner)) user.lastowner = 0
                     if (!isNumber(user.money)) user.money = 0
+                    if (!isNumber(user.bank)) user.bank = 0
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.batu)) user.batu = 0
@@ -81,6 +82,29 @@ module.exports = {
                     if (!isNumber(user.rubahlastclaim)) user.rubahlastclaim = 0
                     if (!isNumber(user.anjing)) user.anjing = 0
                     if (!isNumber(user.anjinglastclaim)) user.anjinglastclaim = 0
+                    if (!isNumber(user.healtmonster)) user.healtmonster = 100
+                    if (!isNumber(user.armormonster)) user.armormonster = 0
+                    if (!isNumber(user.tiketcoin)) user.tiketcoin = 0
+                    if (!isNumber(user.healtmonster)) user.healtmonster = 0
+                    if (!isNumber(user.horse)) user.horse = 0
+                    if (!isNumber(user.horseexp)) user.horseexp = 0
+                    if (!isNumber(user.cat)) user.cat = 0
+                    if (!isNumber(user.catexp)) user.catexp = 0
+                    if (!isNumber(user.fox)) user.fox = 0
+                    if (!isNumber(user.foxhexp)) user.foxexp = 0
+                    if (!isNumber(user.dog)) user.dog = 0
+                    if (!isNumber(user.dogexp)) user.dogexp = 0
+
+                    if (!isNumber(user.horselastfeed)) user.horselastfeed = 0
+                    if (!isNumber(user.catlastfeed)) user.catlastfeed = 0
+                    if (!isNumber(user.foxlastfeed)) user.foxlastfeed = 0
+                    if (!isNumber(user.doglastfeed)) user.doglastfeed = 0
+
+                    if (!isNumber(user.hero)) user.hero = 1
+                    if (!isNumber(user.exphero)) user.exphero = 0
+                    if (!isNumber(user.pillhero)) user.pillhero= 0
+                    if (!isNumber(user.herolastclaim)) user.herolastclaim = 0
+
                     if (!isNumber(user.area)) user.area = 0
                     if (!('banned' in user)) user.banned = false
                     if (!isNumber(user.warn)) user.warn = 0
@@ -97,6 +121,10 @@ module.exports = {
                     if (!isNumber(user.anakrubah)) user.anakrubah = 0
                     if (!isNumber(user.anakanjing)) user.anakanjing = 0
                     if (!isNumber(user.makananpet)) user.makananpet = 0
+                    if (!isNumber(user.ramuankudalast)) user.ramuankudalast = 0
+                    if (!isNumber(user.ramuanrubahlast)) user.ramuanrubahlast = 0
+                    if (!isNumber(user.ramuankucinglast)) user.ramuankucinglast = 0
+                    if (!isNumber(user.ramuananjinglast)) user.ramuananjinglast = 0
                     if (!isNumber(user.antispam)) user.antispam = 0
                     if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0
                     if (!isNumber(user.armor)) user.armor = 0
@@ -145,7 +173,7 @@ module.exports = {
                     if (!isNumber(user.udang)) user.udang = 0
                     if (!isNumber(user.orca)) user.orca = 0
                     if (!isNumber(user.umpan)) user.umpan = 0
-                    if (!isNumber(user.lastfishing)) user.lastfishing = 0
+                    if (!isNumber(user.pancingan)) user.pancingan = 1
                     if (!isNumber(user.anakpancingan)) user.anakpancingan = 0
                     if (!isNumber(user.lastmancingeasy)) user.lastmancingeasy = 0
                     if (!isNumber(user.lastmancingnormal)) user.lastmancingnormal = 0
@@ -166,6 +194,11 @@ module.exports = {
                 } else global.db.data.users[m.sender] = {
                     joincount: 1,
                     healt: 100,
+                    money: 0,
+                    bank: 0,
+                    tiketcoin: 0,
+                    healtmonster: 100,
+                    armormonster: 0,
                     haus: 100,
                     laper: 100,
                     stamina : 100,
@@ -219,6 +252,37 @@ module.exports = {
                     anakrubah: 0,
                     anakanjing: 0,
                     makananpet: 0,
+                    ramuankudalast: 0,
+                    ramuankucinglast: 0,
+                    ramuanrubahlast: 0,
+                    ramuananjinglast: 0,
+                    ramuanherolast: 0,
+
+                    horse: 0,
+                    horseexp: 0,
+                    cat: 0,
+                    catngexp: 0,
+                    fox: 0,
+                    foxexp: 0,
+                    dog: 0,
+                    dogexp: 0,
+                    
+                    hero: 1,
+                    exphero: 0,
+                    pillhero: 0,
+                    herolastclaim: 0,
+           
+                    horselastfeed: 0,
+                    catlastfeed: 0,
+                    foxlastfeed: 0,
+                    doglastfeed: 0,
+      
+                    lastmancingeasy: 0,
+                    lastmancingnormal: 0,
+                    lastmancinghard: 0,
+                    lastmancingextreme: 0,
+                    lastwarpet: 0,
+
                     antispam: 0,
                     antispamlastclaim: 0,
                     kayu: 0,
