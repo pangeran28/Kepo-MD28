@@ -37,7 +37,6 @@ let handler = async (m, { conn, usedPrefix }) => {
     let sampah = member.sampah
     let hero = member.hero
     let exphero = member.exphero
-    let { max } = levelling.xpRange(level, exp, global.multiplier)
 
 
     let name = m.fromMe ? conn.user : conn.contacts[m.sender]
