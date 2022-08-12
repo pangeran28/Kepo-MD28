@@ -4,6 +4,10 @@ autoon = true
 autoketik = false
 autovn = true
 
+
+
+
+
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
