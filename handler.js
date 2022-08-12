@@ -1,5 +1,3 @@
-/*MendingTuru By Koko Pangeran*/
-
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
