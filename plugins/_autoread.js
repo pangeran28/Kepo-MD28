@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, text, isAdmin, isOwner }) => {
 
 if (!isOwner) return m.reply('Lu Owner kah Dekkk?')
-if (autoreyad === true) return m.reply('Auto Read udah Aktif Banh🗿🚬')
+if (autoread === true) return m.reply('Auto Read udah Aktif Banh🗿🚬')
 //if (autovn === true) return 
-autoreyad = true
+autoread = true
 m.reply(`Success Activated Mode Auto Read`)
 
 }
