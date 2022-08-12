@@ -35,8 +35,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let money = member.money
     let exp = member.exp
     let sampah = member.sampah
-    let hero = global.db.data.users[m.sender].hero
-    let exphero = global.db.data.users[m.sender].exphero
+    let hero = member.hero
+    let exphero = member.exphero
     let { max } = levelling.xpRange(level, exp, global.multiplier)
 
 
