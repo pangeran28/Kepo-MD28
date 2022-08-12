@@ -745,7 +745,48 @@ module.exports = {
                 break
         }
     },
-    async groupsUpdate(groupsUpdate, fromMe, m) {
+    
+    async delete({ remoteJid, fromMe, id, participant }) {
+        if (fromMe) return
+        let chats = Object.entries(await this.chats).find(([user, data]) => data.messages && data.messages[id])
+        if (!chats) return
+        let msg = JSON.parse(JSON.stringify(chats[1].messages[id]))
+        let chat = global.db.data.chats[msg.key.remoteJid] || {}
+        if (chat.delete) return
+        await this.sendButton(msg.key.remoteJid, `
+Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
+Untuk mematikan fitur ini, ketik
+*.enable delete*
+`.trim(), wm, 'Matikan Fitur ini', '.enable delete', msg, {
+            mentions: [participant]
+        })
+        await this.delay(1000)
+        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
+    }
+},
+async onCall(json) {
+    if (!db.data.settings[this.user.jid].anticall) return
+    let jid = json[2][0][1]['from']
+    let isOffer = json[2][0][2][0][0] == 'offer'
+    let users = global.db.data.users
+    let user = users[jid] || {}
+    if (user.whitelist) return
+    if (jid && isOffer) {
+      const tag = this.generateMessageTag()
+      const nodePayload = ['action', 'call', ['call', {
+        'from': this.user.jid,
+        'to': `${jid.split`@`[0]}@s.whatsapp.net`,
+        'id': tag
+      }, [['reject', {
+        'call-id': json[2][0][2][0][1]['call-id'],
+        'call-creator': `${jid.split`@`[0]}@s.whatsapp.net`,
+        'count': '0'
+      }, null]]]]
+      this.sendJSON(nodePayload, tag)
+      m.reply(`Kamu dibanned karena menelepon bot, owner : @${owner[0]}`)
+    }
+  },
+async groupsUpdate(groupsUpdate, fromMe, m) {
         if (opts['self'] && m.fromMe) return
             console.log(m)
         // Ingfo tag orang yg update group
@@ -768,25 +809,7 @@ module.exports = {
             if (!text) continue
             await this.sendButtonDoc(id, text, wm, 'Matikan Fitur', `.off detect`, global.fkontak, { contextInfo: global.adReply.contextInfo, mentions: await this.parseMention(text) })
         }
-    },
-    async delete({ remoteJid, fromMe, id, participant }) {
-        if (fromMe) return
-        let chats = Object.entries(await this.chats).find(([user, data]) => data.messages && data.messages[id])
-        if (!chats) return
-        let msg = JSON.parse(JSON.stringify(chats[1].messages[id]))
-        let chat = global.db.data.chats[msg.key.remoteJid] || {}
-        if (chat.delete) return
-        await this.sendButton(msg.key.remoteJid, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
-Untuk mematikan fitur ini, ketik
-*.enable delete*
-`.trim(), wm, 'Matikan Fitur ini', '.enable delete', msg, {
-            mentions: [participant]
-        })
-        await this.delay(1000)
-        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
-}
 
 global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
