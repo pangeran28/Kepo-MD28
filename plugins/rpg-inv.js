@@ -19,6 +19,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let _anjing = member.anakanjing
 
     let diamond = member.diamond
+    let ramuan = member.ramuan
     let potion = member.potion
     let common = member.common
     let makananpet = member.makananpet
@@ -34,6 +35,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     let money = member.money
     let exp = member.exp
     let sampah = member.sampah
+    let hero = global.db.data.users[m.sender].hero
+    let exphero = global.db.data.users[m.sender].exphero
+    let { max } = levelling.xpRange(level, exp, global.multiplier)
 
 
     let name = m.fromMe ? conn.user : conn.contacts[m.sender]
@@ -70,40 +74,56 @@ let handler = async (m, { conn, usedPrefix }) => {
     let userspet = sortedpet.map(v => v[0])
 
     let str = `
-Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*\n
-❤️Nyawa: *${healt}*
-⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Level 1' : '' || pickaxe == 2 ? 'Level 2' : '' || pickaxe == 3 ? 'Level 3' : '' || pickaxe == 4 ? 'Level 4' : '' || pickaxe == 5 ? 'Level 5 (MAX)' : ''}*
-⚔️Sword: *${sword == 0 ? 'Tidak Punya' : '' || sword == 1 ? 'Leather Sword' : '' || sword == 2 ? 'Iron Sword' : '' || sword == 3 ? 'Gold Sword' : '' || sword == 4 ? 'Diamond Sword' : '' || sword == 5 ? 'Netherite Sword (MAX)' : ''}*
-👚Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor (MAX)' : ''}*
-🎣FishingRod: ${fishingrod}
-💵Uang: *${money}*
-🔱Level: *${level}*
-✉️Exp: *${exp}*
-*Inventory*
-💎Diamond: *${diamond}*
-🥤Potion: *${potion}*
-🗑️Sampah: *${sampah}*
-🍖Makanan Pet: *${makananpet}*
-⛓️Iron: *${iron}*
-🪨Batu: *${batu}*
-🪵Kayu: *${kayu}*
-🕸️String: *${string}*
-Total inv: *${diamond + potion + sampah + makananpet}* item\n
-*Crate*
-📦Common: *${common}*
-📦Uncommon: *${uncommon}*
-📦Mythic: *${mythic}*
-🎁Legendary: *${legendary}*
-📦Pet: *${pet}*\n
-*Pet*
-🐎Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level MAX' : ''}*
-🦊Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level MAX' : ''}*
-🐈Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level MAX' : ''}*
-🐶Anjing: *${anjing == 0 ? 'Tidak Punya' : '' || anjing == 1 ? 'Level 1' : '' || anjing == 2 ? 'Level 2' : '' || anjing == 3 ? 'Level 3' : '' || anjing == 4 ? 'Level 4' : '' || anjing == 5 ? 'Level MAX' : ''}*\n\n
-*Proges*\n
+💼Inventory💼 *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*\n
+╭────────────────
+│❤️Nyawa: *${healt}*
+│⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Level 1' : '' || pickaxe == 2 ? 'Level 2' : '' || pickaxe == 3 ? 'Level 3' : '' || pickaxe == 4 ? 'Level 4' : '' || pickaxe == 5 ? 'Level 5 (MAX)' : ''}*
+│⚔️Sword: *${sword == 0 ? 'Tidak Punya' : '' || sword == 1 ? 'Leather Sword' : '' || sword == 2 ? 'Iron Sword' : '' || sword == 3 ? 'Gold Sword' : '' || sword == 4 ? 'Diamond Sword' : '' || sword == 5 ? 'Netherite Sword (MAX)' : ''}*
+│👚Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor (MAX)' : ''}*
+│🎣FishingRod: ${fishingrod}
+│💵Uang: *${money}*
+│🔱Level: *${level}*
+│✉️Exp: *${exp}*
+│💰Tiketm: *${tiketm}*
+│💳Tiketcoin: *${tiketcoin}*
+│💾Expg: *${expg}*
+╰────────────────\n
+*💼Inventory💼*
+╭────────────────
+│💎Diamond: *${diamond}*
+│🥤Potion: *${potion}*
+│🗑️Sampah: *${sampah}*
+│🍖Makanan Pet: *${makananpet}*
+│⛓️Iron: *${iron}*
+│🪨Batu: *${batu}*
+│🪵Kayu: *${kayu}*
+│🕸️String: *${string}*
+│💼Total inv: *${diamond + potion + sampah + makananpet}* item
+╰────────────────\n
+*♻️Crate♻️*
+╭────────────────
+│📦Common: *${common}*
+│📦Uncommon: *${uncommon}*
+│📦Mythic: *${mythic}*
+│🎁Legendary: *${legendary}*
+│📦Pet: *${pet}*
+╰────────────────\n
+*🎭Super Hero🎭*
+╭────────────────
+│😈My Hero: *${hero == 0 ? 'Tidak Punya' : '' || hero == 1 ? 'Level 1' : '' || hero == 2 ? 'Level 2' : '' || hero == 3 ? 'Level 3' : '' || hero == 4 ? 'Level 4' : '' || hero == 5 ? 'Level 5' : '' || hero == 6 ? 'Level 6' : '' || hero == 7 ? 'Level 7' : '' || hero == 8 ? 'Level 8' : '' || hero == 9 ? 'Level 9' : '' || hero == 10 ? 'Level 10' : '' || hero == 11 ? 'Level 11' : '' || hero == 12 ? 'Level 12' : '' || hero == 13 ? 'Level 13' : '' || hero == 14 ? 'Level 14' : '' || hero == 15 ? 'Level 15' : '' || hero == 16 ? 'Level 16' : '' || hero == 17 ? 'Level 17' : '' || hero == 18 ? 'Level 18' : '' || hero == 19 ? 'Level 19' : '' || hero == 20 ? 'Level 20' : '' || hero == 21 ? 'Level 21' : '' || hero == 22 ? 'Level 22' : '' || hero == 23 ? 'Level 23' : '' || hero == 24 ? 'Level 24' : '' || hero == 25 ? 'Level 25' : '' || hero == 26 ? 'Level 26' : '' || hero == 27 ? 'Level 27' : '' || hero == 28 ? 'Level 28' : '' || hero == 29 ? 'Level 29' : '' || hero == 30 ? 'Level 30' : '' || hero == 31 ? 'Level 31' : '' || hero == 32 ? 'Level 32' : '' || hero == 33 ? 'Level 33' : '' || hero == 34 ? 'Level 34' : '' || hero == 35 ? 'Level 35' : '' || hero == 36 ? 'Level 36' : '' || hero == 37 ? 'Level 37'  : '' || hero == 38 ? 'Level 38' : '' || hero == 39 ? 'Level 39' : '' || hero == 40 ? 'Level MAX' : ''}*
+╰────────────────
+*🐾Peliharaan🐾*
+╭────────────────
+│🐎Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level 5' : '' || kuda == 6 ? 'Level 6' : '' || kuda == 7 ? 'Level 7' : '' || kuda == 8 ? 'Level 8' : '' || kuda == 9 ? 'Level 9' : '' || kuda == 10 ? 'Level MAX' : ''}*
+│🦊Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level 5' : '' || rubah == 6 ? 'Level 6' : '' || rubah == 7 ? 'Level 7' : '' || rubah == 8 ? 'Level 8' : '' || rubah == 9 ? 'Level 9' : '' || rubah == 10 ? 'Level MAX' : ''}*
+│🐈Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level 5' : '' || kucing == 6 ? 'Level 6' : '' || kucing == 7 ? 'Level 7' : '' || kucing == 8 ? 'Level 8' : '' || kucing == 9 ? 'Level 9' : '' || kucing == 10 ? 'Level MAX' : ''}*
+│🐕Anjing: *${anjing == 0 ? 'Tidak Punya' : '' || anjing == 1 ? 'Level 1' : '' || anjing == 2 ? 'Level 2' : '' || anjing == 3 ? 'Level 3' : '' || anjing == 4 ? 'Level 4' : '' || anjing == 5 ? 'Level 5' : '' || anjing == 6 ? 'Level 6' : '' || anjing == 7 ? 'Level 7' : '' || anjing == 8 ? 'Level 8' : '' || anjing == 9 ? 'Level 9' : '' || anjing == 10 ? 'Level MAX' : ''}*\n\n 
+╰────────────────\n
 ╭────────────────
 │🔱Level *${level}* To Level *${level}*
 │⚜️Exp *${exp}* -> *${level * 100}*
+│
+│😈Hero ${hero == 0 ? 'Tidak Punya' : '' || hero > 0 && hero < 40 ? `Level *${hero}* To level *${hero + 1}*\n│Exp *${exphero}* -> *${hero *500}*` : '' || hero == 40 ? '*Max Level*' : ''}
 ╰────────────────
 ╭────────────────
 │🦊Rubah ${rubah == 0 ? 'Tidak Punya' : '' || rubah > 0 && rubah < 5 ? `Level *${rubah}* To level *${rubah + 1}*\n│Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 5 ? '*Max Level*' : ''}
@@ -117,23 +137,24 @@ Total inv: *${diamond + potion + sampah + makananpet}* item\n
 ╭────────────────
 │🐶Anjing ${anjing == 0 ? 'Tidak Punya' : '' || anjing > 0 && anjing < 5 ? `Level *${anjing}* To level *${anjing + 1}*\n│Exp *${_anjing}* -> *${anjing *100}*` : '' || anjing == 5 ? '*Max Level*' : ''}
 ╰────────────────\n\n
-*achievement*
-1.Top level *${userslevel.indexOf(m.sender) + 1}* dari *${userslevel.length}*
-2.Top Money *${usersmoney.indexOf(m.sender) + 1}* dari *${usersmoney.length}*
-3.Top Diamond *${usersdiamond.indexOf(m.sender) + 1}* dari *${usersdiamond.length}*
-4.Top Potion *${userspotion.indexOf(m.sender) + 1}* dari *${userspotion.length}*
-5.Top Sampah *${userssampah.indexOf(m.sender) + 1}* dari *${userssampah.length}*
-6.Top Makanan Pet *${usersmakananpet.indexOf(m.sender) + 1}* dari *${usersmakananpet.length}*
-7.Top Batu *${usersbatu.indexOf(m.sender) + 1}* dari *${usersbatu.length}*
-8.Top Iron *${usersiron.indexOf(m.sender) + 1}* dari *${usersiron.length}*
-9.Top Kayu *${userskayu.indexOf(m.sender) + 1}* dari *${userskayu.length}*
-10.Top String *${usersstring.indexOf(m.sender) + 1}* dari *${usersstring.length}*
-11.Top Common *${userscommon.indexOf(m.sender) + 1}* dari *${userscommon.length}*
-13.Top Uncommon *${usersuncommon.indexOf(m.sender) + 1}* dari *${usersuncommon.length}*
-14.Top Mythic *${usersmythic.indexOf(m.sender) + 1}* dari *${usersmythic.length}*
-15.Top Legendary *${userslegendary.indexOf(m.sender) + 1}* dari *${userslegendary.length}*
-16.Top Pet Crate *${userspet.indexOf(m.sender) + 1}* dari *${userspet.length}*
-\n${readMore}\n
+*📉achievement📈*
+╭────────────────
+│1.Top level *${userslevel.indexOf(m.sender) + 1}* dari *${userslevel.length}*
+│2.Top Money *${usersmoney.indexOf(m.sender) + 1}* dari *${usersmoney.length}*
+│3.Top Diamond *${usersdiamond.indexOf(m.sender) + 1}* dari *${usersdiamond.length}*
+│4.Top Potion *${userspotion.indexOf(m.sender) + 1}* dari *${userspotion.length}*
+│5.Top Sampah *${userssampah.indexOf(m.sender) + 1}* dari *${userssampah.length}*
+│6.Top Makanan Pet *${usersmakananpet.indexOf(m.sender) + 1}* dari *${usersmakananpet.length}*
+│7.Top Batu *${usersbatu.indexOf(m.sender) + 1}* dari *${usersbatu.length}*
+│8.Top Iron *${usersiron.indexOf(m.sender) + 1}* dari *${usersiron.length}*
+│9.Top Kayu *${userskayu.indexOf(m.sender) + 1}* dari *${userskayu.length}*
+│10.Top String *${usersstring.indexOf(m.sender) + 1}* dari *${usersstring.length}*
+│11.Top Common *${userscommon.indexOf(m.sender) + 1}* dari *${userscommon.length}*
+│13.Top Uncommon *${usersuncommon.indexOf(m.sender) + 1}* dari *${usersuncommon.length}*
+│14.Top Mythic *${usersmythic.indexOf(m.sender) + 1}* dari *${usersmythic.length}*
+│15.Top Legendary *${userslegendary.indexOf(m.sender) + 1}* dari *${userslegendary.length}*
+│16.Top Pet Crate *${userspet.indexOf(m.sender) + 1}* dari *${userspet.length}*
+╰────────────────\n${readMore}\n
 Warn: *${warn}*
 Banned: *No*
 `.trim()
@@ -142,7 +163,7 @@ Banned: *No*
 handler.help = ['inventory', 'inv']
 handler.tags = ['rpg']
 handler.command = /^(inv(entory)?|bal|level(ing)?|money|e?xp)$/i
-handler.register = false
+handler.register = true
 handler.group = true
 module.exports = handler
 
