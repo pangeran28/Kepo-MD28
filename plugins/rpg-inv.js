@@ -77,7 +77,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let userspet = sortedpet.map(v => v[0])
 
     let str = `
-💼Inventory💼 *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*\n
+💼Inventory💼 *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
 ╭────────────────
 │❤️Nyawa: *${healt}*
 │⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Level 1' : '' || pickaxe == 2 ? 'Level 2' : '' || pickaxe == 3 ? 'Level 3' : '' || pickaxe == 4 ? 'Level 4' : '' || pickaxe == 5 ? 'Level 5 (MAX)' : ''}*
@@ -90,7 +90,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 │💰Tiketm: *${tiketm}*
 │💳Tiketcoin: *${tiketcoin}*
 │💾Expg: *${expg}*
-╰────────────────\n
+╰────────────────
 *💼Inventory💼*
 ╭────────────────
 │💎Diamond: *${diamond}*
@@ -103,7 +103,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 │🪵Kayu: *${kayu}*
 │🕸️String: *${string}*
 │💼Total inv: *${diamond + potion + sampah + makananpet}* item
-╰────────────────\n
+╰────────────────
 *♻️Crate♻️*
 ╭────────────────
 │📦Common: *${common}*
@@ -111,7 +111,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 │📦Mythic: *${mythic}*
 │🎁Legendary: *${legendary}*
 │📦Pet: *${pet}*
-╰────────────────\n
+╰────────────────
 *🎭Super Hero🎭*
 ╭────────────────
 │😈My Hero: *${hero == 0 ? 'Tidak Punya' : '' || hero == 1 ? 'Level 1' : '' || hero == 2 ? 'Level 2' : '' || hero == 3 ? 'Level 3' : '' || hero == 4 ? 'Level 4' : '' || hero == 5 ? 'Level 5' : '' || hero == 6 ? 'Level 6' : '' || hero == 7 ? 'Level 7' : '' || hero == 8 ? 'Level 8' : '' || hero == 9 ? 'Level 9' : '' || hero == 10 ? 'Level 10' : '' || hero == 11 ? 'Level 11' : '' || hero == 12 ? 'Level 12' : '' || hero == 13 ? 'Level 13' : '' || hero == 14 ? 'Level 14' : '' || hero == 15 ? 'Level 15' : '' || hero == 16 ? 'Level 16' : '' || hero == 17 ? 'Level 17' : '' || hero == 18 ? 'Level 18' : '' || hero == 19 ? 'Level 19' : '' || hero == 20 ? 'Level 20' : '' || hero == 21 ? 'Level 21' : '' || hero == 22 ? 'Level 22' : '' || hero == 23 ? 'Level 23' : '' || hero == 24 ? 'Level 24' : '' || hero == 25 ? 'Level 25' : '' || hero == 26 ? 'Level 26' : '' || hero == 27 ? 'Level 27' : '' || hero == 28 ? 'Level 28' : '' || hero == 29 ? 'Level 29' : '' || hero == 30 ? 'Level 30' : '' || hero == 31 ? 'Level 31' : '' || hero == 32 ? 'Level 32' : '' || hero == 33 ? 'Level 33' : '' || hero == 34 ? 'Level 34' : '' || hero == 35 ? 'Level 35' : '' || hero == 36 ? 'Level 36' : '' || hero == 37 ? 'Level 37'  : '' || hero == 38 ? 'Level 38' : '' || hero == 39 ? 'Level 39' : '' || hero == 40 ? 'Level MAX' : ''}*
@@ -121,8 +121,8 @@ let handler = async (m, { conn, usedPrefix }) => {
 │🐎Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level 5' : '' || kuda == 6 ? 'Level 6' : '' || kuda == 7 ? 'Level 7' : '' || kuda == 8 ? 'Level 8' : '' || kuda == 9 ? 'Level 9' : '' || kuda == 10 ? 'Level MAX' : ''}*
 │🦊Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level 5' : '' || rubah == 6 ? 'Level 6' : '' || rubah == 7 ? 'Level 7' : '' || rubah == 8 ? 'Level 8' : '' || rubah == 9 ? 'Level 9' : '' || rubah == 10 ? 'Level MAX' : ''}*
 │🐈Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level 5' : '' || kucing == 6 ? 'Level 6' : '' || kucing == 7 ? 'Level 7' : '' || kucing == 8 ? 'Level 8' : '' || kucing == 9 ? 'Level 9' : '' || kucing == 10 ? 'Level MAX' : ''}*
-│🐕Anjing: *${anjing == 0 ? 'Tidak Punya' : '' || anjing == 1 ? 'Level 1' : '' || anjing == 2 ? 'Level 2' : '' || anjing == 3 ? 'Level 3' : '' || anjing == 4 ? 'Level 4' : '' || anjing == 5 ? 'Level 5' : '' || anjing == 6 ? 'Level 6' : '' || anjing == 7 ? 'Level 7' : '' || anjing == 8 ? 'Level 8' : '' || anjing == 9 ? 'Level 9' : '' || anjing == 10 ? 'Level MAX' : ''}*\n\n 
-╰────────────────\n
+│🐕Anjing: *${anjing == 0 ? 'Tidak Punya' : '' || anjing == 1 ? 'Level 1' : '' || anjing == 2 ? 'Level 2' : '' || anjing == 3 ? 'Level 3' : '' || anjing == 4 ? 'Level 4' : '' || anjing == 5 ? 'Level 5' : '' || anjing == 6 ? 'Level 6' : '' || anjing == 7 ? 'Level 7' : '' || anjing == 8 ? 'Level 8' : '' || anjing == 9 ? 'Level 9' : '' || anjing == 10 ? 'Level MAX' : ''}* 
+╰────────────────\n\n
 ╭────────────────
 │🔱Level *${level}* To Level *${level}*
 │⚜️Exp *${exp}* -> *${level * 100}*
