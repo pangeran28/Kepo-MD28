@@ -746,24 +746,15 @@ module.exports = {
         }
     },
     
-    async delete({ remoteJid, fromMe, id, participant }) {
-        if (fromMe) return
-        let chats = Object.entries(await this.chats).find(([user, data]) => data.messages && data.messages[id])
-        if (!chats) return
-        let msg = JSON.parse(JSON.stringify(chats[1].messages[id]))
-        let chat = global.db.data.chats[msg.key.remoteJid] || {}
-        if (chat.delete) return
-        await this.sendButton(msg.key.remoteJid, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
-Untuk mematikan fitur ini, ketik
-*.enable delete*
-`.trim(), wm, 'Matikan Fitur ini', '.enable delete', msg, {
-            mentions: [participant]
-        })
-        await this.delay(1000)
-        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
-    }
-},
+    async delete(m) {
+    let chat = global.db.data.chats[m.key.remoteJid]
+    if (chat.delete) return
+    await this.sendButton(m.key.remoteJid, `
+Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
+ketik *.on delete* untuk mematikan pesan ini
+`.trim(), watermark, 'Matikan Antidelete', ',on delete', m.message)
+    this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
+  },
 async onCall(json) {
     if (!db.data.settings[this.user.jid].anticall) return
     let jid = json[2][0][1]['from']
