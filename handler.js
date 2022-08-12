@@ -748,15 +748,47 @@ module.exports = {
         }
     },
     
-    async delete(m) {
-    let chat = global.db.data.chats[m.key.remoteJid]
-    if (chat.delete) return
-    await this.sendButton(m.key.remoteJid, `
-Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
-ketik *.on delete* untuk mematikan pesan ini
-`.trim(), wm, 'Matikan Antidelete', ',on delete', m.message)
-    this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
-  },
+    async groupsUpdate(groupsUpdate, fromMe, m) {
+        if (opts['self'] && m.fromMe) return
+            console.log(m)
+        // Ingfo tag orang yg update group
+        for (let groupUpdate of groupsUpdate) {
+            const id = groupUpdate.id
+            const participant = groupUpdate.participants
+            console.log('\n\n=============\n\n In Groups Update \n\n============\n\n'+ `Id: ${id}\nParticipants: ${participant}` + '\n\n==============================\n')
+            if (!id) continue
+            let chats = global.db.data.chats[id], text = ''
+            if (!chats.detect) continue
+            if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc)
+            if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject)
+            if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon)
+            if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke)
+            if (groupUpdate.announce == true) text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || '```Group has been closed!')
+            if (groupUpdate.announce == false) text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || '```Group has been open!')
+            if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '```Group has been all participants!')
+            if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '```Group has been only admin!')
+            //console.log('=============\n\ngroupsUpdate \n\n============\n\n' + await groupUpdate)
+            if (!text) continue
+            await this.sendButtonDoc(id, text, wm, 'Matikan Fitur', `.off detect`, global.fkontak, { contextInfo: global.adReply.contextInfo, mentions: await this.parseMention(text) })
+        }
+    },
+    async delete({ remoteJid, fromMe, id, participant }) {
+        if (fromMe) return
+        let chats = Object.entries(await this.chats).find(([user, data]) => data.messages && data.messages[id])
+        if (!chats) return
+        let msg = JSON.parse(JSON.stringify(chats[1].messages[id]))
+        let chat = global.db.data.chats[msg.key.remoteJid] || {}
+        if (chat.delete) return
+        await this.sendButton(msg.key.remoteJid, `
+Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
+Untuk mematikan fitur ini, ketik
+*.enable delete*
+`.trim(), wm, 'Matikan Fitur ini', '.enable delete', msg, {
+            mentions: [participant]
+        })
+        await this.delay(1000)
+        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
+    },
 async onCall(json) {
     if (!db.data.settings[this.user.jid].anticall) return
     let jid = json[2][0][1]['from']
@@ -778,18 +810,9 @@ async onCall(json) {
       this.sendJSON(nodePayload, tag)
       m.reply(`Kamu dibanned karena menelepon bot, owner : @${owner[0]}`)
     }
-  },
-async GroupUpdate({ jid, desc, descId, descTime, descOwner, announce }) {
-    if (!db.data.chats[jid].desc) return
-    if (!desc) return
-    let caption = `
-    @${descOwner.split`@`[0]} telah mengubah deskripsi grup.
-    ${desc}
-        `.trim()
-    this.sendButton(jid, caption, wm, 'Matikan', ',off desc')
-
   }
-}
+
+
 global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
