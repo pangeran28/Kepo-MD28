@@ -19,6 +19,10 @@ let handler = async (m, { conn, usedPrefix }) => {
     let _anjing = member.anakanjing
 
     let diamond = member.diamond
+    let cupon = member.cupon
+    let tiketcoin = member.tiketcoin
+    let tiketm = member.healtmonster
+    let expg = member.expg
     let ramuan = member.ramuan
     let potion = member.potion
     let common = member.common
