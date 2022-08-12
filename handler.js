@@ -1,3 +1,10 @@
+/*MendingTuru By Koko Pangeran*/
+autoreyad = false
+autoon = false
+autoketik = false
+autovn = true
+
+
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
@@ -21,7 +28,13 @@ module.exports = {
         const Tnow = (new Date()/1000).toFixed(0)
         const seli = Tnow - m.messageTimestamp
         if (seli > global.Intervalmsg) return console.log(new ReferenceError(`Pesan ${Intervalmsg} detik yang lalu diabaikan agar tidak nyepam`))
-        
+
+        /***** Hati hati bos jangan asal recode, salah dikit bisa berakibat fatal!!! *****/
+        if (autoon === true) conn.updatePresence(m.chat, Presence.available) //
+        if (autoketik === true) conn.updatePresence(m.chat, Presence.composing) //
+        if (autovn === true) conn.updatePresence(m.chat, Presence.recording) //
+        if (autoreyad === true) await this.chatRead(m.chat).catch(() => { })
+               
         global.namabot = 'ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜×'
         global.wm = 'Cʀᴇᴀᴛᴇᴅ Bʏ' + ' ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
         //console.log(JSON.stringify(m, null, 4))
