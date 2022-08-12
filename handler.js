@@ -1,10 +1,4 @@
 /*MendingTuru By Koko Pangeran*/
-autoreyad = false
-autoon = false
-autoketik = false
-autovn = true
-
-
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
