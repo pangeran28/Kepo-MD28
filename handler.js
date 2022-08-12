@@ -788,7 +788,8 @@ Untuk mematikan fitur ini, ketik
         })
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
-    },
+    }
+  },
 async onCall(json) {
     if (!db.data.settings[this.user.jid].anticall) return
     let jid = json[2][0][1]['from']
@@ -811,7 +812,7 @@ async onCall(json) {
       m.reply(`Kamu dibanned karena menelepon bot, owner : @${owner[0]}`)
     }
   }
-
+}
 
 global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
