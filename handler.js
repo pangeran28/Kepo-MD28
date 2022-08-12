@@ -1,14 +1,4 @@
 /*MendingTuru By Koko Pangeran*/
-autoreyad = false
-autoon = false
-autoketik = false
-autovn = true
-
-
-
-
-
-
 
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
@@ -448,11 +438,6 @@ module.exports = {
             }
             if (opts['nyimak']) return
             if (!m.fromMe && opts['self']) return
-            /***** Hati hati bos jangan asal recode, salah dikit bisa berakibat fatal!!! *****/
-            if (autoon === true) conn.updatePresence(m.chat, Presence.available) //
-            if (autoketik === true) conn.updatePresence(m.chat, Presence.composing) //
-            if (autovn === true) conn.updatePresence(m.chat, Presence.recording) //
-            if (autoreyad === true) await this.chatRead(m.chat).catch(() => { })
             if (opts['pconly'] && m.chat.endsWith('s.whatsapp.net')) return
             if (opts['gconly'] && !m.chat.endsWith('g.us')) return
             if (opts['swonly'] && m.chat !== 'status@broadcast') return
