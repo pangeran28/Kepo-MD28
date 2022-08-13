@@ -744,8 +744,7 @@ module.exports = {
                 if (chat.detect) this.sendButtonDoc(id, text, wm, 'Matikan Fitur Ini', '.off detect', fkontak, { contextInfo: global.adReply.contextInfo })
                 break
         }
-    },
-    
+    },   
     async groupsUpdate(groupsUpdate, fromMe, m) {
         if (opts['self'] && m.fromMe) return
             console.log(m)
