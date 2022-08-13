@@ -29,7 +29,7 @@ const defaultMenu = {
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
-`
+`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './src/tmp.mp3'
