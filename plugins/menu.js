@@ -23,9 +23,9 @@ const defaultMenu = {
 ┃➤ https://github.com/MendingTuru
 ┗━━━━━━⬣
 %readmore`.trim(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
+  header: '┏━━〔 %category 〕━⬣',
+  body: '┃➤ %cmd %islimit %isPremium',
+  footer: '┗━━━━━⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
