@@ -377,23 +377,23 @@ module.exports = {
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: true,
-                    descUpdate: true,
+                    desc: false,
+                    descUpdate: false,
                     stiker: false,
                     delete: false,
                     antiLink: true,
                     expired: 0,
-                    antiBadword: true,
+                    antiBadword: false,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
-                    viewonce: true,
+                    viewonce: false,
                     nsfw: false,
                     simi: false,
                     clear: false,
@@ -725,7 +725,7 @@ module.exports = {
                                 groupname: await this.getName(id),
                                 membercount: groupMetadata.participants.length
                             })
-                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')
+                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Selamat Datang Sayang' : 'Beban', action === 'add' ? '.intro' : 'Pangeran')
                         }
                     }
                 }
