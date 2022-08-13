@@ -1,8 +1,11 @@
 let levelling = require('../lib/levelling')
+let { MessageType } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
+const chats = conn.chats.all()
+const groups = chats.filter(v => v.jid.endsWith('g.us'))
 const defaultMenu = {
   before: `
 ┏━━〔ᵈʳᴋᴏᴋᴏ⁻ᴹᴰ×፝֟͜×〕━⬣
