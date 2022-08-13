@@ -32,10 +32,10 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-
+  let bzz = './src/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'maker', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'nsfw', 'asupan', 'bokep', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -49,7 +49,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
+    'maker': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -59,8 +59,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quran': 'Al Qur\'an',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
+    'nsfw': 'Anime Hentai',
+    'asupan': 'Asupan 18+',
+    'bokep': 'Bokep 22+',
     'info': 'Info',
-    '': 'Tanpa Kategori',
   }
   if (teks == 'game') tags = {
     'game': 'Game',
@@ -90,8 +92,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
   }
-  if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+  if (teks == 'maker') tags = {
+    'maker': 'MagerNulis & Logo'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
@@ -118,11 +120,17 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
   }
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'Anime Hentai'
+  }
+  if (teks == 'asupan') tags = {
+    'asupan': 'Asupan 18+'
+  }
+  if (teks == 'bokep') tags = {
+    'bokep': 'Bokep 22+'
+  }
   if (teks == 'info') tags = {
     'info': 'Info'
-  }
-  if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
   }
   if (teks == 'owner') tags = {
     'owner': 'Owner',
@@ -210,8 +218,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: "Al-Qur\'an", rowId: `${_p}? quran` },
           { title: 'Pengubah Suara', rowId: `${_p}? audio` },
           { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
+          { title: 'Anime Hentai', rowId: `${_p}? nsfw` },
+          { title: 'Asupan 18+', rowId: `${_p}? asupan` },
+          { title: 'Bokep 22+', rowId: `${_p}? bokep` },
           { title: 'Info', rowId: `${_p}? info` },
-          { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
+          { title: 'Thanks To', rowId: `${_p}tqto` },
           { title: 'Owner', rowId: `${_p}? owner` },
         ]
       }
