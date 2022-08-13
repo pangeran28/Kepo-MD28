@@ -32,7 +32,7 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-  let bzz = './src/tmp.mp3'
+    let bzz = './src/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'maker', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'nsfw', 'asupan', 'bokep', 'info', 'owner']
@@ -287,7 +287,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Koko`, `${_p}owner`, `🎖Rules`, `${_p}rules`, `🎗 Donasi 🎗`, `${_p}donasi`)
+    await conn.sendFile(m.chat, bzz, 'audio.opus', null, m, true, { duration: 999999999 })
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
