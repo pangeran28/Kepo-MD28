@@ -200,98 +200,98 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         title: 'List Menu ' + namabot,
         rows: [
                 {
-                  title: `[🧾] Semua Perintah`,
-                  description: 'Memberikan Semua Fitur Bot',
-                  rowId: `${_p}? all`
+                  "title": "[🧾] Semua Perintah",
+                  "description": 'Memberikan Semua Fitur Bot',
+                  "rowId": `${_p}? all`
                 }, {
-                  title: '[🎮] Menu Game',
-                  description: 'Menu Game Kidz',
-                  rowId: `${_p}? game`
+                  "title": '[🎮] Menu Game',
+                  "description": 'Menu Game Kidz',
+                  "rowId": `${_p}? game`
                 }, {
-                  title: '[📈] Menu XP',
-                  description: 'XP Dan Level Kidz',
-                  rowId: `${_p}? xp`
+                  "title": '[📈] Menu XP',
+                  "description": 'XP Dan Level Kidz',
+                  "rowId": `${_p}? xp`
                 }, {
-                  title: '[🎇] Menu Sticker',
-                  description: 'Menu Buat Sticker Kidz',
-                  rowId: `${_p}? sticker`
+                  "title": '[🎇] Menu Sticker',
+                  "description": 'Menu Buat Sticker Kidz',
+                  "rowId": `${_p}? sticker`
                 }, {
-                  title: "[🐚] Kerang Ajaib',
-                  description: 'Menurut Kerang Ajaib Kidz...',
-                  rowId: `${_p}? kerangajaib`
+                  "title": "[🐚] Kerang Ajaib',
+                  "description": 'Menurut Kerang Ajaib Kidz...',
+                  "rowId": `${_p}? kerangajaib`
                 }, {
-                  title: '[📑] Menu Quotes',
-                  description: 'Menu Quotes Kidz',
-                  rowId: `${_p}? quotes`
+                  "title": '[📑] Menu Quotes',
+                  "description": 'Menu Quotes Kidz',
+                  "rowId": `${_p}? quotes`
                 }, {
-                  title: '[🏢] Menu Group',
-                  description: 'Menu Group Kidz',
-                  rowId: `${_p}? group`
+                  "title": '[🏢] Menu Group',
+                  "description": 'Menu Group Kidz',
+                  "rowId": `${_p}? group`
                 }, {
-                  title: '[🔝] Menu Premium',
-                  description: 'Menu Untuk Premium Kidz',
-                  rowId: `${_p}? premium`
+                  "title": '[🔝] Menu Premium',
+                  "description": 'Menu Untuk Premium Kidz',
+                  "rowId": `${_p}? premium`
                 }, {
-                  title: '[🖥️] Menu Internet',
-                  description: 'Cari Sesuatu Di Bot',
-                  rowId: `${_p}? internet`
+                  "title": '[🖥️] Menu Internet',
+                  "description": 'Cari Sesuatu Di Bot',
+                  "rowId": `${_p}? internet`
                 }, {
-                  title: '[🥷] Menu Anonymous',
-                  description: 'Mainkan Anonymous Chat',
-                  rowId: `${_p}? anonymous`
+                  "title": '[🥷] Menu Anonymous',
+                  "description": 'Mainkan Anonymous Chat',
+                  "rowId": `${_p}? anonymous`
                 }, {
-                  title: '[✒️] Nulis & Logo',
-                  description: 'Menu Nulis & Logo',
-                  rowId: `${_p}? maker`
+                  "title": '[✒️] Nulis & Logo',
+                  "description": 'Menu Nulis & Logo',
+                  "rowId": `${_p}? maker`
                 }, {
-                  title: '[🔞] Menu NSFW',
-                  description: 'Menu Bokep',
-                  rowId: `${_p}? nsfw`
+                  "title": '[🔞] Menu NSFW',
+                  "description": 'Menu Bokep',
+                  "rowId": `${_p}? nsfw`
                 }, {
-                  title: '[📺] Menu Downloader',
-                  description: 'Download Sesuatu Di Bot',
-                  rowId: `${_p}? downloader`
+                  "title": '[📺] Menu Downloader',
+                  "description": 'Download Sesuatu Di Bot',
+                  "rowId": `${_p}? downloader`
                 }, {
-                  title: '[🔧] Menu Tools',
-                  description: 'Tools Yang Bisa di Gunakan Di Bot',
-                  rowId: `${_p}? tools`
+                  "title": '[🔧] Menu Tools',
+                  "description": 'Tools Yang Bisa di Gunakan Di Bot',
+                  "rowId": `${_p}? tools`
                 }, {
-                  title: '[🎇] Menu Fun',
-                  description: 'Menu Ceria Kidz',
-                  rowId: `${_p}? fun`
+                  "title": '[🎇] Menu Fun',
+                  "description": 'Menu Ceria Kidz',
+                  "rowId": `${_p}? fun`
                 }, {
-                  title: '[📂] Menu Database',
-                  description: 'Simpan Sesuatu Di Bot',
-                  rowId: `${_p}? database`
+                  "title": '[📂] Menu Database',
+                  "description": 'Simpan Sesuatu Di Bot',
+                  "rowId": `${_p}? database`
                 }, {
-                  title: '[📝] Vote & Absen',
-                  description: 'Menu Vote & Absen',
-                  rowId: `${_p}? vote`
+                  "title": '[📝] Vote & Absen',
+                  "description": 'Menu Vote & Absen',
+                  "rowId": `${_p}? vote`
                 }, {
-                  title: '[🕋] Menu Islam',
-                  description: 'Menu Tentang Islam',
-                  rowId: `${_p}? quran`
+                  "title": '[🕋] Menu Islam',
+                  "description": 'Menu Tentang Islam',
+                  "rowId": `${_p}? quran`
                 }, {
-                  title: '[🎙️] Pengubah Suara',
-                  description: 'Ubah Suaramu Sayang',
-                  rowId: `${_p}? audio`
+                  "title": '[🎙️] Pengubah Suara',
+                  "description": 'Ubah Suaramu Sayang',
+                  "rowId": `${_p}? audio`
                 }, {
-                  title: '[🤖] Menu Jadi Bot',
-                  description: 'Jadi Bot Kidz',
-                  rowId: `${_p}? jadibot`
+                  "title": '[🤖] Menu Jadi Bot',
+                  "description": 'Jadi Bot Kidz',
+                  "rowId": `${_p}? jadibot`
                 }, {
-                  title: '[ℹ️] Menu Info',
-                  description: 'Info Tentang Bot',
-                  rowId: `${_p}? info`
+                  "title": '[ℹ️] Menu Info',
+                  "description": 'Info Tentang Bot',
+                  "rowId": `${_p}? info`
                 }, {
-                  title: '[🌟] Thanks To',
-                  description: 'Terimakasih Kontribusinya',
-                  rowId: `${_p}? tqto`
+                  "title": '[🌟] Thanks To',
+                  "description": 'Terimakasih Kontribusinya',
+                  "rowId": `${_p}? tqto`
                 }, {
-                  title: '[🧑‍💻] Menu Owner',
-                  description: 'Menu Khusu Owner',
-                  rowId: `${_p}? owner`
-            },
+                  "title": '[🧑‍💻] Menu Owner',
+                  "description": 'Menu Khusu Owner',
+                  "rowId": `${_p}? owner`
+            }
          ]
       }
     ]
