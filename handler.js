@@ -263,6 +263,7 @@ module.exports = {
                     pickaxedurability: 0,
                     fishingrod: 0,
                     fishingroddurability: 0,
+                    pancingan: 1,
                     lastadventure: 0,
                     lastfishing: 0,
                     lastdungeon: 0,
