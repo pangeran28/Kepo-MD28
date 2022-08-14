@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let bzz = './src/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -72,7 +72,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
   }
-  if (teks == 'stiker') tags = {
+  if (teks == 'sticker') tags = {
     'sticker': 'Stiker'
   }
   if (teks == 'kerangajaib') tags = {
@@ -199,29 +199,29 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       {
         title: 'List Menu ' + namabot,
         rows: [
-          { title: 'Semua Perintah', description: 'Fitur Semua Menu Kidz', rowId: `${_p}? all` },
-          { title: 'Game', description: 'Fitur Bermain Dengan Bot Kidz', rowId: `${_p}? game` },
-          { title: 'XP', rowId: description: 'Level dan XP Kidz', `${_p}? xp` },
-          { title: 'Sticker', description: 'Fitur Membuat Sticker Kidz', rowId: `${_p}? sticker` },
-          { title: 'Kerang Ajaib', description: 'Fitur Kerang Ajaib Kidz', rowId: `${_p}? kerangajaib` },
-          { title: 'Quotes', description: 'Fitur Kata Sad Di Bot Kidz', rowId: `${_p}? quotes` },
-          { title: 'Group', description: 'Fitur Group Kidz', rowId: `${_p}? group` },
-          { title: 'Premium', description: 'Fitur Premium Kidz', rowId: `${_p}? premium` },
-          { title: 'Internet', description: 'Fitur Internet Kidz', rowId: `${_p}? internet` },
-          { title: 'Fitur Dewasa 22+', description: 'Fitur Khusus 22+ Kidz', rowId: `${_p}? nsfw` },
-          { title: 'Anonymous', description: 'Fitur Cari Teman Kidz', rowId: `${_p}? anonymous` },
-          { title: 'Nulis & Logo', description: 'Fitur Membuat Logo Dan Nulis', rowId: `${_p}? maker` },
-          { title: 'Downloader', description: 'Fitur Khusus Download Kidz', rowId: `${_p}? downloader` },
-          { title: 'Tools', description: 'Fitur Tools Bot Kidz', rowId: `${_p}? tools` },
-          { title: 'Fun', description: 'Fitur Ceria Kidz', rowId: `${_p}? fun`},
-          { title: 'Database', description: 'Fitur Menyimpan Data Di Bot Kidz', rowId: `${_p}? database` },
-          { title: 'Vote & Absen', description: 'Fitur Vote dan Absen Kidz', rowId: `${_p}? vote` },
-          { title: "Al-Qur\'an", description: 'Fitur Islami Kidz', rowId: `${_p}? quran` },
+          { title: 'Semua Perintah', rowId: `${_p}? all` },
+          { title: 'Game', rowId: `${_p}? game` },
+          { title: 'XP', rowId: `${_p}? xp` },
+          { title: 'Sticker', rowId: `${_p}? sticker` },
+          { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
+          { title: 'Quotes', rowId: `${_p}? quotes` },
+          { title: 'Group', rowId: `${_p}? group` },
+          { title: 'Premium', rowId: `${_p}? premium` },
+          { title: 'Internet', rowId: `${_p}? internet` },
+          { title: 'Fitur Dewasa 22+', rowId: `${_p}? nsfw` },
+          { title: 'Anonymous', rowId: `${_p}? anonymous` },
+          { title: 'Nulis & Logo', rowId: `${_p}? maker` },
+          { title: 'Downloader', rowId: `${_p}? downloader` },
+          { title: 'Tools', rowId: `${_p}? tools` },
+          { title: 'Fun', rowId: `${_p}? fun`},
+          { title: 'Database', rowId: `${_p}? database` },
+          { title: 'Vote & Absen', rowId: `${_p}? vote` },
+          { title: "Al-Qur\'an", rowId: `${_p}? quran` },
           { title: 'Pengubah Suara', description: 'Fitur Pengubah Suara Kidz', rowId: `${_p}? audio` },
-          { title: 'Jadi Bot', description: 'Fitur Jadi Bot Kidz', rowId: `${_p}? jadibot` },
-          { title: 'Info', description: 'Fitur Info Bot Kidz', rowId: `${_p}? info` },
-          { title: 'Thanks To', description: 'Terimakasih Kontribusinya', rowId: `${_p}? tqto` },
-          { title: 'Owner', description: 'Fitur Khusus Owner Kidz', rowId: `${_p}? owner` },
+          { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
+          { title: 'Info', rowId: `${_p}? info` },
+          { title: 'Thanks To', rowId: `${_p}? tqto` },
+          { title: 'Owner', rowId: `${_p}? owner` },
         ]
       }
     ]
