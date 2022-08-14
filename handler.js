@@ -60,7 +60,6 @@ module.exports = {
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
                     if (!isNumber(user.lastowner)) user.lastowner = 0
                     if (!isNumber(user.money)) user.money = 0
-                    if (!isNumber(user.bank)) user.bank = 0
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.batu)) user.batu = 0
@@ -86,24 +85,9 @@ module.exports = {
                     if (!isNumber(user.armormonster)) user.armormonster = 0
                     if (!isNumber(user.tiketcoin)) user.tiketcoin = 0
                     if (!isNumber(user.healtmonster)) user.healtmonster = 0
-                    if (!isNumber(user.horse)) user.horse = 0
-                    if (!isNumber(user.horseexp)) user.horseexp = 0
-                    if (!isNumber(user.cat)) user.cat = 0
-                    if (!isNumber(user.catexp)) user.catexp = 0
-                    if (!isNumber(user.fox)) user.fox = 0
-                    if (!isNumber(user.foxhexp)) user.foxexp = 0
-                    if (!isNumber(user.dog)) user.dog = 0
-                    if (!isNumber(user.dogexp)) user.dogexp = 0
 
-                    if (!isNumber(user.horselastfeed)) user.horselastfeed = 0
-                    if (!isNumber(user.catlastfeed)) user.catlastfeed = 0
-                    if (!isNumber(user.foxlastfeed)) user.foxlastfeed = 0
-                    if (!isNumber(user.doglastfeed)) user.doglastfeed = 0
-
-                    if (!isNumber(user.hero)) user.hero = 1
+                    if (!isNumber(user.hero)) user.hero = 0
                     if (!isNumber(user.exphero)) user.exphero = 0
-                    if (!isNumber(user.pillhero)) user.pillhero= 0
-                    if (!isNumber(user.herolastclaim)) user.herolastclaim = 0
 
                     if (!isNumber(user.area)) user.area = 0
                     if (!('banned' in user)) user.banned = false
@@ -257,26 +241,9 @@ module.exports = {
                     ramuankucinglast: 0,
                     ramuanrubahlast: 0,
                     ramuananjinglast: 0,
-                    ramuanherolast: 0,
-
-                    horse: 0,
-                    horseexp: 0,
-                    cat: 0,
-                    catngexp: 0,
-                    fox: 0,
-                    foxexp: 0,
-                    dog: 0,
-                    dogexp: 0,
                     
-                    hero: 1,
+                    hero: 0,
                     exphero: 0,
-                    pillhero: 0,
-                    herolastclaim: 0,
-           
-                    horselastfeed: 0,
-                    catlastfeed: 0,
-                    foxlastfeed: 0,
-                    doglastfeed: 0,
       
                     lastmancingeasy: 0,
                     lastmancingnormal: 0,
