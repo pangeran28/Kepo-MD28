@@ -1,4 +1,8 @@
 let handler = async (m, { conn, command }) => {
+let nyenye = `https://api.waifu.pics/nsfw/waifu`
+    conn.sendButtonImg(m.chat, nyenye, `Nihh @${m.sender.split('@')[0]} Jangan Sagne Om!`, wm, `Next Sayang`, `.${command}`, m) 
+}
+/*let handler = async (m, { conn, command }) => {
   try {
   var {age} = db.data.users[m.sender]
   if (age <17) throw conn.reply(m.chat, 'Lu masih di bawah umur jangan dulu deh', m)
@@ -10,7 +14,7 @@ let handler = async (m, { conn, command }) => {
   } catch {
   
   }
-}
+}*/
 handler.help = ['nsfwwaifu']
 handler.tags = ['nsfw']
 handler.command = /^(nsfwwaifu|waifunsfw)$/i
