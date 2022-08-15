@@ -1,87 +1,32 @@
-let nh = require('nhentai')
-let moment = require('moment')
+let { get } = require('axios')
+let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
- if (!DATABASE.data.chats[m.chat].nsfw && m.isGroup) throw 'Feature Nsfw Disable\nType *!enable* *nsfw* to activate this feature'
- if (!args[0]) throw 'Kodenya Mana?'
-  let req = new nh.API()
-  response = await req.fetchDoujin(args[0]).catch(e => {
-  throw `Kode ${args[0]} Tidak Ditemukan!`
-  })
-  let caption = `*Data Berhasil Ditemukan!!*
-  
-  Title : ${response.titles.english}
-  
-  Title Japan : ${response.titles.japanese}
-  
-  Upload At : ${moment(response.uploadDate).format('HH:mm:ss DD-MM-YYYY')}
-  
-  Lang : ${response.tags.all.filter(v => v.type == 'language').map(v => v.name).join(', ')}
-  
-  Character : ${response.tags.all.filter(v => v.type == 'character').map(v => v.name).join(', ')}
-  
-  Category : ${response.tags.all.filter(v => v.type == 'category').map(v => v.name).join(', ')}
-  
-  Tag : ${response.tags.all.filter(v => v.type == 'tag').map(v => v.name).join(', ')}
-  
-  
-  
-  Mohon Tunggu Sebentar, Media Sedang Dikirim.....
-  `.trim()
-  await conn.sendMessage(m.chat, { url: response.thumbnail.url } , 'imageMessage', { caption, quoted: m, thumbnail: Buffer.alloc(0) })
-  conn.sendMessage(m.chat, await getpdf(args[0]), 'documentMessage', { quoted: m, filename: response.titles.english+'.pdf', thumbnail: await getBuffer(response.thumbnail.url), mimetype: 'application/pdf' })
+  if (!args[0]) throw 'Uhm...kode nya mana?'
+  await conn.reply(m.chat, wm, 0, { thumbnail: await(await fetch(ext.thum)).buffer(), contextInfo: {
+                  externalAdReply: {
+                    mediaUrl: 'https://youtu.be/-tKVN2mAKRI',
+                    title: ext.title,
+                    body: ext.body,
+                    thumbnail: await(await fetch(ext.thum)).buffer()
+                   }
+                 }
+               }
+           )
+  let lol = global.API('lol', `/api/nhentaipdf/${args[0]}`, {}, 'apikey')
+  let { result } = (await get(lol)).data
+  if (result.includes('HTML')) throw `Code ${args[0]} Not Found!`
+   conn.sendMessage(m.chat, await getBuffer(result), 'documentMessage', { quoted: m, filename: `${args[0]}.pdf`, mimetype: 'application/pdf' })
 }
-handler.help = ['nh', 'nhentai'].map(v => v + ' <code>')
-handler.tags = ['nsfw', 'internet']
-handler.command = /^(nh|nhentai)$/i
-handler.limit = 1
-handler.owner = false
-handler.mods = false
-handler.premium = true
-handler.group = false
-handler.private = false
-handler.nsfw = true
-
+handler.help = ['nhpdf'].map(v => v + ' <code>')
+handler.tags = ['nsfw']
+handler.command = /^(nhpdf|nh)$/i
 handler.limit = true
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
+handler.premium = true
+handler.register = true
 module.exports = handler
 
-async function getpdf(id) {
-let count = 0
-let ResultPdf = [];
-const nhentai = require("nhentai");
-const request = require("request");
-const topdf = require("image-to-pdf");
-const fs = require("fs");
-const get_result = new nhentai.API()
-      const doujin = await get_result.fetchDoujin(id);
-      const array_page = doujin.pages
-      const title = doujin.titles.pretty
-
-      for (let index = 0; index < array_page.length; index++) {
-        const image_name = "nhentai/" + title + index + ".jpg"
-        await new Promise((resolve) => request(array_page[index]).pipe(fs.createWriteStream(image_name)).on('finish', resolve))
-        console.log(array_page[index].url);
-
-        ResultPdf.push(image_name);
-        count++
-      }
-
-      await new Promise((resolve) =>
-        topdf(ResultPdf, 'A4')
-        .pipe(fs.createWriteStream('nhentai/' + title + '.pdf'))
-        .on('finish', resolve)
-      )
-
-      for (let index = 0; index < array_page.length; index++) {
-        fs.unlink("nhentai/" + title + index + ".jpg", (err) => {
-          if (err) throw err
-        })
-      }
-      output = await fs.promises.readFile("nhentai/" + title +".pdf")
-      await fs.promises.unlink("nhentai/" + title +".pdf")
-      return output
+async function getBuffer(url) {
+k = await require('node-fetch')(url)
+a = await k.buffer()
+return a 
 }
