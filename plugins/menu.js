@@ -185,6 +185,31 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       minute: 'numeric',
       second: 'numeric'
     })
+    const wita = moment.tz('Asia/Makassar').format("HH:mm:ss")
+    const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
+    const wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
+    const hariRaya = new Date('January 1, 2023 23:59:59')
+    const sekarang = new Date().getTime()
+    const Selisih = hariRaya - sekarang
+    const jhari = Math.floor( Selisih / (1000 * 60 * 60 * 24));
+    const jjam = Math.floor( Selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+    const mmmenit = Math.floor( Selisih % (1000 * 60 * 60) / (1000 * 60))
+    const ddetik = Math.floor( Selisih % (1000 * 60) / 1000)
+    const hariRayaramadan = new Date('April 21, 2023 23:59:59')
+    const sekarangg = new Date().getTime()
+    const lebih = hariRayaramadan - sekarangg
+    const harii = Math.floor( lebih / (1000 * 60 * 60 * 24));
+    const jamm = Math.floor( lebih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+    const menitt = Math.floor( lebih % (1000 * 60 * 60) / (1000 * 60))
+    const detikk = Math.floor( lebih % (1000 * 60) / 1000)
+    const ultah = new Date('August 18, 2022 23:59:59')
+    const sekarat = new Date().getTime() 
+    const Kurang = ultah - sekarat
+    const ohari = Math.floor( Kurang / (1000 * 60 * 60 * 24));
+    const ojam = Math.floor( Kurang % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+    const onet = Math.floor( Kurang % (1000 * 60 * 60) / (1000 * 60))
+    const detek = Math.floor( Kurang % (1000 * 60) / 1000)
+    let pe = '```'
     let _uptime = process.uptime() * 1000
     let _muptime
     if (process.send) {
