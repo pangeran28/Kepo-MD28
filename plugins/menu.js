@@ -6,21 +6,21 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┏──『 *ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ* 』──⬣
-┆       *Hai*, %name 
+┆         *Hai*, %name 
 ┗┬──────────────┈ ⳹
 ┏┆⬡ *Tersisa* : %limit Limit
 ┆┆⬡ *Role* : %role
 ┆┆⬡ *Level* : %level [%exp / %maxexp]
 ┆┆⬡ *Exp* : %totalexp XP
 ┗┬──────────────┈ ⳹
-┏┤       *Kalender*
+┏┤         *Kalender*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Hari* : %week %weton
 ┆⬡ *Tanggal* : %week %weton, %date
 ┆⬡ *Tanggal Islam* : %dateIslamic
 ┆⬡ *Waktu* : %time
 ┗┬──────────────┈ ⳹
-┏┤       *Bot Info*
+┏┤         *Bot Info*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Uptime* : %uptime
 ┆⬡ *Run Bot* : Panel/RDP
@@ -202,7 +202,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     const jamm = Math.floor( lebih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
     const menitt = Math.floor( lebih % (1000 * 60 * 60) / (1000 * 60))
     const detikk = Math.floor( lebih % (1000 * 60) / 1000)
-    const ultah = new Date('August 18, 2022 23:59:59')
+    const ultah = new Date('February 21, 2023 23:59:59')
     const sekarat = new Date().getTime() 
     const Kurang = ultah - sekarat
     const ohari = Math.floor( Kurang / (1000 * 60 * 60 * 24));
@@ -270,7 +270,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     ]
     const listMessage = {
           text: `
-✧────────···[ Dashboard ]···─────────✧      
+✧─···[ Dashboard ]···─✧      
 │
 ❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
 │⬡ Nama : ${name}
@@ -361,7 +361,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       totalexp: exp,
       xp4levelup: max - exp <= 0 ? `Siap untuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role, premium,
       readmore: readMore
     }
     m.reply('_Tunggu Sebentar Sayang. . ._')
