@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command }) => {
+/*let handler = async (m, { conn, command }) => {
 let supa = 'https://api.zacros.my.id/asupan/malaysia'
 conn.sendButtonImg(m.chat, supa, `Nihh @${m.sender.split('@')[0]} Cewe Malaynya Om!`, wm, `Next Sayang`, `.${command}`, m)
 }
@@ -8,4 +8,4 @@ handler.command = /^(malay)$/i
 handler.premium = true
 handler.limit = true
 handler.register = true
-module.exports = handler
+module.exports = handler*/
