@@ -308,7 +308,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 │ Tolong Jangan Dispam ya Biar Ga Delay
 ╰━━━━━━━━━━━━━━━━┈─◂
 `,
-      footer: `       ▌│█║▌║▌║║▌║▌║█│▌`,
+      footer: `        ▌│█║▌║▌║║▌║▌║█│▌\n\nCʀᴇᴀᴛᴇᴅ Bʏ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ`,
       title: judul,
       buttonText: "Klik Sayang",
       sections
