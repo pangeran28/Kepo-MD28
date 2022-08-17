@@ -10,5 +10,6 @@ handler.tags = ['asupan']
 handler.command = /^(cogan)$/i
 handler.limit = true
 handler.premium = true
+handler.register = true
 
 module.exports = handler
