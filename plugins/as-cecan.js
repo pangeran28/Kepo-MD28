@@ -1,7 +1,7 @@
 /*let handler = async (m, { conn, command }) => {
 let supa = 'https://api.zacros.my.id/asupan/cecan'
 conn.sendButtonImg(m.chat, supa, `Nihh @${m.sender.split('@')[0]} Cewe Cantiknya Om!`, wm, `Next Sayang`, `.${command}`, m)
-}\*
+}*/
 let scrap = require("../lib/scraper_pinterest3")
 let fetch = require('node-fetch')
 
