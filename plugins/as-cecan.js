@@ -6,5 +6,6 @@ handler.help = ['cecan']
 handler.tags = ['asupan']
 handler.command = /^(cecan)$/i
 handler.premium = true
+handler.register = true
 handler.limit = true
 module.exports = handler
