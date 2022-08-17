@@ -6,21 +6,21 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┏──『 *ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ* 』──⬣
-┆   *Hai*, %name 
+┆       *Hai*, %name 
 ┗┬──────────────┈ ⳹
 ┏┆⬡ *Tersisa* : %limit Limit
 ┆┆⬡ *Role* : %role
 ┆┆⬡ *Level* : %level [%exp / %maxexp]
 ┆┆⬡ *Exp* : %totalexp XP
 ┗┬──────────────┈ ⳹
-┏┤   *Kalender*
+┏┤       *Kalender*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Hari* : %week %weton
 ┆⬡ *Tanggal* : %week %weton, %date
 ┆⬡ *Tanggal Islam* : %dateIslamic
 ┆⬡ *Waktu* : %time
 ┗┬──────────────┈ ⳹
-┏┤   *Bot Info*
+┏┤       *Bot Info*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Uptime* : %uptime
 ┆⬡ *Run Bot* : Panel/RDP
@@ -43,7 +43,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let bzz = './src/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'vote', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'vote', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'anime', 'film', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -55,6 +55,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quotes': 'QUOTES',
     'group': 'GROUP',
     'premium': 'PREMIUM',
+    'anime': 'ANIME',
+    'film': 'NONTON FILM',
     'internet': 'INTERNET',
     'anonymous': 'ANONYMOUS CHAT',
     'maker': 'MAGERNULIS & LOGO',
@@ -94,6 +96,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'premium') tags = {
     'premium': 'PREMIUM'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'ANIME'
+  }
+  if (teks == 'film') tags = {
+    'film': 'NONTON FILM'
   }
   if (teks == 'internet') tags = {
     'internet': 'INTERNET'
@@ -215,6 +223,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '🌀QUOTES BOT', description: 'Fitur Quotes Kidz', rowId: `${_p}? quotes` },
           { title: '🗿GROUP BOT', description: 'Fitur Khusus Group Kidz', rowId: `${_p}? group` },
           { title: '✨PREMIUM', description: 'Fitur Khusus Prem Kidz', rowId: `${_p}? premium` },
+          { title: '💨ANIME', description: 'Fitur Khusus Wibu Kidz', rowId: `${_p}? anime` },
+          { title: '🎬NONTON FILM', description: 'Fitur Nonton Film Kidz', rowId: `${_p}? film` },
           { title: '🗼INTERNET', description: 'Fitur Internet Kidz', rowId: `${_p}? internet` },
           { title: '🔞FITUR DEWASA 22+', description: 'Fitur Khusus 22+ Kidz', rowId: `${_p}? nsfw` },
           { title: '🎭ANONYMOUS', description: 'Fitur Nyari Teman Kidz', rowId: `${_p}? anonymous` },
