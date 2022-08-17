@@ -13,14 +13,14 @@ const defaultMenu = {
 ┆┆⬡ *Level* : %level [%exp / %maxexp]
 ┆┆⬡ *Exp* : %totalexp XP
 ┗┬──────────────┈ ⳹
-┏┤         *Kalender*
+┏┤            *Kalender*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Hari* : %week %weton
 ┆⬡ *Tanggal* : %week %weton, %date
 ┆⬡ *Tanggal Islam* : %dateIslamic
 ┆⬡ *Waktu* : %time
 ┗┬──────────────┈ ⳹
-┏┤         *Bot Info*
+┏┤            *Bot Info*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Uptime* : %uptime
 ┆⬡ *Run Bot* : Panel/RDP
@@ -308,7 +308,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 │ Tolong Jangan Dispam ya Biar Ga Delay
 ╰━━━━━━━━━━━━━━━━┈─◂
 `,
-      footer: `     ▌│█║▌║▌║║▌║▌║█│▌`,
+      footer: `       ▌│█║▌║▌║║▌║▌║█│▌`,
       title: judul,
       buttonText: "Klik Sayang",
       sections
