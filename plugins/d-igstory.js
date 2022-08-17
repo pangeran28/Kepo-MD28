@@ -1,25 +1,43 @@
-const { igstory } = require('../lib/scrape')
-
+const { igstory, igstory2 } = require('../lib/scrape')
+const { instagramStory, instagramStoryv2 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-
-  if (!args[0]) throw `Harap masukkan username Instagram!\n\nContoh:\n\n${usedPrefix + command} xijinpingofficial.cn`
-  if (args[0].startsWith('http') || args[0].startsWith('@')) throw `username tidak ditemukan!`
-
-  igstory(args[0]).then(async res => {
-    let igs = JSON.stringify(res)
-    let json = JSON.parse(igs)
-    await m.reply(global.wait)
-    for (let { downloadUrl, type } of json)
-      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), watermark, m)
-
-  })
-
+    if (!args[0]) throw `uhm.. username nya mana?\n\ncontoh:\n\n${usedPrefix + command} rasel.ganz`
+    if (args[0].startsWith('http') || args[0].startsWith('@')) throw `username salah\n\ncontoh: *${usedPrefix}${command} the.sad.boy01*`
+    try {
+    await m.reply(wait)
+    await conn.reply(m.chat, `Downloading ig story ${args[0]}`, 0, {
+    contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    mediaUrl: linkig,
+    mediaType: 2,
+    description: deslink, 
+    title: titlink,
+    body: wm, //`${fileSizeH}`,
+    thumbnail: await(await fetch(img)).buffer(),
+    sourceUrl: linkgc
+     }}
+    })
+    //const res = await fetch(API('hardianto', '/api/download/igstory', { username: args[0] }, 'apikey'))
+    const res = await fetch(`https://hardianto.xyz/api/download/igstory?username=${args[0]}&apikey=hardianto`)
+    var anu = await res.json()
+    var anuku = anu.medias
+    for (let { url, preview } of anuku) 
+    conn.sendMedia(m.chat, url, null, {mentions: [m.sender], jpegThumbnail: await(await fetch(preview)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
+    } catch {
+        try {
+    const res2 = await scrape.igstory(args[0]).catch(async _=> await yzu.igstory(args[0]))
+    for ( const { downloadUrl, url, preview, type, fileType } of res2 )
+    conn.sendMedia(m.chat, url, null, { mentions: [m.sender], jpegThumbnail: await(await fetch(preview)).buffer(), caption: `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`})
+    } catch {
+        throw `No media found!`
+    }                  
+  }
 }
-handler.help = ['igstory'].map(v => v + ' <username>')
+handler.help = ['instagramstory'].map(v => v + ' <username>')
 handler.tags = ['downloader']
-handler.command = /^(igs(tory)?)$/i
-handler.premium = true
+handler.command = /^((igs|instagrams)(tory)?(dl)?(downloa?d(er)?)?)$/i
 handler.register = true
+handler.premium = true
 handler.limit = true
 
 module.exports = handler
