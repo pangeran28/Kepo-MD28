@@ -244,11 +244,47 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     ]
     const listMessage = {
-      text: judul,
-      footer: wm,
-      mentions: await conn.parseMention(judul),
-      title: '',
-      buttonText: "DiKlik Sayang",
+✧────────···[ Dashboard ]···─────────✧      
+│
+❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
+│⬡ Nama : ${name}
+│⬡ Uang : ${money}
+│⬡ Limit : ${limit} 
+│⬡ Premium : ${premium ? '✅' : '❌'}
+┴
+├━━━━━━━━━━━━━━━━┈─⋆
+┬
+❏ 𝙏𝙄𝙈𝙀
+│⬡ Wib : ${time}
+│⬡ Tanggal : ${week} ${weton} ${date}
+┴
+├━━━━━━━━━━━━━━━━┈─⋆
+┬
+❏ 𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
+│⬡ _${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik_
+┴
+├━━━━━━━━━━━━━━━━┈─⋆
+┬
+❏ 𝙍𝘼𝙈𝘼𝘿𝘼𝙉
+│⬡ _${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik_
+┴
+├━━━━━━━━━━━━━━━━┈─⋆
+┬
+❏ 𝙐𝙇𝘼𝙉𝙂 𝙏𝘼𝙃𝙐𝙉 𝙊𝙒𝙉𝙀𝙍
+│⬡ _${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik_
+┴
+┬
+├━━━━━━━━━━━━━━━━┈─⋆
+│ ▸ *Author :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
+┴ ▸ *Owner :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
+✧
+┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
+│ Tolong Jangan Dispam ya Biar Ga Delay
+╰━━━━━━━━━━━━━━━━┈─◂
+`,
+      footer: `     ▌│█║▌║▌║║▌║▌║█│▌`,
+      title: judul,
+      buttonText: "Klik Sayang",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
