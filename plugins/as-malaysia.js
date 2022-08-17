@@ -1,10 +1,11 @@
-let handler = async(m,{text, conn}) => {
+let handler = async (m, { conn, command }) => {
 let supa = 'https://api.zacros.my.id/asupan/malaysia'
-conn.sendFile(m.chat, supa, null, 'Malaysia', m)
+conn.sendButtonImg(m.chat, supa, `Nihh @${m.sender.split('@')[0]} Cewe Malaynya Om!`, wm, `Next Sayang`, `.${command}`, m)
 }
-handler.help = ['negaratetangga3']
+handler.help = ['malay']
 handler.tags = ['asupan']
-handler.command = /^(negaratetangga3)$/i
+handler.command = /^(malay)$/i
 handler.premium = true
 handler.limit = true
+handler.register = true
 module.exports = handler
