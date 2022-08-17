@@ -8,31 +8,31 @@ const defaultMenu = {
 ┏──『 *ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ* 』──⬣
 ┆         *Hai*, %name 
 ┗┬──────────────┈ ⳹
-┏┆⬡ *Tersisa* : %limit Limit
-┆┆⬡ *Role* : %role
-┆┆⬡ *Level* : %level [%exp / %maxexp]
-┆┆⬡ *Exp* : %totalexp XP
+┏┆❏ *Tersisa* : %limit Limit
+┆┆❏ *Role* : %role
+┆┆❏ *Level* : %level [%exp / %maxexp]
+┆┆❏ *Exp* : %totalexp XP
 ┗┬──────────────┈ ⳹
 ┏┤             *Kalender*
 ┆┗──────────────┈ ⳹
-┆⬡ *Hari* : %week %weton
-┆⬡ *Tanggal* : %week %weton, %date
-┆⬡ *Tanggal Islam* : %dateIslamic
-┆⬡ *Waktu* : %time
+┆❏ *Hari* : %week %weton
+┆❏ *Tanggal* : %week %weton, %date
+┆❏ *Tanggal Islam* : %dateIslamic
+┆❏ *Waktu* : %time
 ┗┬──────────────┈ ⳹
 ┏┤              *Bot Info*
 ┆┗──────────────┈ ⳹
-┆⬡ *Uptime* : %uptime
-┆⬡ *Run Bot* : Panel/RDP
-┆⬡ *Bailyes Version* : 4.2.0
-┆⬡ *Database* : %rtotalreg dari %totalreg
-┆⬡ *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-┆⬡ *Github* :
-┆⬡ https://github.com/MendingTuru
+┆❏ *Uptime* : %uptime
+┆❏ *Run Bot* : Panel/RDP
+┆❏ *Bailyes Version* : 4.2.0
+┆❏ *Database* : %rtotalreg dari %totalreg
+┆❏ *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+┆❏ *Github* :
+┆❏ https://github.com/MendingTuru
 ┗────────────────⬣
 %readmore`.trim(),
   header: '┏━┈┈『 %category 』┈┈⬣',
-  body: '┆⬡ %cmd %islimit %isPremium',
+  body: '┆◦➛ %cmd %islimit %isPremium',
   footer: '┗━───────⬣\n',
   after: `
 *%npmname@^%version*
@@ -235,7 +235,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      let judul = `${global.ucapan}, ${name}`.trim()
+      let judul = `
+      ┏─────···[ᵈʳᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]···────✧
+      │ ${global.ucapan}, ${name}
+      │
+        `.trim()
       const sections = [
       {
         title: 'List Menu ' + namabot,
@@ -273,37 +277,38 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ┏────···[ Dashboard ]···───✧      
 ┬
 ❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
-│⬡ Nama : ${name}
-│⬡ Uang : ${money}
-│⬡ Limit : ${limit} 
-│⬡ Premium : ${premium ? '✅' : '❌'}
+│◦➛ Nama : ${name}
+│◦➛ Uang : ${money}
+│◦➛ Limit : ${limit} 
+│◦➛ Premium : ${premium ? '✅' : '❌'}
 ┴
 ├━━━━━━━━━━━━━━━━┈─⋆
 ┬
 ❏ 𝙏𝙄𝙈𝙀
-│⬡ Wib : ${time}
-│⬡ Tanggal : ${week} ${weton} ${date}
+│◦➛ Wib : ${time}
+│◦➛ Tanggal : ${week} ${weton} ${date}
 ┴
 ├━━━━━━━━━━━━━━━━┈─⋆
 ┬
 ❏ 𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
-│⬡ _${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik_
+│◦➛ _${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik_
 ┴
 ├━━━━━━━━━━━━━━━━┈─⋆
 ┬
 ❏ 𝙍𝘼𝙈𝘼𝘿𝘼𝙉
-│⬡ _${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik_
+│◦➛ _${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik_
 ┴
 ├━━━━━━━━━━━━━━━━┈─⋆
 ┬
 ❏ 𝙐𝙇𝘼𝙉𝙂 𝙏𝘼𝙃𝙐𝙉 𝙊𝙒𝙉𝙀𝙍
-│⬡ _${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik_
+│◦➛ _${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik_
 ┴
 ┬
 ├━━━━━━━━━━━━━━━━┈─⋆
 ┴
-│ *Author :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
-│ *Owner :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
+┬
+│◦➛ *Author :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
+│◦➛ *Owner :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
 ┴
 ✧
 ┬ 
