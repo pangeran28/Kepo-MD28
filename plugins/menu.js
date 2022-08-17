@@ -13,14 +13,14 @@ const defaultMenu = {
 ┆┆⬡ *Level* : %level [%exp / %maxexp]
 ┆┆⬡ *Exp* : %totalexp XP
 ┗┬──────────────┈ ⳹
-┏┤            *Kalender*
+┏┤             *Kalender*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Hari* : %week %weton
 ┆⬡ *Tanggal* : %week %weton, %date
 ┆⬡ *Tanggal Islam* : %dateIslamic
 ┆⬡ *Waktu* : %time
 ┗┬──────────────┈ ⳹
-┏┤            *Bot Info*
+┏┤             *Bot Info*
 ┆┗──────────────┈ ⳹
 ┆⬡ *Uptime* : %uptime
 ┆⬡ *Run Bot* : Panel/RDP
@@ -270,7 +270,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     ]
     const listMessage = {
           text: `
-✧──···[ Dashboard ]···──✧      
+✧───···[ Dashboard ]···───✧      
 │
 ❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
 │⬡ Nama : ${name}
