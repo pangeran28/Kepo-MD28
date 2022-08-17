@@ -1,4 +1,4 @@
-let handler = async(m,{text, conn}) => {
+let handler = async (m, { conn, command }) => {
 let supa = 'https://api.zacros.my.id/asupan/Indonesia'
 conn.sendFile(m.chat, supa, null, 'indonesia', m)
 }
