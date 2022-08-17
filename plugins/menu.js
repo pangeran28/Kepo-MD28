@@ -5,27 +5,35 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┏━━〔ᵈʳᴋᴏᴋᴏ-ᴍᴅ×፝֟͜×〕━⬣
-┃➤ *%ucapan %name*
-┃
-┃➤ Tersisa *%limit Limit*
-┃➤ Role *%role*
-┃➤ Level *%level (%exp / %maxexp)* [%xp4levelup]
-┃➤ %totalexp XP secara Total
-┃
-┃➤ Tanggal: *%week %weton, %date*
-┃➤ Tanggal Islam: *%dateIslamic*
-┃➤ Waktu: *%time*
-┃
-┃➤ Uptime: *%uptime (%muptime)*
-┃➤ Database: %rtotalreg dari %totalreg
-┃➤ Github:
-┃➤ https://github.com/MendingTuru
-┗━━━━━━⬣
+┏─────────────────⬣
+┆   *Hai*, %name 
+┗┬──────────────┈ ⳹
+┏┆⬡ *Tersisa* : %limit Limit
+┆┆⬡ *Role* : %role
+┆┆⬡ *Level* : %level [%exp / %maxexp]
+┆┆⬡ *Exp* : %totalexp XP
+┗┬──────────────┈ ⳹
+┏┤   *Kalender*
+┆┗──────────────┈ ⳹
+┆⬡ *Hari* : %week %weton
+┆⬡ *Tanggal* : %week %weton, %date
+┆⬡ *Tanggal Islam* : %dateIslamic
+┆⬡ *Waktu* : %time
+┗┬──────────────┈ ⳹
+┏┤   *Bot Info*
+┆┗──────────────┈ ⳹
+┆⬡ *Uptime* : %uptime
+┆⬡ *Run Bot* : Panel/RDP
+┆⬡ *Bailyes Version* : 4.2.0
+┆⬡ *Database* : %rtotalreg dari %totalreg
+┆⬡ *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+┆⬡ *Github* :
+┆⬡ https://github.com/MendingTuru
+┗─────────────────⬣
 %readmore`.trim(),
-  header: '┏━━〔 %category 〕━⬣',
-  body: '┃➤ %cmd %islimit %isPremium',
-  footer: '┗━━━━⬣\n',
+  header: '┏━┈┈『 %category 』┈┈⬣',
+  body: '┆⬡ %cmd %islimit %isPremium',
+  footer: '┗━───────⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
