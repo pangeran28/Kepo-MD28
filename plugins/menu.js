@@ -41,101 +41,101 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'main': 'UTAMA',
     'game': 'Game',
     'rpg': 'RPG',
-    'xp': 'Exp & Limit',
-    'sticker': 'Stiker',
-    'kerang': 'Kerang Ajaib',
-    'quotes': 'Quotes',
-    'group': 'Group',
-    'premium': 'Premium',
-    'internet': 'Internet',
-    'anonymous': 'Anonymous Chat',
-    'maker': 'MagerNulis & Logo',
-    'nsfw': 'Anime Hentai',
-    'asupan': 'Asupan 18+',
-    'bokep': 'Bokep 22+',
-    'downloader': 'Downloader',
-    'tools': 'Tools',
-    'fun': 'Fun',
-    'database': 'Database',
-    'vote': 'Voting',
-    'absen': 'Absen',
-    'quran': 'Al Qur\'an',
-    'audio': 'Pengubah Suara',
-    'jadibot': 'Jadi Bot',
-    'info': 'Info',
-    '': 'Tanpa Kategori',
+    'xp': 'EXP & LIMIT',
+    'sticker': 'STIKER',
+    'kerang': 'KERANG AJAIB',
+    'quotes': 'QUOTES',
+    'group': 'GROUP',
+    'premium': 'PREMIUM',
+    'internet': 'INTERNET',
+    'anonymous': 'ANONYMOUS CHAT',
+    'maker': 'MAGERNULIS & LOGO',
+    'nsfw': 'ANIME HENTAI',
+    'asupan': 'ASUPAN 18+',
+    'bokep': 'BOKEP 22+',
+    'downloader': 'DOWNLOADER',
+    'tools': 'TOOLS',
+    'fun': 'FUN',
+    'database': 'DATABASE',
+    'vote': 'VOTING',
+    'absen': 'ABSEN',
+    'quran': 'AL QUR\'AN',
+    'audio': 'PENGUBAH SUARA',
+    'jadibot': 'JADI BOT',
+    'info': 'INFO',
+    '': 'TANPA KATEGORI',
   }
   if (teks == 'game') tags = {
-    'game': 'Game',
+    'game': 'GAME',
     'rpg': 'RPG'
   }
   if (teks == 'xp') tags = {
-    'xp': 'Exp & Limit'
+    'xp': 'EXP & LIMIT'
   }
   if (teks == 'sticker') tags = {
-    'sticker': 'Stiker'
+    'sticker': 'STIKER'
   }
   if (teks == 'kerangajaib') tags = {
-    'kerang': 'Kerang Ajaib'
+    'kerang': 'KERANG AJAIB'
   }
   if (teks == 'quotes') tags = {
-    'quotes': 'Quotes'
+    'quotes': 'QUOTES'
   }
   if (teks == 'group') tags = {
-    'group': 'Group'
+    'group': 'GROUP'
   }
   if (teks == 'premium') tags = {
-    'premium': 'Premium'
+    'premium': 'PREMIUM'
   }
   if (teks == 'internet') tags = {
-    'internet': 'Internet'
+    'internet': 'INTERNET'
   }
   if (teks == 'anonymous') tags = {
-    'anonymous': 'Anonymous Chat'
+    'anonymous': 'ANONYMOUS CHAT'
   }
   if (teks == 'maker') tags = {
-    'maker': 'MagerNulis & Logo'
+    'maker': 'MAGERNULIS & LOGO'
   }
   if (teks == 'nsfw') tags = {
-    'nsfw': 'Anime Hentai',
-    'asupan': 'Asupan 18+',
-    'bokep': 'Bokep 22+'
+    'nsfw': 'ANIME HENTAI',
+    'asupan': 'ASUPAN 18+',
+    'bokep': 'BOKEP 22+'
   }
   if (teks == 'downloader') tags = {
-    'downloader': 'Downloader'
+    'downloader': 'DOWNLOADER'
   }
   if (teks == 'tools') tags = {
-    'tools': 'Tools'
+    'tools': 'TOOLS'
   }
   if (teks == 'fun') tags = {
-    'fun': 'Fun'
+    'fun': 'FUN'
   }
   if (teks == 'database') tags = {
-    'database': 'Database'
+    'database': 'DATABASE'
   }
   if (teks == 'vote') tags = {
-    'vote': 'Voting',
-    'absen': 'Absen'
+    'vote': 'VOTING',
+    'absen': 'ABSEN'
   }
   if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
+    'quran': 'AL QUR\'AN'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': 'PENGUBAH SUARA'
   }
   if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
+    'jadibot': 'JADI BOT'
   }
   if (teks == 'info') tags = {
-    'info': 'Info'
+    'info': 'INFO'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
+    '': 'TANPA KATEGORI'
   }
   if (teks == 'owner') tags = {
-    'owner': 'Owner',
-    'host': 'Host',
-    'advanced': 'Advanced'
+    'owner': 'OWNER',
+    'host': 'HOST',
+    'advanced': 'ADVANCED'
   }
 
 
@@ -199,29 +199,29 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       {
         title: 'List Menu ' + namabot,
         rows: [
-          { title: 'Semua Perintah', description: 'Fitur ALLMENU Kidz', rowId: `${_p}? all` },
-          { title: 'Game', description: 'Fitur Game Kidz', rowId: `${_p}? game` },
-          { title: 'XP', description: 'Fitur xp & lvl Kidz ', rowId: `${_p}? xp` },
-          { title: 'Sticker', description: 'Fitur Sticker Kidz', rowId: `${_p}? sticker` },
-          { title: 'Kerang Ajaib', description: 'Fitur Kerang Kidz', rowId: `${_p}? kerangajaib` },
-          { title: 'Quotes', description: 'Fitur Quotes Kidz', rowId: `${_p}? quotes` },
-          { title: 'Group', description: 'Fitur Khusus Group Kidz', rowId: `${_p}? group` },
-          { title: 'Premium', description: 'Fitur Khusus Prem Kidz', rowId: `${_p}? premium` },
-          { title: 'Internet', description: 'Fitur Internet Kidz', rowId: `${_p}? internet` },
-          { title: 'Fitur Dewasa 22+', description: 'Fitur Khusus 22+ Kidz', rowId: `${_p}? nsfw` },
-          { title: 'Anonymous', description: 'Fitur Nyari Teman Kidz', rowId: `${_p}? anonymous` },
-          { title: 'Nulis & Logo', description: 'Fitur Nulis & Logo Kidz', rowId: `${_p}? maker` },
-          { title: 'Downloader', description: 'Fitur Download Kidz', rowId: `${_p}? downloader` },
-          { title: 'Tools', description: 'Fitur Tools Kidz', rowId: `${_p}? tools` },
-          { title: 'Fun', description: 'Fitur Ceria Kidz', rowId: `${_p}? fun`},
-          { title: 'Database', description: 'Fitur Database Kidz', rowId: `${_p}? database` },
-          { title: 'Vote & Absen', description: 'Fitur Absen Kidz', rowId: `${_p}? vote` },
-          { title: "Al-Qur\'an", description: 'Fitur Muslim Kidz', rowId: `${_p}? quran` },
-          { title: 'Pengubah Suara', description: 'Fitur Pengubah Suara Kidz', rowId: `${_p}? audio` },
-          { title: 'Jadi Bot', description: 'Fitur JadiBot Kidz', rowId: `${_p}? jadibot` },
-          { title: 'Info', description: 'Fitur Info Bot Kidz', rowId: `${_p}? info` },
-          { title: 'Thanks To', description: 'Terimakasih Contributors', rowId: `${_p}? tqto` },
-          { title: 'Owner', description: 'Fitur Owner Kidz', rowId: `${_p}? owner` },
+          { title: '📌SEMUA PERINTAH', description: 'Fitur ALLMENU Kidz', rowId: `${_p}? all` },
+          { title: '🎮GAME BOT', description: 'Fitur Game Kidz', rowId: `${_p}? game` },
+          { title: '🌐XP & LEVEL', description: 'Fitur xp & lvl Kidz ', rowId: `${_p}? xp` },
+          { title: '📃STICKER', description: 'Fitur Sticker Kidz', rowId: `${_p}? sticker` },
+          { title: '🐚KERANG AJAIB', description: 'Fitur Kerang Kidz', rowId: `${_p}? kerangajaib` },
+          { title: '🌀QUOTES BOT', description: 'Fitur Quotes Kidz', rowId: `${_p}? quotes` },
+          { title: '🗿GROUP BOT', description: 'Fitur Khusus Group Kidz', rowId: `${_p}? group` },
+          { title: '✨PREMIUM', description: 'Fitur Khusus Prem Kidz', rowId: `${_p}? premium` },
+          { title: '🗼INTERNET', description: 'Fitur Internet Kidz', rowId: `${_p}? internet` },
+          { title: '🔞FITUR DEWASA 22+', description: 'Fitur Khusus 22+ Kidz', rowId: `${_p}? nsfw` },
+          { title: '🎭ANONYMOUS', description: 'Fitur Nyari Teman Kidz', rowId: `${_p}? anonymous` },
+          { title: '📝NULIS & LOGO', description: 'Fitur Nulis & Logo Kidz', rowId: `${_p}? maker` },
+          { title: '📺DOWNLOADER', description: 'Fitur Download Kidz', rowId: `${_p}? downloader` },
+          { title: '🔧TOOLS BOT', description: 'Fitur Tools Kidz', rowId: `${_p}? tools` },
+          { title: '😄FUN BOT', description: 'Fitur Ceria Kidz', rowId: `${_p}? fun`},
+          { title: '💾DATABASE', description: 'Fitur Database Kidz', rowId: `${_p}? database` },
+          { title: '💥VOTE & ABSEN', description: 'Fitur Absen Kidz', rowId: `${_p}? vote` },
+          { title: "📓AL-QUR\'AN", description: 'Fitur Muslim Kidz', rowId: `${_p}? quran` },
+          { title: '🎤PENGUBAH SUARA', description: 'Fitur Pengubah Suara Kidz', rowId: `${_p}? audio` },
+          { title: '👺JADI BOT', description: 'Fitur JadiBot Kidz', rowId: `${_p}? jadibot` },
+          { title: '⭐INFO BOT', description: 'Fitur Info Bot Kidz', rowId: `${_p}? info` },
+          { title: '🌟THANKS TO', description: 'Terimakasih Contributors', rowId: `${_p}tqto` },
+          { title: '👤OWNER BOT', description: 'Fitur Owner Kidz', rowId: `${_p}? owner` },
         ]
       }
     ]
