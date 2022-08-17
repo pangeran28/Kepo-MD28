@@ -1,9 +1,9 @@
 let handler = async(m, { conn }) => {
-  await conn.sendButtonVid(m.chat, pickRandom(asupanloli), 'asupan.mp4', 'Nih Kak Lolinya\n\nFollow IG OwnerKu Tante:\nhttps://instagram.com/kokopangeran_', 'Next', '.asupanloli',  m)
+  await conn.sendButtonVid(m.chat, pickRandom(lolivid), 'asupan.mp4', 'Nih Kak Lolinya\n\nFollow IG OwnerKu Tante:\nhttps://instagram.com/kokopangeran_', 'Next', '.lolivid',  m)
 }
-handler.help = ['asupanloli']
+handler.help = ['lolivid']
 handler.tags = ['asupan']
-handler.command = /^asupanloli$/i
+handler.command = /^lolivid$/i
 handler.owner = false
 handler.mods = false
 handler.premium = true
@@ -22,7 +22,7 @@ function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
 
-const asupanloli = [
+const lolivid = [
 "https://raw.githubusercontent.com/NurFy/txt/main/asupan-loli/loli1.mp4",
 "https://raw.githubusercontent.com/NurFy/txt/main/asupan-loli/loli2.mp4",
 "https://raw.githubusercontent.com/NurFy/txt/main/asupan-loli/loli3.mp4",
