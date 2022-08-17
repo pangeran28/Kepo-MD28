@@ -270,8 +270,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     ]
     const listMessage = {
           text: `
-✧────···[ Dashboard ]···───✧      
-│
+┏────···[ Dashboard ]···───✧      
+┬
 ❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
 │⬡ Nama : ${name}
 │⬡ Uang : ${money}
@@ -301,12 +301,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ┴
 ┬
 ├━━━━━━━━━━━━━━━━┈─⋆
-│ ▸ *Author :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
-┴ ▸ *Owner :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
+┴
+│ *Author :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
+│ *Owner :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
+┴
 ✧
-┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
-│ Tolong Jangan Dispam ya Biar Ga Delay
-╰━━━━━━━━━━━━━━━━┈─◂
+┬ 
+❏ 𝗣𝗶𝗻𝗻𝗲𝗱 :
+│ Tolong Jangan Dispam ya Biar Ga Delay!
+┗━━━━━━━━━━━━━━━━┈─◂
 `,
       footer: `        ▌│█║▌║▌║║▌║▌║█│▌\n\nCʀᴇᴀᴛᴇᴅ Bʏ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×`,
       title: judul,
