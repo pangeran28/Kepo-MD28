@@ -244,6 +244,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     ]
     const listMessage = {
+          text: `
 ✧────────···[ Dashboard ]···─────────✧      
 │
 ❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
