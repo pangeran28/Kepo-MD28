@@ -6,21 +6,21 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┏──『 *ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ* 』──⬣
-┆         *Hai*, %name 
+┆      ❏ *Hai*, %name ❏
 ┗┬──────────────┈ ⳹
 ┏┆❏ *Tersisa* : %limit Limit
 ┆┆❏ *Role* : %role
 ┆┆❏ *Level* : %level [%exp / %maxexp]
 ┆┆❏ *Exp* : %totalexp XP
 ┗┬──────────────┈ ⳹
-┏┤             *Kalender*
+┏┤          ❏ *Kalender* ❏
 ┆┗──────────────┈ ⳹
 ┆❏ *Hari* : %week %weton
 ┆❏ *Tanggal* : %week %weton, %date
 ┆❏ *Tanggal Islam* : %dateIslamic
 ┆❏ *Waktu* : %time
 ┗┬──────────────┈ ⳹
-┏┤              *Bot Info*
+┏┤           ❏ *Bot Info* ❏
 ┆┗──────────────┈ ⳹
 ┆❏ *Uptime* : %uptime
 ┆❏ *Run Bot* : Panel/RDP
@@ -236,7 +236,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     })
     if (teks == '404') {
       let judul = `
-✧───··[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]··──✧
+✧───··[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]··───✧
  ${global.ucapan}, ${name}
         `.trim()
       const sections = [
@@ -311,7 +311,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ✧
 ┬ 
 ❏ 𝗣𝗶𝗻𝗻𝗲𝗱 :
-│ Tolong Jangan Dispam ya Biar Ga Delay!
+│◦➛ Tolong Jangan Dispam
+│   Biar Ga Delay Tod!
 ┗━━━━━━━━━━━━━━━━┈─✧
 `,
       footer: `        ▌│█║▌║▌║║▌║▌║█│▌\n\nCʀᴇᴀᴛᴇᴅ Bʏ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×`,
