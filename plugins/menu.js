@@ -236,7 +236,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     })
     if (teks == '404') {
       let judul = `
-┏─··[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]··─✧
+✧───··[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]··──✧
  ${global.ucapan}, ${name}
         `.trim()
       const sections = [
@@ -273,8 +273,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     ]
     const listMessage = {
           text: `
-┏────···[ Dashboard ]···───✧      
-┬
+┏────···[ Dashboard ]···───✧
 ❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
 │◦➛ Nama : ${name}
 │◦➛ Uang : ${money}
