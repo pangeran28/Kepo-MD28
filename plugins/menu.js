@@ -236,8 +236,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     })
     if (teks == '404') {
       let judul = `
-┏────···[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]···────✧
-   ${global.ucapan}, ${name}
+┏─··[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]··─✧
+ ${global.ucapan}, ${name}
         `.trim()
       const sections = [
       {
