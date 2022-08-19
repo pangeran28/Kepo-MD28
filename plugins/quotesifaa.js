@@ -1,10 +1,10 @@
 let fs = require('fs')
 let handler  = async (m, { conn, usedPrefix, command }) => {
-   let anu = ` ────〔 *Ifa & Koko* 〕────
+   let anu = ` ─────〔 *IFA & KOKO* 〕─────
 
 ${pickRandom(global.ifaa)}
 `
-conn.sendButton(m.chat, anu, wm, `Quotes Ifaa`, `${usedPrefix + command}`, m)
+conn.sendButton(m.chat, anu, wm, `IFA & KOKO`, `${usedPrefix + command}`, m)
 }
 handler.help = ['ifaa']
 handler.tags = ['quotes']
