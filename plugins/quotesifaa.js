@@ -47,7 +47,7 @@ global.ifaa = [
 "_Jika dia benar-benar mencintaimu, dia tidak akan pernah meninggalkanmu dengan alasan yang begitu susah dipercaya._\n\n*©KokoPangeran*",
 "_Tidurlah, gadang mu tidak akan membuat dirinya kembali kepadamu._\n\n*©KokoPangeran*",
 "_Jika aku pergi, maka berjanji lah kepadaku, jangan pernah dirimu menyakiti laki-laki lain dengan kepuasanmu atau egomu._\n\n*©KokoPangeran*",
-"_Hadirku bisa selamanya dan bisa juga sementara, jadi jangan pernah menyia"kan orang lain demi kebahagiaan mu._\n\n*©KokoPangeran*",
+"_Hadirku bisa selamanya dan bisa juga sementara, jadi jangan pernah menyia-nyiakan orang lain demi kebahagiaan mu._\n\n*©KokoPangeran*",
 "_Aku takut dicintai karena nafsu, bukan karena sayang._\n\n*©Faaa*",
 "_Mungkin bukan takdirnya kita bersam, namun ga ada yang ga mungkin untuk kita selalu bersama._\n\n*©KokoPangeran*",
 "_Kamu cantik utama kan bersyukur ya cantik sama-sama ciptaan Tuhan hrus bersyukur bukan insecure._\n\n*©Faaa*"
