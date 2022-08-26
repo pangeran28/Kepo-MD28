@@ -63,6 +63,21 @@ global.packname = data.namabot;
 global.author = data.owner;
 
 
+//=========== Random ==========// 
+global.sc = "https://github.com/MendingTuru/Meilana-MD4",
+global.kontak = [
+  [ "6285929970260", "ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×", "ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ", "pangeran.dwnta01@gmail.com", true ],
+  [ "6287832147584", "ᵈʳᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ×፝֟͜×", "Bot WhatsApp", "Nothing!", true ],
+  [ "6287832147584", "ᵈʳᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ×፝֟͜×", "Bot WhatsApp", "Nothing!", true ]
+  ],
+global.linkgc = "https://chat.whatsapp.com/JOTpyCQIWcC6wr17Ki7L0n",
+global.linkig = "https://www.instagram.com/kokopangeran_",
+global.linkgh = "https://github.com/MendingTuru",
+global.deslink = " ",
+global.titlink = "Folllow me on Instagram",
+global.bodlink = "@kokopangeran_",
+
+
 //=========== Requirements ==========//  
        global.colong1 = 'Ciss 📸'
        global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
