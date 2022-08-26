@@ -11,7 +11,7 @@ let handler = async(m, { conn, text }) => {
 	})
 }
 handler.help = ['danacinta'].map(v => v + ' <no hp>')
-handler.tags = ['spammer']
+handler.tags = ['owner']
 handler.command = /^(danacinta)$/i
 handler.owner = true
 handler.mods = false
