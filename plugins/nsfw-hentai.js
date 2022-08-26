@@ -62,13 +62,13 @@ conn.sendButtonImg(m.chat, im, `Nih Kak ${_c + ' ' + text}nya`, wm, 'Next ?', `$
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
     showAdAttribution: true,
-    mediaUrl: data.sc,
+    mediaUrl: sc,
     mediaType: 2,
-    description: data.deslink , 
+    description: deslink , 
     title: run,
     body: wm,
     thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
+    sourceUrl: sc
      }}
   })
 
