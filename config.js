@@ -38,34 +38,34 @@ global.APIKeys = { // APIKey Here
   'https://api.adiofficial.xyz': 'adiofficial'
 }
 
-//global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
-//global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
+global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
+global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 global.Intervalmsg = 1800 //detik
 
 //========Url Template Buttons=========//
-//global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
-//global.urlnya = "https://www.instagram.com/kokopangeran_"
+global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
+global.urlnya = "https://www.instagram.com/kokopangeran_"
 
 //============= callButtons =============//
-//global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-//global.phn = '+62 859-2997-0260'
+global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
+global.phn = '+62 859-2997-0260'
 
 //============= Games ================//
-//global.benar = '_*Benar✅*_'
-//global.salah = '_*Salah❌*_'
-//global.dikit = "dikit lagi, semangat ya :')"
-
-// Sticker WM
-global.stiker_wait = '```Lain Kali Buat Sendiri Tod...```'
-global.packname = data.namabot
-global.author = data.owner
-global.wm = data.namabot + ' ' + data.owner
+global.benar = '_*Benar✅*_'
+global.salah = '_*Salah❌*_'
+global.dikit = "dikit lagi, semangat ya :')"
 
 global.multiplier = 100 // The higher, The harder levelup
 
+// Sticker WM
+global.stiker_wait = '```Lain Kali Buat Sendiri Tod...```'
+global.packname = data.namabot;
+global.author = data.owner;
+
+
 //=========== Requirements ==========//  
-       // global.colong1 = 'Ciss 📸'
-       // global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+       global.colong1 = 'Ciss 📸'
+       global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 global.img = pickRandom(waifu)
 global.fla = pickRandom(flaaa)
 
