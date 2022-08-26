@@ -749,7 +749,29 @@ Untuk mematikan fitur ini, ketik
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
-}
+},
+
+conn.ws.on('CB:call', async function callUpdatePushToDb(json) {
+        let call = json.tag
+        let callerId = json.attrs.from
+        console.log({ call, callerId })
+        let users = db.data.users
+        let user = users[callerId] || {}
+        if (user.whitelist) return
+        if (!db.data.settings[conn.user.jid].anticall) return
+        switch (conn.callWhitelistMode) {
+          case 'mycontact':
+            if (callerId in conn.contacts && 'short' in conn.contacts[callerId])
+            return
+          break
+        }
+        const data = global.owner.filter(([id, isCreator]) => id && isCreator)
+        let sentMsg = await conn.reply(callerId, `Sistem otomatis block, jangan menelepon bot silahkan hubungi owner untuk dibuka!`)
+        await conn.sendContact(callerId, data.map(([id, name]) => [id, name]), sentMsg)
+        await conn.updateBlockStatus(callerId, 'block')
+        await conn.reply(owner[0]+'@s.whatsapp.net', `*NOTIF CALLER BOT!*\n\n@${callerId.split`@`[0]} telah menelpon *${conn.user.name}*\n\n ${callerId.split`@`[0]}\n`, null, { mentions: [callerId] })
+        conn.delay(10000) // supaya tidak spam
+    })
 
 global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
