@@ -66,8 +66,8 @@ global.multiplier = 100 // The higher, The harder levelup
 //=========== Requirements ==========//  
        // global.colong1 = 'Ciss 📸'
        // global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
-//global.img = pickRandom(waifu)
-//global.fla = pickRandom(flaaa)
+global.img = pickRandom(waifu)
+global.fla = pickRandom(flaaa)
 
 global.rpg = {
   emoticon(string) {
