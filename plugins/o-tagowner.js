@@ -5,7 +5,7 @@ conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil an
     let a = "https://telegra.ph/file/a43304aef3ca1c97511fd.jpg"
   conn.sendStimg(m.chat, a, m, {packname: "", author: data.clg2, 
   contextInfo: { mentionedJid: [m.sender],
-    externalAdReply :{
+    externalAdReply : {
     showAdAttribution: true,
     mediaUrl: data.sc,
     mediaType: 2,
