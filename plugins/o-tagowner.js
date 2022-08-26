@@ -7,13 +7,13 @@ conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil an
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply : {
     showAdAttribution: true,
-    mediaUrl: data.sc,
+    mediaUrl: sc,
     mediaType: 2,
-    description: data.deslink , 
+    description: deslink, 
     title: run,
     body: wm,
     thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
+    sourceUrl: sc
      }
     }
   })
