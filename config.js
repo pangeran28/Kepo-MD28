@@ -2,7 +2,7 @@ let fs = require('fs')
 
 let flaaa = JSON.parse(fs.readFileSync('./api/fla.json'))
 let waifu = JSON.parse(fs.readFileSync('./api/waifu.json'))
-let data = JSON.parse(fs.readFileSync('./data.json'))
+global.data = JSON.parse(fs.readFileSync('./data.json'))
 
 
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
