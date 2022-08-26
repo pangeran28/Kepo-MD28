@@ -65,7 +65,7 @@ conn.sendButtonImg(m.chat, im, `Nih Kak ${_c + ' ' + text}nya`, wm, 'Next ?', `$
     mediaUrl: sc,
     mediaType: 2,
     description: deslink, 
-    title: run,
+    title: linkig,
     body: wm,
     thumbnail: await(await fetch(img)).buffer(),
     sourceUrl: sc
