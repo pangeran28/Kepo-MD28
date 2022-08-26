@@ -58,14 +58,15 @@ global.multiplier = 100 // The higher, The harder levelup
 
 // Sticker WM
 global.stiker_wait = '```Lain Kali Buat Sendiri Tod...```'
-global.packname = data.namabot;
-global.author = data.owner;
+global.packname = data.namabot
+global.author = data.owner
+global.wm = data.namabot + ' ' + data.owner
 
 //=========== Requirements ==========//  
        // global.colong1 = 'Ciss 📸'
        // global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
-global.img = pickRandom(waifu)
-global.fla = pickRandom(flaaa)
+//global.img = pickRandom(waifu)
+//global.fla = pickRandom(flaaa)
 
 global.rpg = {
   emoticon(string) {
@@ -114,6 +115,6 @@ fs.watchFile(file, () => {
   require(file)
 })
 
-function pickRandom(list) {
+/*function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
-}
+}*/
