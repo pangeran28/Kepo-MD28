@@ -358,7 +358,7 @@ module.exports = {
                     antiLink: true,
                     expired: 0,
                     antiBadword: true,
-                    antispam: true,
+                    antispam: false,
                     antitroli: false,
                     antivirtex: true,
                     viewonce: false,
