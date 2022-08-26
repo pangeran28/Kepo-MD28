@@ -406,3 +406,25 @@ function ucapan() {
   }
   return res
 }
+// By Koko Pangeran : https://github.com/MendingTuru
+async function genProfile(conn, m) {
+    let font = await jimp.loadFont('./name.fnt'),
+    mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
+    let res = JSON.parse(fs.readFileSync('./api/thumb.json')),
+    welcome = await jimp.read(res.getRandom()),
+    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
+    status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
+
+    await avatar.resize(460, 460)
+    await mask.resize(460, 460)
+    await avatar.mask(mask)
+    await welcome.resize(welcome.getWidth(), welcome.getHeight())
+
+    await welcome.print(font, 550, 180, 'Name:')
+    await welcome.print(font, 650, 255, m.pushName.slice(0, 25))
+    await welcome.print(font, 550, 340, 'About:')
+    await welcome.print(font, 650, 415, status)
+    await welcome.print(font, 550, 500, 'Number:')
+    await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+    return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png')
+}
