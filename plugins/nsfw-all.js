@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command }) => {
+/*let handler = async (m, { conn, command }) => {
 let nyenye = `https://zenzapis.xyz/api/morensfw/${command}?apikey=80b5045dce`
     conn.sendButtonImg(m.chat, nyenye, `Nihh @${m.sender.split('@')[0]} Jangan Sagne Om!`, wm, `Next Sayang`, `.${command}`, m) 
 }
@@ -8,4 +8,4 @@ handler.command = /^(ahegao|ass|bdsm|blowjob|cum|cuckold|ero|femdom|foot|gangban
 handler.premium = true
 handler.limit = true
 handler.register = true
-module.exports = handler
+module.exports = handler*/
