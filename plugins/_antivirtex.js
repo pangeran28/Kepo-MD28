@@ -5,35 +5,43 @@ let handler = m => m
 handler.all = async function (m, { isBlocked }) {
     if (isBlocked) return
 
-   let regs = /(ผิดุท้เึางืผิดุท้เึางื)/i
-   let isVertexThai = regs.exec(m.text)
+   let rega = /(ผิดุท้เึางืผิดุท้เึางื)/i
+   let isVertexThai = rega.exec(m.text)
    if (isVertexThai && !m.fromMe) {
-   conn.sendMessage(m.chat, { delete: m.key })
    conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
    }
    
-   let regk = /(♚㜸ཽཽࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ͢͢㜺ࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ㜸ཽཽཽ͢͢͢♚)/i
-   let isVertexSymbol = regk.exec(m.text)
-   if (isVertexSymbol && !m.fromMe) {
-   conn.sendMessage(m.chat, { delete: m.key })
+   let regb = /(♚㜸ཽཽࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ͢͢㜺ࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ㜸ཽཽཽ͢͢͢♚)/i
+   let isVertexSymbol = regb.exec(m.text)
+   if (isVertexThai && !m.fromMe) {
    conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
    }
    
-   let regp = /(๒๒)/i
-   let isVertexsThai= regp.exec(m.text)
+   let regc = /(๒๒)/i
+   let isVertexsThai= regc.exec(m.text)
    if (isVertexsThai && !m.fromMe) {
-   conn.sendMessage(m.chat, { delete: m.key })
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+
+   let regd = /(☛͜⧼🥊⃟✪.IՏᗩᒪ ᘔᘔ Oᒪᗪ.✪⧽͜💞͜✞‍️)/i
+   let isVertexsThaia= regd.exec(m.text)
+   if (isVertexsThaia && !m.fromMe) {
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+
+   let rege = /(༒⃪᪼⃟```99999*```⛤༒⃢)/i
+   let isVertexsThaib= rege.exec(m.text)
+   if (isVertexsThaib && !m.fromMe) {
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+
+   let regf = /(𝘿𝙤𝙬𝙣 𝙎𝙮𝙨𝙩𝙚𝙢⃢☙)/i
+   let isVertexsThaic= regf.exec(m.text)
+   if (isVertexsThaic && !m.fromMe) {
    conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
    }
    
-   // tambahin sendiri code virus WhatsApp.. Contohnya di bawah
-  
-   // let abc1 = /(virusnya)/i
-   // let abc2 = abc1.exec(m.text)
-   // if (abc2 && !m.fromMe) {
-   // conn.sendMessage(m.chat, { delete: m.key })
-   // conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
-   // }
+   // tambahin sendiri code virus WhatsApp..
 }
 
 handler.botAdmin = true
