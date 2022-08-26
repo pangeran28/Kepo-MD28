@@ -1,7 +1,7 @@
 let fs = require('fs')
 
-let flaaa = JSON.parse(fs.readFileSync('./api/fla.json'))
-let waifu = JSON.parse(fs.readFileSync('./api/waifu.json'))
+// let flaaa = JSON.parse(fs.readFileSync('./api/fla.json'))
+// let waifu = JSON.parse(fs.readFileSync('./api/waifu.json'))
 
 global.data = JSON.parse(fs.readFileSync('./data.json'))
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
@@ -54,13 +54,13 @@ global.Intervalmsg = 1800 //detik
 //global.salah = '_*Salah❌*_'
 //global.dikit = "dikit lagi, semangat ya :')"
 
-global.multiplier = 100 // The higher, The harder levelup
-
 // Sticker WM
 global.stiker_wait = '```Lain Kali Buat Sendiri Tod...```'
 global.packname = data.namabot
 global.author = data.owner
 global.wm = data.namabot + ' ' + data.owner
+
+global.multiplier = 100 // The higher, The harder levelup
 
 //=========== Requirements ==========//  
        // global.colong1 = 'Ciss 📸'
