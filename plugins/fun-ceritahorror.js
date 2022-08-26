@@ -1,34 +1,20 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn, text }) => {
-  let res = await fetch('https://x-restapi.herokuapp.com/api/random-cehor?apikey=BETA')
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-    let more = String.fromCharCode(8206)
-    let readMore = more.repeat(4001)
-let anu = `*${json.judul}*
-${readMore}
-${json.desc}`
-  const ftroli = {
-    key : {
-    remoteJid: '6283136505591-1614953337@g.us',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 26-9999, 
-    status: 1,
-    surface : 1,
-    message: 'Random Cerita Horor', 
-    orderTitle: `▮Menu ▸`,
-    thumbnail: 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg', 
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-  conn.sendButton(m.chat, anu, wm, 'Cerita Horror👻', '.ceritahoror', ftroli) 
+let handler = async (m, { conn }) => {
+  
+let res = await fetch('https://api.lolhuman.xyz/api/ceritahoror?apikey=SGWN')
+    let json = await res.json()
+    
+    await m.reply(data.wait)
+await conn.sendButtonImg(m.chat, json.result.thumbnail, `Judul: ${json.result.title}
+Desc: ${json.result.desc}
+Cerita: ${json.result.story}`, wm, 'Again', '.ceritahoror', m)
+ //   await conn.sendButtonImg(m.chat, json.result.thumbnail, txt, wm, `Again`, `.ceritahoror`, m)
 }
-handler.help = ['ceritahorror', 'ceritahantu']
-handler.tags = ['internet', 'fun']
-handler.command = /^(ceritahorror|ceritahoror|ceritahantu)$/i
+handler.help = ['ceritahoror']
+handler.tags = ['internet']
+handler.command = /^ceritahoror$/i
 handler.limit = true
+handler.register = true
+
+
 module.exports = handler
