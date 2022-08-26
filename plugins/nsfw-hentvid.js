@@ -8,7 +8,7 @@ let handler = async(m, { conn, usedPrefix, text, command }) => {
 }
 
 handler.help = ['hentaivideo']
-handler.tags = ['+18']
+handler.tags = ['bokep']
 handler.command = /^(hentaivideo)$/i
 handler.premium = true
 handler.register = true
