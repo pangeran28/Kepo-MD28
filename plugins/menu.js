@@ -237,7 +237,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      let judul = `${global.ucapan}, ${name}`.trim()
+      let judul = `${ucapan()}, ${name}`.trim()
       const sections = [
       {
         title: 'List Menu ' + namabot,
