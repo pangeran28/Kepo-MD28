@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   let server = (args[1] || servers[0]).toLowerCase()
   let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : data.wait)
+  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : wait)
   if (!isLimit) conn.sendMedia(m.chat, dl_link, m, {
     asDocument: chat.useDocument, mimetype: 'audio/mp4', ptt: false, contextInfo: {
         externalAdReply: {
