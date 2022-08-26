@@ -282,7 +282,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.clear = isEnable
       break
-    case 'autoread':
+    /*case 'autoread':
     case 'read':
       isAll = true
       if (!isOwner) {
@@ -290,7 +290,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       	throw false
       }
       global.opts['autoread'] = isEnable
-      break
+      break*/
     case 'epe':
     case 'ephe':
     case 'ephemeral':
