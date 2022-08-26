@@ -24,12 +24,12 @@ let handler = async (m, { conn, command, usedPrefix, text, isPrems, isOwner }) =
   if (yt === false) throw 'semua server gagal'
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-  await conn.send2ButtonImg(m.chat, await (await fetch(thumb)).buffer(), `
+  await conn.send3ButtonImg(m.chat, await conn.resize(thumb, 280, 210), `
 *Judul:* ${title}
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
- `.trim(), wm, `🎵 AUDIO ${filesizeF}`, usedPrefix + `yta ${vid.url}`, `📽 VIDEO ${yt2.filesizeF}`, usedPrefix + `ytv ${vid.url}`, m)
+ `.trim(), wm, `🎵 AUDIO ${filesizeF}`, usedPrefix + `yta ${vid.url}`, `📽 VIDEO ${yt2.filesizeF}`, usedPrefix + `yt ${vid.url}`, `🔍 SEARCH`, `.yts ${vid.url}`, m)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
@@ -40,8 +40,3 @@ handler.limit = true
 handler.register = true
 
 module.exports = handler
-
-async function shortlink(url) {
-isurl = /https?:\/\//.test(url)
-return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''
-}
