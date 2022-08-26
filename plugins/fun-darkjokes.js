@@ -5,7 +5,7 @@ let handler = async (m, { conn }) => {
     showAdAttribution: true,
     mediaUrl: sc,
     mediaType: 2,
-    description: deslink , 
+    description: deslink, 
     title: linkig,
     body: wm, 
     thumbnail: bg,
