@@ -76,6 +76,14 @@ global.linkgh = "https://github.com/MendingTuru",
 global.deslink = " ",
 global.titlink = "Folllow me on Instagram",
 global.bodlink = "@kokopangeran_",
+global.sa = "╭─",
+global.gx = "│✇",
+global.gy = "│•",
+global.gz = "│",
+global.sb = "╰────࿐",
+global.kki = "「",
+global.kka = "」",
+global.petik = "```",
 
 
 //=========== Requirements ==========//  
