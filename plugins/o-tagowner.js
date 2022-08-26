@@ -14,7 +14,8 @@ conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil an
     body: wm,
     thumbnail: await(await fetch(img)).buffer(),
     sourceUrl: data.sc
-     }}
+     }
+    }
   })
     
   /*conn.reply(m.chat, `
