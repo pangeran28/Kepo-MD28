@@ -3,7 +3,7 @@ let handler = async (m, { conn, text }) => {
 conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil anda ehe ehe:V*`, m)
 
     let a = "https://telegra.ph/file/a43304aef3ca1c97511fd.jpg"
-  conn.sendStimg(m.chat, a, m, {packname: "", author: data.clg2, 
+  conn.sendStimg(m.chat, a, m, {packname: "", author: clg2, 
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply : {
     showAdAttribution: true,
