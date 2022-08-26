@@ -3,6 +3,8 @@ let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
+let jimp = require('jimp')
+let PhoneNumber = require('awesome-phonenumber')
 const defaultMenu = {
   before: `
 ┏──『 *ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ* 』──⬣
@@ -235,10 +237,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      let judul = `
-✧───··[ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-ᴍᴅ]··───✧
- ${global.ucapan}, ${name}
-        `.trim()
+      let judul = ` ${global.ucapan}, ${name}`.trim()
       const sections = [
       {
         title: 'List Menu ' + namabot,
@@ -272,52 +271,36 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     ]
     const listMessage = {
-          text: `
-┏────···[ Dashboard ]···───✧
-❏ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
-│◦➛ Nama : ${name}
-│◦➛ Uang : ${money}
-│◦➛ Limit : ${limit} 
-│◦➛ Premium : ${premium ? '✅' : '❌'}
-┴
-├━━━━━━━━━━━━━━━━┈─✧
-┬
+      text: `
+❏ *U S E R   I N F O*
+• Nama    : *${name}*
+• Limit   : *${limit}*
+• Status  : *${global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Owner 🗿' : 'Users ⚔️'}*
+• Premium : *${premium ? `${conn.msToDate(premiumTime - new Date() * 1)}` : 'Gratisan'}*
+
+❏ *S T A T U S   I N F O*
+• Total User : *${rtotalreg} dari ${totalreg}*
+• Tersisa    : *${limit} Limit*
+• Role       : *${role}*
+• Level      : *${level}*
+
 ❏ 𝙏𝙄𝙈𝙀
-│◦➛ Wib : ${time}
-│◦➛ Tanggal : ${week} ${weton} ${date}
-┴
-├━━━━━━━━━━━━━━━━┈─✧
-┬
+» Wib : *${time}*
+» Tanggal : *${week} ${weton} ${date}*
+
 ❏ 𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
-│◦➛ _${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik_
-┴
-├━━━━━━━━━━━━━━━━┈─✧
-┬
+_*${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik*_
+
 ❏ 𝙍𝘼𝙈𝘼𝘿𝘼𝙉
-│◦➛ _${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik_
-┴
-├━━━━━━━━━━━━━━━━┈─✧
-┬
+_*${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik*_
+
 ❏ 𝙐𝙇𝘼𝙉𝙂 𝙏𝘼𝙃𝙐𝙉 𝙊𝙒𝙉𝙀𝙍
-│◦➛ _${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik_
-┴
-┬
-├━━━━━━━━━━━━━━━━┈─✧
-┴
-┬
-│◦➛ *Author :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
-│◦➛ *Owner :* ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
-┴
-✧
-┬ 
-❏ 𝗣𝗶𝗻𝗻𝗲𝗱 :
-│◦➛ Tolong Jangan Dispam
-│   Biar Ga Delay Tod!
-┗━━━━━━━━━━━━━━━━┈─✧
-`,
-      footer: `        ▌│█║▌║▌║║▌║▌║█│▌\n\nCʀᴇᴀᴛᴇᴅ Bʏ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×`,
+_*${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik*_
+
+${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
+      footer: wm,
       title: judul,
-      buttonText: "Klik Sayang",
+      buttonText: "DiKlik Sayang",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
