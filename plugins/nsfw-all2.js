@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command }) => {
+/*let handler = async (m, { conn, command }) => {
 let nyenye = `https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=3bb99b19ba15e6a65ee4f6dd`
     conn.sendButtonImg(m.chat, nyenye, `Nihh @${m.sender.split('@')[0]} Jangan Sagne Om!`, wm, `Next Sayang`, `.${command}`, m) 
 }
@@ -8,4 +8,4 @@ handler.command = /^(hollolewd|sideoppai|animefeets|animebooty|animethighss|anim
 handler.premium = true
 handler.limit = true
 handler.register = true
-module.exports = handler
+module.exports = handler*/
