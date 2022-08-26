@@ -84,6 +84,10 @@ global.sb = "╰────࿐",
 global.kki = "「",
 global.kka = "」",
 global.petik = "```",
+global.images = "https://telegra.ph/file/be35f3f279c9af2d607e8.jpg",
+global.wmnya = "ву ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ",
+global.clg1 = "Ciss 📸",
+global.clg2 = "ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ"
 
 
 //=========== Requirements ==========//  
