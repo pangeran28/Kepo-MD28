@@ -1,24 +1,41 @@
+let fs = require('fs')
+let { MessageType } = require('@adiwajshing/baileys')
 let handler = m => m
 
-handler.before = function (m, { user, text }) {
+handler.all = async function (m, { isBlocked }) {
+    if (isBlocked) return
 
-  if (m.isBaileys && m.fromMe) return
-  let chat = global.db.data.chats[m.chat]
-  let name = this.getName(m.sender)
-
-  if (chat.antivirtex && text > 2000) {
-    this.reply(m.chat `
-*「 ANTI VIRTEX 」*
-
-Terdeteksi telah mengirim virtex!
-
-Maaf Kamu akan dikick dari grup ini!
-`.trim(), m)
-
-    this.groupRemove(m.chat, [m.sender])
-  } else return false
+   let regs = /(ผิดุท้เึางืผิดุท้เึางื)/i
+   let isVertexThai = regs.exec(m.text)
+   if (isVertexThai && !m.fromMe) {
+   conn.sendMessage(m.chat, { delete: m.key })
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+   
+   let regk = /(♚㜸ཽཽࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ͢͢㜺ࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ㜸ཽཽཽ͢͢͢♚)/i
+   let isVertexSymbol = regk.exec(m.text)
+   if (isVertexSymbol && !m.fromMe) {
+   conn.sendMessage(m.chat, { delete: m.key })
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+   
+   let regp = /(๒๒)/i
+   let isVertexsThai= regp.exec(m.text)
+   if (isVertexsThai && !m.fromMe) {
+   conn.sendMessage(m.chat, { delete: m.key })
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+   
+   // tambahin sendiri code virus WhatsApp.. Contohnya di bawah
+  
+   // let abc1 = /(virusnya)/i
+   // let abc2 = abc1.exec(m.text)
+   // if (abc2 && !m.fromMe) {
+   // conn.sendMessage(m.chat, { delete: m.key })
+   // conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   // }
 }
-handler.group = true
-handler.register = false
 
+handler.botAdmin = true
+handler.group = true
 module.exports = handler
