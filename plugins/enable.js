@@ -111,8 +111,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'publik':
     case 'public':
       isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
         throw false
       }
       setting.self = !isEnable
