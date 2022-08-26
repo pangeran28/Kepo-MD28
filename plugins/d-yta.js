@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
             mediaUrl: `${args}`,
             title: `${title}`, 
             body: wm,
-            description: wm,
+            description: wmnya,
             mediaType: 2,
           thumbnail: await (await fetch(thumb)).buffer(),
          mediaUrl: `${args}`
