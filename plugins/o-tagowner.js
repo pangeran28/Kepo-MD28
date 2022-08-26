@@ -10,7 +10,7 @@ conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil an
     mediaUrl: sc,
     mediaType: 2,
     description: deslink, 
-    title: run,
+    title: linkig,
     body: wm,
     thumbnail: await(await fetch(img)).buffer(),
     sourceUrl: sc
