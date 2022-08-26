@@ -2,9 +2,8 @@ let fs = require('fs')
 
 let flaaa = JSON.parse(fs.readFileSync('./api/fla.json'))
 let waifu = JSON.parse(fs.readFileSync('./api/waifu.json'))
-let data = JSON.parse(fs.readFileSync('./data.json'))
 
-
+global.data = JSON.parse(fs.readFileSync('./data.json'))
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
 
@@ -38,22 +37,22 @@ global.APIKeys = { // APIKey Here
   'https://api.adiofficial.xyz': 'adiofficial'
 }
 
-global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
-global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
+//global.wait = '```▁ ▂ ▄ ▅ ▆ ▇ █𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬. . .```'
+//global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 global.Intervalmsg = 1800 //detik
 
 //========Url Template Buttons=========//
-global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
-global.urlnya = "https://www.instagram.com/kokopangeran_"
+//global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
+//global.urlnya = "https://www.instagram.com/kokopangeran_"
 
 //============= callButtons =============//
-global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-global.phn = '+62 859-2997-0260'
+//global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
+//global.phn = '+62 859-2997-0260'
 
 //============= Games ================//
-global.benar = '_*Benar✅*_'
-global.salah = '_*Salah❌*_'
-global.dikit = "dikit lagi, semangat ya :')"
+//global.benar = '_*Benar✅*_'
+//global.salah = '_*Salah❌*_'
+//global.dikit = "dikit lagi, semangat ya :')"
 
 global.multiplier = 100 // The higher, The harder levelup
 
@@ -63,8 +62,8 @@ global.packname = data.namabot;
 global.author = data.owner;
 
 //=========== Requirements ==========//  
-        global.colong1 = 'Ciss 📸'
-        global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+       // global.colong1 = 'Ciss 📸'
+       // global.colong2 = 'ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 global.img = pickRandom(waifu)
 global.fla = pickRandom(flaaa)
 
